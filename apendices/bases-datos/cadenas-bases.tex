@@ -34,76 +34,246 @@
 \begin{tcolorbox}[
 		colback=gray!5,
 		colframe=black!60,
-		title=Cadena de búsqueda en ACM Full Text Collection,
+		title=Cadena de búsqueda en ACM Full Text Collection para ``Metodología'',
 		fonttitle=\bfseries,
 		sharp corners=south
 	]
 	\scriptsize
 	\begin{verbatim}
-((HTCondor OR Condor) AND (HTC OR "High Throughput Computing" OR HPC OR "High
-Performance Computing") AND (Universe OR "Execution Environment") AND (Project OR
-Work) AND (Research OR Teaching OR Industry))
+((Abstract:("Notation" OR "Architecture description language" OR "Modeling language") AND Abstract:(“Methodology” OR "Technique" OR "Procedure")) 
+OR
+(Title:("Notation" OR "Architecture description language" OR "Modeling language") AND Title:(“Methodology” OR "Technique" OR "Procedure")) 
+OR
+(Keyword:("Notation" OR "Architecture description language" OR "Modeling language") AND Keyword:(“Methodology” OR "Technique" OR "Procedure")))
 	\end{verbatim}
 \end{tcolorbox}
 
 \begin{tcolorbox}[
 		colback=gray!5,
 		colframe=black!60,
-		title=Cadena de búsqueda en IEEE Xplore,
+		title=Cadena de búsqueda en ACM Full Text Collection para ``Tecnología'',
 		fonttitle=\bfseries,
 		sharp corners=south
 	]
 	\scriptsize
 	\begin{verbatim}
-(HTCondor OR Condor) AND (HTC OR (High Throughput Computing)) AND (Universe OR
-(Runtime Environment)) AND (Research OR Teaching OR Industry)
+(Abstract:("Notation" OR "Architecture description language" OR "Modeling language") AND Abstract:("Technology" OR "Implementation Information Technology"  OR "Instrument")) 
+OR 
+(Title:("Notation" OR "Architecture description language" OR "Modeling language") AND Title:("Technology" OR "Implementation Information Technology"  OR "Instrument"))
+OR 
+(Keyword:("Notation" OR "Architecture description language" OR "Modeling language") AND Keyword:("Technology" OR "Implementation Information Technology" OR "Instrument")) 
 	\end{verbatim}
 \end{tcolorbox}
 
 \begin{tcolorbox}[
 		colback=gray!5,
 		colframe=black!60,
-		title=Cadena de búsqueda en Springer,
+		title=Cadena de búsqueda en ACM Full Text Collection para ``Diseño'',
 		fonttitle=\bfseries,
 		sharp corners=south
 	]
 	\scriptsize
 	\begin{verbatim}
-((HTCondor — Condor) + (HTC — "High Throughput Computing" — HPC — "High
-Performance Computing") + (Universe — "Execution Environment") + (Project — Work) +
-(Research — Teaching — Industry))
+(Abstract:("Notation" OR "Architecture description language" OR "Modeling language") AND Abstract:("Design" OR "Diagram"  OR "Representation")) 
+OR 
+(Title:("Notation" OR "Architecture description language" OR "Modeling language") AND Title:("Design" OR "Diagram"  OR "Representation")) 
+OR 
+(Keyword:("Notation" OR "Architecture description language" OR "Modeling language") AND Keyword:("Design" OR "Diagram"  OR "Representation")) 
 	\end{verbatim}
 \end{tcolorbox}
 
 \begin{tcolorbox}[
 		colback=gray!5,
 		colframe=black!60,
-		title=Cadena de búsqueda en ScienceDirect,
+		title=Cadena de búsqueda en IEEE Xplore para ``Metodología'',
 		fonttitle=\bfseries,
 		sharp corners=south
 	]
 	\scriptsize
 	\begin{verbatim}
-(HTCondor OR Condor) (HTC OR "High Throughput Computing" OR HPC OR
-"High Performance Computing") (Universe OR "Execution Environment")
-(Project OR Work) (Research OR Teaching OR Industry)
+("Abstract":"Notation" OR "Abstract":"Architecture description language" OR "Abstract":"Modeling language") AND ("Abstract":"Technique" OR "Abstract":"Procedure") 
+OR 
+("Publication Title":"Notation" OR "Publication Title":"Architecture description language" OR "Publication Title":"Modeling language") AND ("Publication Title":"Technique" OR "Publication Title":"Procedure") 
+OR 
+("Author Keywords":"Notation" OR "Author Keywords":"Architecture description language" OR "Author Keywords":"Modeling language") AND ("Author Keywords":"Technique" OR "Author Keywords":"Procedure")
 	\end{verbatim}
 \end{tcolorbox}
 
 \begin{tcolorbox}[
 		colback=gray!5,
 		colframe=black!60,
-		title=Cadena de búsqueda en Taylor \& Francis,
+		title=Cadena de búsqueda en IEEE Xplore para ``Tecnología'',
 		fonttitle=\bfseries,
 		sharp corners=south
 	]
 	\scriptsize
 	\begin{verbatim}
-(HTCondor OR Condor) AND (HTC OR (High Throughput Computing)) AND (Universe OR
-(Runtime Environment)) AND (Research OR Teaching OR Industry)
+("Abstract":"Notation" OR "Abstract":"Architecture description language" OR "Abstract":"Modeling language") AND ("Abstract":"Implementation Information Technology" OR "Abstract":"Instrument") 
+OR 
+("Author Keywords":"Notation" OR "Author Keywords":"Architecture description language" OR "Author Keywords":"Modeling language") AND ("Author Keywords":"Implementation Information Technology" OR "Author Keywords":"Instrument") 
+OR 
+("Publication Title":"Notation" OR "Publication Title":"Architecture description language" OR "Publication Title":"Modeling language") AND ("Publication Title":"Implementation Information Technology" OR "Publication Title":"Instrument")
+	\end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+		colback=gray!5,
+		colframe=black!60,
+		title=Cadena de búsqueda en IEEE Xplore para ``Diseño'',
+		fonttitle=\bfseries,
+		sharp corners=south
+	]
+	\scriptsize
+	\begin{verbatim}
+("Abstract":"Notation" OR "Abstract":"Architecture description language" OR "Abstract":"Modeling language") AND ("Abstract":"Diagram" OR "Abstract":"Representation") 
+OR 
+("Author Keywords":"Notation" OR "Author Keywords":"Architecture description language" OR "Author Keywords":"Modeling language") AND ("Author Keywords":"Implementation Information Technology" OR "Author Keywords":"Instrument") 
+OR 
+("Publication Title":"Notation" OR "Publication Title":"Architecture description language" OR "Publication Title":"Modeling language") AND ("Publication Title":"Implementation Information Technology" OR "Publication Title":"Instrument")
+	\end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+		colback=gray!5,
+		colframe=black!60,
+		title=Cadena de búsqueda en Springer para ``Metodología'',
+		fonttitle=\bfseries,
+		sharp corners=south
+	]
+	\scriptsize
+	\begin{verbatim}
+(title:("Notation" OR "Architecture description language" OR "Modeling language") AND title:(“Methodology” OR "Technique" OR "Procedure"))
+OR
+(abstract:("Notation" OR "Architecture description language" OR "Modeling language")AND abstract:(“Methodology” OR "Technique" OR "Procedure"))
+OR 
+(keyword:("Notation" OR "Architecture description language" OR "Modeling language") AND keyword:(“Methodology” OR "Technique" OR "Procedure"))
+	\end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+		colback=gray!5,
+		colframe=black!60,
+		title=Cadena de búsqueda en Springer para ``Tecnología'',
+		fonttitle=\bfseries,
+		sharp corners=south
+	]
+	\scriptsize
+	\begin{verbatim}
+(title:("Notation" OR "Architecture description language" OR "Modeling language") AND title:("Technology" OR "Implementation Information Technology"  OR "Instrument"))
+OR
+(abstract:("Notation" OR "Architecture description language" OR "Modeling language")AND abstract:("Technology" OR "Implementation Information Technology"  OR "Instrument"))
+OR 
+(keyword:("Notation" OR "Architecture description language" OR "Modeling language") AND keyword:("Technology" OR "Implementation Information Technology"  OR "Instrument"))
+	\end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+		colback=gray!5,
+		colframe=black!60,
+		title=Cadena de búsqueda en Springer para ``Diseño'',
+		fonttitle=\bfseries,
+		sharp corners=south
+	]
+	\scriptsize
+	\begin{verbatim}
+(title:("Notation" OR "Architecture description language" OR "Modeling language") AND title:("Design" OR "Diagram"  OR "Representation")) 
+AND
+(abstract:("Notation" OR "Architecture description language" OR "Modeling language")AND abstract:("Design" OR "Diagram"  OR "Representation")) 
+AND 
+(keyword:("Notation" OR "Architecture description language" OR "Modeling language") AND keyword:("Design" OR "Diagram"  OR "Representation")) 
+	\end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+		colback=gray!5,
+		colframe=black!60,
+		title=Cadena de búsqueda en ScienceDirect para ``Metodología'',
+		fonttitle=\bfseries,
+		sharp corners=south
+	]
+	\scriptsize
+	\begin{verbatim}
+("Notation" OR "Architecture description language" OR "Modeling language")  AND (“Methodology” OR "Technique" OR "Procedure")
+	\end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+		colback=gray!5,
+		colframe=black!60,
+		title=Cadena de búsqueda en ScienceDirect para ``Tecnología'',
+		fonttitle=\bfseries,
+		sharp corners=south
+	]
+	\scriptsize
+	\begin{verbatim}
+("Notation" OR "Architecture description language" OR "Modeling language")  AND ("Technology" OR "Implementation Information Technology"  OR "Instrument")
+	\end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+		colback=gray!5,
+		colframe=black!60,
+		title=Cadena de búsqueda en ScienceDirect para ``Diseño'',
+		fonttitle=\bfseries,
+		sharp corners=south
+	]
+	\scriptsize
+	\begin{verbatim}
+("Notation" OR "Architecture description language" OR "Modeling language")  AND ("Design" OR "Diagram"  OR "Representation")
+	\end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+		colback=gray!5,
+		colframe=black!60,
+		title=Cadena de búsqueda en Taylor \& Francis para ``Metodología'',
+		fonttitle=\bfseries,
+		sharp corners=south
+	]
+	\scriptsize
+	\begin{verbatim}
+[[Publication Title: "notation"] OR [Publication Title: "architecture description language"] OR [Publication Title: "modeling language"]] AND [[Publication Title: "design"] OR [Publication Title: "diagram"] OR [Publication Title: "representation"]] 
+AND 
+[[Keywords: "notation"] OR [Keywords: "architecture description language"] OR [Keywords: "modeling language"]] AND [[Keywords: "design"] OR [Keywords: "diagram"] OR [Keywords: "representation"]] 
+AND 
+[[Abstract: "notation"] OR [Abstract: "architecture description language"] OR [Abstract: "modeling language"]] AND [[Abstract: "design"] OR [Abstract: "diagram"] OR [Abstract: "representation"]]
   \end{verbatim}
 \end{tcolorbox}
 
+
+\begin{tcolorbox}[
+		colback=gray!5,
+		colframe=black!60,
+		title=Cadena de búsqueda en Taylor \& Francis para ``Tecnología'',
+		fonttitle=\bfseries,
+		sharp corners=south
+	]
+	\scriptsize
+	\begin{verbatim}
+[[Publication Title: "notation"] OR [Publication Title: "architecture description language"] OR [Publication Title: "modeling language"]] AND [[Publication Title: "technology"] OR [Publication Title: "implementation information technology"] OR [Publication Title: "instrument"]] 
+AND
+[[Keywords: "notation"] OR [Keywords: "architecture description language"] OR [Keywords: "modeling language"]] AND [[Keywords: "technology"] OR [Keywords: "implementation information technology"] OR [Keywords: "instrument"]] 
+AND
+[[Abstract: "notation"] OR [Abstract: "architecture description language"] OR [Abstract: "modeling language"]] AND [[Abstract: "technology"] OR [Abstract: "implementation information technology"] OR [Abstract: "instrument"]]
+  \end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+		colback=gray!5,
+		colframe=black!60,
+		title=Cadena de búsqueda en Taylor \& Francis para ``Diseño'',
+		fonttitle=\bfseries,
+		sharp corners=south
+	]
+	\scriptsize
+	\begin{verbatim}
+[[Publication Title: "notation"] OR [Publication Title: "architecture description language"] OR [Publication Title: "modeling language"]] AND [[Publication Title: "design"] OR [Publication Title: "diagram"] OR [Publication Title: "representation"]] 
+AND
+[[Keywords: "notation"] OR [Keywords: "architecture description language"] OR [Keywords: "modeling language"]] AND [[Keywords: "design"] OR [Keywords: "diagram"] OR [Keywords: "representation"]] 
+AND 
+[[Abstract: "notation"] OR [Abstract: "architecture description language"] OR [Abstract: "modeling language"]] AND [[Abstract: "design"] OR [Abstract: "diagram"] OR [Abstract: "representation"]]
+  \end{verbatim}
+\end{tcolorbox}
 
 \section{Búsqueda de artículos sin criterios de inclusión/exclusión}\label{sec:busqueda-sin-criterios}
 
@@ -112,9 +282,77 @@ Performance Computing") + (Universe — "Execution Environment") + (Project — 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/acm.png}
-	\caption{Búsqueda de artículos de educación en ACM sin criterios de inclusión/exclusión \\
-		Fecha de acceso: 12/03/25 9:13 pm
-	}\label{fig:busqueda-acm-no-exclusion}
+	\caption{Búsqueda de artículos de educación en ACM (Metodología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 12:38 am
+	}\label{fig:busqueda-acm-metodologia-no-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/acm2.png}
+	\caption{Búsqueda de artículos de educación en ACM (Tecnología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 12:39 am
+	}\label{fig:busqueda-acm-tecnologia-no-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/acm3.png}
+	\caption{Búsqueda de artículos de educación en ACM (Diseño) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 12:40 am
+	}\label{fig:busqueda-acm-diseno-no-exclusion}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/ieee.png}
+	\caption{Búsqueda de artículos de educación en IEEE Xplore (Metodología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 12:47 am
+	}\label{fig:busqueda-ieee-metodologia-no-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/ieee2.png}
+	\caption{Búsqueda de artículos de educación en IEEE Xplore (Tecnología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 12:53 am
+	}\label{fig:busqueda-ieee-tecnologia-no-exclusion}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/ieee3.png}
+	\caption{Búsqueda de artículos de educación en IEEE Xplore (Diseño) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 12:56 am
+	}\label{fig:busqueda-ieee-diseno-no-exclusion}
+
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/springer.png}
+	\caption{Búsqueda de artículos de investigación en Springer Nature (Metodología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 02:15 pm
+	}\label{fig:busqueda-springer-metodologia-no-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/springer2.png}
+	\caption{Búsqueda de artículos de investigación en Springer Nature (Tecnología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 02:16 pm
+	}\label{fig:busqueda-springer-tecnologia-no-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/springer3.png}
+	\caption{Búsqueda de artículos de investigación en Springer Nature (Diseño) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 02:17 pm
+	}\label{fig:busqueda-springer-diseno-no-exclusion}
 \end{figure}
 
 \FloatBarrier
@@ -122,17 +360,51 @@ Performance Computing") + (Universe — "Execution Environment") + (Project — 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/science-direct.png}
-	\caption{Búsqueda de artículos de investigación en ACM sin criterios de inclusión/exclusión \\
-		Fecha de acceso: 12/03/25 8:23 pm
-	}\label{fig:busqueda-science-direct-no-exclusion}
+	\caption{Búsqueda de artículos de investigación en ScienceDirect (Metodología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 01:32 am
+	}\label{fig:busqueda-science-direct-metodologia-no-exclusion}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/springer.png}
-	\caption{Búsqueda de artículos de investigación en ACM sin criterios de inclusión/exclusión \\
-		Fecha de acceso: 12/03/25 8:23 pm
-	}\label{fig:busqueda-springer-no-exclusion}
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/science-direct2.png}
+	\caption{Búsqueda de artículos de investigación en ScienceDirect (Tecnología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 01:36 am
+	}\label{fig:busqueda-science-direct-tecnologia-no-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/science-direct3.png}
+	\caption{Búsqueda de artículos de investigación en ScienceDirect (Diseño) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 01:37 am
+	}\label{fig:busqueda-science-direct-diseno-no-exclusion}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/TyF.png}
+	\caption{Búsqueda de artículos de investigación en Taylor & Francis (Metodología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 02:32 pm
+	}\label{fig:busqueda-taylor-and-francis-direct-metodologia-no-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/TyF2.png}
+	\caption{Búsqueda de artículos de investigación en Taylor & Francis (Tecnología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 02:35 pm
+	}\label{fig:busqueda-taylor-and-francis-direct-tecnologia-no-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/sin-exclusion/TyF3.png}
+	\caption{Búsqueda de artículos de investigación en Taylor & Francis (Diseño) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 02:37 pm
+	}\label{fig:busqueda-taylor-and-francis-direct-diseno-no-exclusion}
 \end{figure}
 
 
@@ -144,9 +416,77 @@ Performance Computing") + (Universe — "Execution Environment") + (Project — 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/acm.png}
-	\caption{Búsqueda de artículos de educación en ACM sin criterios de inclusión/exclusión \\
-		Fecha de acceso: 12/03/25 9:13 pm
-	}\label{fig:busqueda-acm-con-exclusion}
+	\caption{Búsqueda de artículos de educación en ACM (Metodología) con criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 02:37 pm
+	}\label{fig:busqueda-acm-metodologia-con-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/acm2.png}
+	\caption{Búsqueda de artículos de educación en ACM (Tecnología) con criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 03:27 pm
+	}\label{fig:busqueda-acm-tecnologia-con-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/acm3.png}
+	\caption{Búsqueda de artículos de educación en ACM (Diseño) con criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 03:29 pm
+	}\label{fig:busqueda-acm-diseno-con-exclusion}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/ieee.png}
+	\caption{Búsqueda de artículos de educación en IEEE Xplore (Metodología) con criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 03:31 pm
+	}\label{fig:busqueda-ieee-metodologia-con-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/ieee2.png}
+	\caption{Búsqueda de artículos de educación en IEEE Xplore (Tecnología) con criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 03:35 pm
+	}\label{fig:busqueda-ieee-tecnologia-con-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/ieee3.png}
+	\caption{Búsqueda de artículos de educación en IEEE Xplore (Diseño) con criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 03:38 pm
+	}\label{fig:busqueda-ieee-diseno-con-exclusion}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/springer.png}
+	\caption{Búsqueda de artículos de investigación en Springer Nature (Metodología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 05:52 pm
+	}\label{fig:busqueda-springer-metodologia-con-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/springer2.png}
+	\caption{Búsqueda de artículos de investigación en Springer Nature (Tecnología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 05:54 pm
+	}\label{fig:busqueda-springer-tecnologia-con-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/springer3.png}
+	\caption{Búsqueda de artículos de investigación en Springer Nature (Diseño) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 05:57 pm
+	}\label{fig:busqueda-springer-diseno-con-exclusion}
 \end{figure}
 
 \FloatBarrier
@@ -154,15 +494,49 @@ Performance Computing") + (Universe — "Execution Environment") + (Project — 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/science-direct.png}
-	\caption{Búsqueda de artículos de investigación en ACM sin criterios de inclusión/exclusión \\
-		Fecha de acceso: 12/03/25 8:23 pm
-	}\label{fig:busqueda-science-direct-con-exclusion}
+	\caption{Búsqueda de artículos de investigación en Science Direct (Metodología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 05:57 pm
+	}\label{fig:busqueda-science-direct-metodologia-con-exclusion}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/springer.png}
-	\caption{Búsqueda de artículos de investigación en ACM sin criterios de inclusión/exclusión \\
-		Fecha de acceso: 12/03/25 8:23 pm
-	}\label{fig:busqueda-springer-con-exclusion}
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/science-direct2.png}
+	\caption{Búsqueda de artículos de investigación en Science Direct (Tecnología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 06:02 pm
+	}\label{fig:busqueda-science-direct-technologia-con-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/science-direct3.png}
+	\caption{Búsqueda de artículos de investigación en Science Direct (Diseño) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 06:03 pm
+	}\label{fig:busqueda-science-direct-diseno-con-exclusion}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/TyF.png}
+	\caption{Búsqueda de artículos de investigación en Taylor & Francis (Metodología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 06:13 pm
+	}\label{fig:busqueda-taylor-and-francis-metodologia-con-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/TyF2.png}
+	\caption{Búsqueda de artículos de investigación en Taylor & Francis (Tecnología) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 06:17 pm
+	}\label{fig:busqueda-taylor-and-francis-tecnologia-con-exclusion}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,keepaspectratio]{apendices/bases-datos/con-exclusion/TyF3.png}
+	\caption{Búsqueda de artículos de investigación en Taylor & Francis (Diseño) sin criterios de inclusión/exclusión \\
+		Fecha de acceso: 09/04/25 06:18 pm
+	}\label{fig:busqueda-taylor-and-francis-diseno-con-exclusion}
 \end{figure}
