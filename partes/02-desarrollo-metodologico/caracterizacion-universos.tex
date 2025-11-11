@@ -1,119 +1,118 @@
 \ChapterImageStar[cap:caracterizacion-universos]{Caracterización de los Universos HTCondor}{./images/fondo.png}\label{cap:caracterizacion-universos}
 \mbox{}\\
 
-En esta sección se presenta una descripción detallada de los distintos universos que conforman HTCondor. Cada universo representa un entorno de ejecución específico, diseñado para satisfacer diferentes necesidades computacionales y facilitar la integración de diversas aplicaciones científicas y técnicas. Se analizan sus principales características, ventajas y limitaciones, proporcionando una visión integral que permita seleccionar el universo más adecuado según los requerimientos de cada proyecto.
+En esta sección se presenta una descripción detallada de la herramienta ArchiMate, considerada un referente conceptual y metodológico fundamental para el desarrollo de la Notación de Diseño de Infraestructura de~\TI~(\NDITI). A través de esta caracterización se analizan sus principales elementos, capas, relaciones y principios de modelado, así como su potencial de adaptación a los requerimientos específicos de NDITI. De igual manera, se revisan sus fortalezas y limitaciones, con el fin de determinar en qué medida esta herramienta puede servir como base metodológica para la definición y representación visual de infraestructuras complejas en entornos académicos o institucionales.
 
 
+\section{ArchiMate}
 
-\section{Universos disponibles}
+Como se ha mencionado anteriormente, ArchiMate es un lenguaje de modelado abierto e independiente, gestionado como estándar técnico por The Open Group, diseñado específicamente para la descripción, el análisis y la visualización de arquitecturas empresariales~\cite{ArchiMate}. Uno de sus propósitos principales es la definición de las relaciones entre conceptos pertenecientes a diferentes dominios arquitectonicos, estos se ubican en un punto intermedio entre los conceptos ams detallados usados para modelar dominios individuales~\cite{Stojanovic01}. Este lenguaje ha estado en constante evolución, cuya última versión ``ArchiMate 3.2'' fue publicada en Octubre del 2022~\cite{ArchiMate}.
 
-Como se ha mencionado anteriormente, HTCondor es un sofisticado sistema de software diseñado para la \textbf{Computación de Alto Rendimiento} (\HTC) que gestiona vastos recursos computacionales al emparejar a los propietarios de recursos con los consumidores de recursos \citep{HTCondor}. Un concepto fundamental dentro de este software es el de los \textit{Universos}, los cuales definen el entorno de ejecución específico, las reglas de gestión de recursos y la semántica de fallos.
-
-La selección del universo se define en el archivo de descripción de envío (también conocido como \textit{submit file}) y determina principalmente la forma en que el trabajo interactúa con el pool de recursos computacionales. Esta elección especifica aspectos como por ejemplo si la ejecución será local o remota, tal y como ocurre en el universo \textit{Grid}, o si se debe buscar algún binario específico para la ejecución, como en el caso del universo \textit{java}. Hasta la fecha de redacción de este documento, los principales universos soportados son los siguientes \citep{HTCondor-choosing-universe}:
-
-\begin{itemize}
-	\item \textbf{\textit{Vanilla}}
-	\item \textbf{Grid}
-	\item \textbf{Java}
-	\item \textbf{\textit{Scheduler}}
-	\item \textbf{Local}
-	\item \textbf{Parallel}
-	\item \textbf{VM}
-	\item \textbf{Container}
-	\item \textbf{Docker}
-\end{itemize}
-
-\subsection{\textit{Vanilla}}
-
-El universo \textit{Vanilla} sirve como el entorno de ejecución \textbf{predeterminado} y más ampliamente utilizado en HTCondor. Está destinado específicamente a la gran mayoría de los programas de usuario, ofreciendo las menores restricciones y el más alto nivel de compatibilidad general. Si un administrador o usuario no especifica explícitamente un universo en el archivo \textit{submit}, se asume automáticamente que el universo escogido es el \textit{Vanilla} \citep{CERNBatchDocs}.
+En el marco de la NDITI, ArchiMate constituye un referente metodológico y formal para la especificación visual de diseños de infraestructura, ya que provee un lenguaje que facilita la interoperabilidad y el entendimiento común entre diseñadores, ingenieros y gestores de TI.
 
 
-
-La flexibilidad inherente del universo \textit{Vanilla} significa que, para cargas de trabajo nuevas o especializadas, los administradores y desarrolladores frecuentemente priorizan adaptarlas para que se ejecuten dentro de este entorno. Por ejemplo, algunos trabajos requieren de envolver aplicaciones paralelas o pilas de dependencias complejas dentro de contenedores (\textit{Docker o Singularity}) y lanzarlas como un simple \textit{wrapper} ejecutable bajo el universo \textit{Vanilla}, estableciendo efectivamente el universo \textit{Vanilla} como la capa de compatibilidad universal para los flujos de trabajo modernos de alto rendimiento \citep{Emilio_DockerHTCondor, HTCondor_Parallel}.
-
-
-\subsection{Local}
-
-El universo \textit{Local} es aquel con el cual es posible ejecutar trabajos en la máquina \textit{submit}.
-
-Los trabajos en el universo local presentan las siguientes características \citep{HTCondor-choosing-universe}:
+\subsection{\textit{Objetivos Principales}}
 
 \begin{itemize}
-	\item Se ejecutan \textbf{inmediatamente} tras el envío
-	\item No entran en el ciclo de negociación
-	\item Omiten el proceso típico de emparejamiento
+	\item Proveer un lenguaje común, independiente de herramientas y estandarizado para describir la arquitectura de una organización, facilitando que sus diferentes dominios se modelen de forma coherente~\cite{ArchiMate}.
+	\item Facilitar la consistencia y coherencia en el modelado de arquitectura a traves de la alineación entre negocio, aplicaciones y tecnología mediante una representación clara concetrada en un solo framework~\cite{OMG01}.
+	\item Facilitar la toma de decisiones informadas mediante el análisis de decisiones arquitectónicas, evaluación de riesgos y evaluación de escenarios alternos~\cite{archimetric01}.
+	\item Ofrecer un marco visual estandarizado e inequívoco de modo que los stakeholders de perfiles, tanto técnicos como no técnicos, puedan colaborar y comunicarse entre si garantizando la comprensión y la alineación compartidas~\cite{archimetric01}.
 \end{itemize}
 
 
-\subsection{\textit{Scheduler}}
+\subsection{Estructura del Lenguaje}
 
-Según la documentación oficial de \cite{HTCondor-choosing-universe}, el universo \textit{Scheduler} es esencialmente el mismo que el universo \textit{Local}, sin embargo, a diferencia de este último, el universo \textit{Scheduler} no utiliza un demonio \texttt{condor\_starter} para gestionar el trabajo y por lo tanto, ofrece funciones y soporte de políticas limitados.
-
-\section{Universos con entornos de ejecución especializados}
-
-Estos universos están diseñados para cargas de trabajo que requieren entornos de tiempo de ejecución de programación específicos o esquemas complejos de asignación de recursos que involucran múltiples máquinas concurrentes.
-
-\subsection{Universo Java}
-
-El universo Java está ajustado para trabajos escritos en este lenguaje, diseñados para ejecutarse en la Máquina Virtual de Java (JVM). Aunque es posible ejecutar aplicaciones Java en el universo \textit{Vanilla}, el universo Java incluye características especializadas que simplifican y facilitan su ejecución. Por ejemplo, como señalan \cite{Thain2002}, anteriormente los usuarios debían enviar el binario de la JVM bajo el universo \textit{standard} (un universo antiguo de HTCondor que ha sido reemplazado por el universo \textit{Vanilla}) para ejecutar programas Java. Actualmente, basta con enviar el archivo \texttt{.class} en el archivo \textit{submit}, permitiendo que el trabajo se ejecute directamente en los nodos ejecutores que cumplen con los requisitos necesarios para ejecutar un trabajo Java.
-
-\subsection{Parallel}
-
-El universo \textit{Parallel} está diseñado para dar soporte a trabajos que requieren ejecución síncrona en múltiples máquinas de ejecución dedicadas. Es esencial para aplicaciones estrechamente acopladas, más comúnmente aquellas que utilizan el paradigma \textbf{\textit{Message Passing Interface} (MPI)}, y reemplaza al universo \textbf{mpi} más antiguo \citep{HTCondor-env-services}.
-
-
-Según la documentación oficial de \citep{HTCondor-env-services} en el universo \textit{Parallel}:
+Segun el documento de especificación de~\cite{ArchiMate}, este mismo define estructuras de elementos y realciones agrupadas y especializadas en diferentes capas específicas, las cuales seran detaladas a continuación:
 
 \begin{itemize}
-	\item El envío del trabajo especifica el número total de \textit{slots} (o nodos ejecutores) requeridos usando \texttt{machine\_count}
-	\item El demonio negociador de HTCondor asegura que todos los recursos necesarios se reclamen \textbf{concurrentemente} antes de que la ejecución pueda comenzar.
-	\item HTCondor designa uno de los nodos como ``\textbf{nodo 0}'', que típicamente ejecuta el proceso maestro.
+	\item \textbf{Capa de Negocio:} Referente a los servicios ofrecidos a los consumidores de una organización, los cuales a su vez son realizados por los procesos de neogocio al interior de la misma.
+	\item \textbf{Capa de Aplicación:} Describe los servicios de aplicación que dan soporte a los procesos de negocio de la organización y a su vez las aplicaciones que los implementan.
+	\item \textbf{Capa de tecnología:} Esta capa agrupa tanto las tecnologías de operación, como las pertenecientes a \TI. Permitiendo incluir tanto la tecnología que da soporte a las aplicaciones y capas de negocio, como también instalaciones y equipos físicos.
 \end{itemize}
 
-HTCondor gestiona la configuración de la comunicación, incluida la generación y copia de claves SSH a través de los nodos asignados para permitir la comunicación sin contraseña necesaria para iniciar la aplicación paralela. También requiere una configuración específica del comportamiento de terminación del trabajo a través de atributos como \texttt{+ParallelShutdownPolicy}~\citep{HTCondor-env-services}.
-
-
-
-
-\section{Entornos de Alto Aislamiento: Contenedores y Máquinas Virtuales}
-
-La necesidad de entornos de ejecución que encapsulen las dependencias de la aplicación, aseguren la reproducibilidad y proporcionen distintos niveles de aislamiento de seguridad ha llevado al desarrollo de universos dedicados para contenedores y virtualización.
-
-\subsection{Docker}
-
-El universo \textit{Docker} permite que un trabajo HTCondor se ejecute directamente dentro de un contenedor Docker. Este universo proporciona aislamiento de procesos a nivel de sistema operativo, utilizando la funcionalidad estándar de Docker para ejecutar imágenes definidas por el usuario.
-
-\subsubsection{Requisitos e Integración}
-
-La ejecución en el universo \textit{Docker} requiere:
+Sin embargo, Archimate tambien cuenta con un framework extendido llamado full framework, incorporando nuevas capas y perspectivas adicionales buscando un efoque mas integral en el modelado~\cite{leanix01}. EL documento de especificacion mencionado anteriormente (\cite{ArchiMate}) también hace énfasis en las capas adicionales:
 
 \begin{itemize}
-	\item El servicio Docker debe estar preinstalado y configurado en los nodos ejecutores.
-	\item El envío del trabajo debe especificar el nombre de la imagen del contenedor usando \texttt{docker\_image}.
+	\item \textbf{Capa de Estrategia:} Agrupa los elementos usados para modelar la direccion estrategica de la organización en lo que respecta a su impacto en la arquitectura. Su diferencia principal con la capa de negocio radica en que esta última modela únicamente la organización operativa de la empresa.
+	\item \textbf{Capa de implementación/Migración:} Soporta todo aquello relacionado con la implementación y migración de arquitecturas, incluyendo programas y proyectos de respaldo para diferentes aspectos organizativos (Programas, portafolios y proyectos) y su planificación.
+\end{itemize}
+
+Tomando en cuenta ambas estructuras por capas mencionadas anteriormente, la jerarquía del modelo full framework al completo es la siguiente:
+ 
+\begin{itemize}
+	\item \textbf{Capa de Estrategia}
+	\item \textbf{Capa de Negocio}
+	\item \item \textbf{Capa de Aplicación}
+	\item \item \textbf{Capa de tecnología}
+	\item \textbf{Capa de implementación/Migración}
 \end{itemize}
 
 
-\subsection{Container}
+\subsection{\textit{Elementos y relaciones clave}}
 
-El universo \textit{Container} ofrece un enfoque más flexible que el universo Docker, abstrayendo la tecnología de contenerización subyacente para dar soporte a sistemas como Singularity (ahora Apptainer). Esencialmente, lo que el universo \textit{Container} procura es ofrecer una sintaxis que no dé privilegio a un \textit{runtime} específico (como sí ocurre en el universo \textit{Docker}), de manera que cualquier máquina con un \textit{runtime} compatible con la imagen especificada por el usuario pueda ser usada \citep{HTCondor-env-services}.
+En su docuemnto de especificación,~\cite{ArchiMate}~define también un conjunto limitado y coherente de elementos básicos y de relaciones que permiten modelar la arquitectura de la empresa de forma sistemática y comprensible. Estos elementos se presentan se presentan en la tabla~\ref{table:archimate-elements}.
+
+	\subsubsection{Elementos básicos por dominio}
+
+	\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.3}
+	\setlength{\tabcolsep}{8pt}
+	\begin{tabular}{@{}p{4cm}p{6cm}p{6cm}@{}}
+	\toprule
+	\textbf{Capa / Aspecto} & \textbf{Elementos principales} & \textbf{Relaciones típicas} \\ 
+	\midrule
+	\textbf{Estrategia / Motivación} &
+	\textit{Driver}, \textit{Goal}, \textit{Outcome}, \textit{Principle}, \textit{Requirement}, \textit{Capability}, \textit{Resource} &
+	\textit{Influence}, \textit{Realization}, \textit{Aggregation} \\ 
+	\midrule
+	\textbf{Negocio} &
+	\textit{Business Actor}, \textit{Business Role}, \textit{Business Process}, \textit{Business Service}, \textit{Business Object} &
+	\textit{Assignment}, \textit{Serving}, \textit{Flow}, \textit{Composition} \\ 
+	\midrule
+	\textbf{Aplicación} &
+	\textit{Application Component}, \textit{Application Interface}, \textit{Application Service}, \textit{Data Object} &
+	\textit{Realization}, \textit{Serving}, \textit{Access}, \textit{Flow} \\ 
+	\midrule
+	\textbf{Tecnología / Infraestructura} &
+	\textit{Node}, \textit{Device}, \textit{System Software}, \textit{Artifact}, \textit{Technology Service} &
+	\textit{Composition}, \textit{Assignment}, \textit{Realization}, \textit{Flow} \\ 
+	\midrule
+	\textbf{Implementación / Migración} &
+	\textit{Deliverable}, \textit{Work Package}, \textit{Plateau}, \textit{Gap} &
+	\textit{Triggering}, \textit{Flow}, \textit{Aggregation} \\ 
+	\bottomrule
+	\end{tabular}
+	\caption{Elementos y relaciones clave del lenguaje ArchiMate según sus diferentes capas.}
+	\label{table:archimate-elements}
+	\end{table}
 
 
-\subsection{VM}
-
-El universo \textit{VM} facilita la ejecución de una imagen de disco de máquina virtual como un trabajo HTCondor.
-\subsubsection{Mecanismo e Integración con el Hipervisor}
-
-En este universo:
+\section{Limitaciones de ArchiMate}
+Si bien ArchiMate se ha consolidado como uno de los lenguajes de modelado más utilizados para representar arquitecturas empresariales de forma integrada y estandarizada, Diversos estudios y experiencias en la industria han identificado limitaciones relacionadas con la complejidad de su aprendizaje, el nivel de detalle técnico que ofrece, su enfoque predominantemente organizacional y las condiciones de uso de las herramientas que lo implementan, como se presenta a continuación.
 
 \begin{itemize}
-	\item El trabajo ya no es un simple ejecutable, sino una \textbf{imagen de disco completa}
-	\item HTCondor soporta la integración con hipervisores como Xen, KVM y VMware \citep{HTCondor_vm_universe_wiki}
+	\item \textbf{Curva de aprendizaje elevada:} Una revisión realizada por el grupo BOC, indica que ArchiMate es un lenguaje de modelado complejo, debido a que el mismo incluye numerosas capas, elementos y relaciones~\cite{BOC01}. Lo anterior exige que los stakeholders y modeladores tengan una comprensión sólida de ArchiMate y de la arquitectura empresarial para poder entender estos modelos y comunicarse de manera efectiva.
+	\item \textbf{Menor precisión técnica:} Análisis realizados por la empresa de consultoria NILUS señalan que si bien ArchiMate es muy adecuado para modelar a nivel arquitectónico, el mismo presenta limitaciones para describir detalles de infraestructura técnica debido a su carencia de estructuras sólidas para la arquitectura de datos y capacidades formales de modelado entidad-relación~\cite{Nilus01}.
+	\item \textbf{Enfoque organizacional:} La meta principal de ArchiMate es ser lo mas pequeño posible~\cite{ArchiMate}. Por lo que está diseñado principalmente para describir la arquitectura empresarial y no para escenarios exclusivos de infraestructura donde puede no tener las herramientas necesarias para la comunicación efectiva de estos escenarios.
+	\item \textbf{Dependencia de herramientas propietarias:} Aunque el lenguaje es abierto, múltiples estudios y análisis del mercado señalan que las herramientas de arquitectura empresarial implican costes elevados, de implementación y mantenimiento cual puede hacer difícil su justificación en organizaciones pequeñas o con baja madurez en arquitectura\cite{kenresearch01}.
+	\item \textbf{Mantenimiento y escalabilidad:} En la revisión del grupo BOC anteriormente mencionada, tambien se expone la dificultad de mantener la consistencia y la precisión que aumenta cuando los modelos crecen en tamaño y complejidad, lo que en ultima instancia genera modelos difíciles de gobernar o interpretar al aumentar el riegos de errores e inconsistencias~\cite{BOC01}.
+	\item \textbf{Ambigüedad semántica:} En algunos estudios se ha observado que ArchiMate puede ser multi-interpretable, con conceptos importante ausentes y sin ofrecer metodos estructurados para capturar reglas de negocio~\cite{Krouwel01}. Lo que puede restar eficacia en la comunicación o en la toma de decisiones basada en el modelo.
 \end{itemize}
 
-\section{Universos Distribuidos y Federados}
+Visto lo anterior, se puede concluir que ArchiMate constituye una herramienta valiosa para la representación y modelado de infraestructuras, presenta limitaciones que deben considerarse en su aplicación práctica. Su curva de aprendizaje elevada y la escasa precisión en aspectos técnicos de bajo nivel pueden dificultar su adopción. Además, su cobertura conceptual no abarca todas las perspectivas posibles —como las operativas, de seguridad o de configuración detallada—, lo que limita su utilidad cuando se requiere una representación exhaustiva de la infraestructura o de dominios técnicos específicos.
 
-Estos universos abordan la necesidad de integrar y gestionar recursos computacionales que residen fuera de los límites inmediatos del clúster HTCondor, soportando la federación de recursos externos  \citep{Padmanabhan2011}.
+\subsection{Aplicaciones prácticas y herramientas compatibles}
 
-\subsection{Grid}
+El uso de ArchiMate no se limita a sus especificaciones teóricas: existen múltiples herramientas (libres y comerciales) que permiten modelar conforme a su metamodelo y aplicar la notación en contextos reales. A continuación se presenta una selección de herramientas relevantes:
 
-El universo \textit{Grid} permite a los usuarios de HTCondor enviar trabajos a sistemas de gestión remotos, actuando como un puente hacia sistemas de lotes externos como Slurm, LSF u otros \textit{pools} de HTCondor a través del demonio \texttt{condor\_gridmanager}. La gestión de trabajos se realiza mediante protocolos de comunicación especializados \citep{HTCondor-Grid-universe}, lo que permite a las organizaciones utilizar recursos distribuidos a través de dominios administrativos dispares. Esta capacidad facilita colaboraciones científicas a gran escala y la federación de clústeres universitarios o nacionales \citep{Padmanabhan2011}.
+\begin{itemize}
+	\item \textbf{Archi:} Conjunto de herramientas de modelado enfocada en la accesibilidad. Soporta la creación de modelos ArchiMate completos permitiendo ser operada por modeladores y arquitectos empresariales de todos los niveles. Su naturaleza es de código abierto y multiplataforma~\cite{Archi01}.
+	\item \textbf{BiZZdesign Enterprise Studio:} Se presenta como una solución corporativa avanzada para arquitectura empresarial, su soporte del lenguaje ArchiMate 3.0 es oficialmente certificado por The Open Group, permitiendo herramientas de colaboración, dashboards, reporting y modelado integrado~\cite{Bizz01}.
+	\item \item \textbf{Sparx Enterprise Architect:} Herramienta multipropósito con soporte para diversos lenguajes de modelado, entre ellos ArchiMate cuyo soporte es oficial. Al ser enfocada en multiples lenguajes permite operaciones como modelado completo, trazabilidad entre capas, vistas y almacenamiento en repositorio~\cite{EA_GUIDE01}.
+\end{itemize}
+
+Las herramientas mencionadas anteriormente estan enfocadas en facilitar la adopción de ArchiMate en organizaciones de dsitintos niveles de tamaño o madurez, permitiendo construir repositorios de arquitectura, definir vistas para stakeholders, realizar análisis de impacto y generar artefactos de modelado para las mismas.
+
+Una vez terminada la caracterización de la herramienta ArchiMate, se puede evidenciar que, a pesar de ofrecer una estructura sólida para modelar arquitecturas empresariales, presenta limitaciones al representar dominios técnicos o de infraestructura de TI, donde puede resultar ambiguo o insuficientemente detallado. Su curva de aprendizaje elevada, la falta de precisión técnica y cierta ambigüedad semántica reducen su eficacia en escenarios que requieren especificaciones más formales. Estas limitaciones evidencian la necesidad de una notación complementaria, como la NDITI, que permita una representación más clara y ajustada al contexto de diseño de infraestructuras tecnológicas.
