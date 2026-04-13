@@ -1,25 +1,784 @@
 \ChapterImageStar[cap:disenio]{Diseño de la solución}{./images/fondo.png}\label{cap:disenio}
 \mbox{}\\
 
-El presente capítulo tiene como objetivo fundamental traducir la decisión estratégica —la implementación de los universos Grid y Parallel— en un diseño técnico y estratégico concreto y ejecutable. Aquí se especifica la arquitectura de la solución, detallando los componentes de HTCondor que serán configurados o modificados, los flujos de trabajo establecidos para cada universo y los criterios de interoperabilidad con el universo Vanilla preexistente. Este diseño busca establecer las bases técnicas y metodológicas para la fase de implementación, propendiendo por la robustez, escalabilidad e integridad de la infraestructura de computación distribuida resultante. Además, busca ayudar al Grupo \GRID con el cumplimiento de sus objetivos estratégicos y el cierre de la brecha identificada en la caracterización.
+El presente capítulo tiene como objetivo presentar una propuesta metodológica concreta para la definición de una notación unificada basada principalmente en ArchiMate aplicable en el contexto del programa de Ingeniería de Sistemas y Computación. En esta sección se especifica la estructura de la notación propuesta, detallando sus elementos seleccionados, capas definidas y reglas de representación que orientarán su uso en el área de Infraestructura de~\TI. Este diseño busca establecer las bases conceptuales para su implementación, promoviendo coherencia, claridad y sostenibilidad en la representación de la infraestructura tecnológica. Además, se pretende apoyar al grupo \GRID en el fortalecimiento de sus procesos formativos y en el cierre de las necesidades identificadas durante la caracterización.
 
-\section{Definición de estrategia}
+La notación definida en este capítulo se fundamenta principalmente en la especificación oficial de ArchiMate, desarrollada por The Open Group. ArchiMate proporciona un lenguaje estandarizado para el modelado de arquitecturas empresariales, organizado por capas y con una semántica claramente definida.
+
+A partir de esta base, la propuesta NDTI adopta los conceptos estructurales y relacionales que resultan pertinentes para el contexto académico del área de Infraestructura de TI. No obstante, con el fin de atender necesidades específicas identificadas en el programa, se realizan ajustes controlados en ciertos elementos gráficos y relaciones, así como la incorporación de nuevos símbolos que amplían la capacidad expresiva de la notación.
+
+Estas extensiones no modifican la lógica conceptual central de ArchiMate, sino que la adaptan al entorno universitario, buscando mayor claridad pedagógica, simplificación semántica y alineación con los contenidos del plan curricular.
+
+\section{Definición de capas}
 \noindent
-La definición de la estrategia de diseño se fundamenta en una filosofía de desarrollo guiado por pruebas (\TDD), que es una disciplina de diseño y programación donde cada línea de código está escrita en respuesta a una prueba que el programador escribe justo antes de escribir el código \citep{4163024}. Antes de especificar los componentes arquitectónicos, se establece un conjunto de casos de prueba estructurados que definen de manera formal y verificable el comportamiento esperado de los universos Grid y Parallel. Estos casos, que funcionan como criterios de aceptación guiarán de manera iterativa el diseño de la solución, asegurando que cada decisión de implementación esté directamente alineada con la validación funcional del sistema.
+La notación propuesta en el marco del proyecto se organizará bajo un enfoque por capas, permitiendo representar la infraestructura de TI desde el nivel más concreto hasta el más abstracto, iniciando desde la capa física y culminando en la capa de negocio. . Esta estructura facilita la comprensión progresiva de los sistemas.
 
-Por último, se considera necesario establecer un nombre para el sistema. Esto con el fin de dar mayor claridad al lector y hacer más visibles los momentos en los que se habla del sistema resultado de este proyecto. Se opta por la \textit{Grid App} haciendo referencia al Grupo \GRID, que es el sujeto nuclear de este proyecto; al universo Grid, que es uno de los universos que se decidió implementar para este proyecto de aplicación después de la toma de decisiones estructurada mediante el análisis \DAR y el modelo computacional \textit{Grid} que es básicamente una infraestructura que provee gran capacidad computacional a un sistema distribuido haciendo uso de recursos geográficamente distribuidos \citep{8974490}.
+En este sentido, se definieron cuatro capas principales: Capa Física, Capa Tecnológica, Capa de Aplicación y Capa de Negocio.
 
-\section{Casos de prueba}
+\subsection{Capa Física}
+\noindent
+La Capa Física constituye el nivel base de la notación NDTI y representa los componentes materiales que soportan la infraestructura tecnológica. En esta capa se modelan los elementos tangibles que permiten la operación de los sistemas de información, incluyendo equipos, espacios físicos, redes de distribución y recursos materiales involucrados en la prestación de servicios tecnológicos.
+
+Desde la perspectiva conceptual adoptada de ArchiMate, esta capa se fundamenta principalmente en elementos estructurales activos, pasivos y de conectividad pertenecientes a la capa tecnológica, manteniendo su semántica esencial pero orientándolos a su interpretación física. Esto permite representar de forma clara la infraestructura subyacente sobre la cual se construyen los demás niveles del modelo.
+
+Desde la perspectiva conceptual adoptada de ArchiMate, esta capa se fundamenta principalmente en elementos estructurales activos, pasivos y de conectividad pertenecientes a la capa tecnológica, manteniendo su semántica esencial pero orientándolos a su interpretación física. Esto permite representar de forma clara la infraestructura subyacente sobre la cual se construyen los demás niveles del modelo.
+
+De acuerdo a esto la especificación presentada a continuación define tanto los elementos adoptados directamente de ArchiMate como las extensiones propuestas en el proyecto NDTI, asegurando coherencia conceptual gráfica dentro del modelo.
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\extrarowheight}{2pt}
+\fontsize{8.5pt}{10pt}\selectfont
+
+\begin{longtable}{|
+>{\centering\arraybackslash}m{1.8cm}|
+>{\centering\arraybackslash}m{2.6cm}|
+>{\centering\arraybackslash}m{2.1cm}|
+>{\raggedright\arraybackslash}m{4.3cm}|
+>{\centering\arraybackslash}m{2cm}|}
+
+\caption{Especificación de elementos de la Capa Física en la notación NDTI}
+\label{tab:capa_fisica_ndti} \\
+
+\hline
+\textbf{Ícono} & \textbf{Elemento} & \textbf{Clasificación} & \textbf{Descripción semántica} & \textbf{Origen} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Ícono} & \textbf{Elemento} & \textbf{Clasificación} & \textbf{Descripción semántica} & \textbf{Origen} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+% ==========================================================
+% ======== ELEMENTOS ADOPTADOS DE ARCHIMATE ===============
+% ==========================================================
+
+\hline
+\multicolumn{5}{|c|}{\textbf{Elementos adoptados de ArchiMate}} \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/fisica/archi_equipment.png}
+& F-01 Componente (Activo)
+& Estructural activo
+& Máquina o recurso físico con capacidad de ejecutar comportamientos u operaciones dentro de la infraestructura.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/fisica/archi_facility.png}
+& F-02 Locación
+& Estructural activo
+& Espacio físico destinado a alojar equipos e infraestructura tecnológica.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/fisica/archi_dn.png}
+& F-03 Red de distribución
+& Conectividad
+& Infraestructura física que permite el transporte o suministro de recursos entre distintos puntos. En la notación, este elemento incorpora una etiqueta descriptiva que identifica el tipo de red de distribución representada (por ejemplo, datos, energía, insumos, entre otros), facilitando su diferenciación semántica dentro del modelo.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/fisica/archi_material.png} 
+& F-04 Material 
+& Estructural pasivo 
+& Elemento físico susceptible de ser utilizado, transformado o consumido dentro de un proceso. 
+& ArchiMate 3.x \\ 
+\hline
+
+% ==========================================================
+% ======== EXTENSIONES PROPUESTAS EN NDTI ==================
+% ==========================================================
+
+\hline
+\multicolumn{5}{|c|}{\textbf{Extensiones propuestas por el proyecto}} \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/fisica/nditi_pascomp.png}
+& F-05 Componente (Pasivo)
+& Estructural pasivo
+& Elemento físico susceptible de ser utilizado, transformado o consumido dentro de un proceso.
+& Propuesta NDTI \\
+\hline
+
+\end{longtable}
+
+\subsubsection{Capa de Redes y Comunicaciones}
 \noindent
 
-\subsection{Definición de requisitos}
-\noindent
-Para iniciar con la definición de casos de prueba, se establecen los requisitos que debe cumplir la \textit{Grid App} que están fundamentados en el análisis preliminar hecho anteriormente, principalmente en la descripción de la oportunidad para el Grupo \GRID.
+La Capa de Redes y Comunicaciones se introduce en la notación NDTI como una extensión orientada a representar de manera más detallada y estructurada los elementos asociados a la conectividad dentro de la infraestructura de TI. Aunque ArchiMate contempla conceptos generales de red y comunicación, no proporciona un conjunto de elementos suficientemente específico para modelar dispositivos y componentes comúnmente utilizados en el contexto académico del área de Infraestructura de TI.
 
-\subsubsection{Requisitos funcionales}
+Con el propósito de cubrir esta limitación, se define una capa especializada que agrupa elementos propios del dominio de redes y comunicaciones, tales como dispositivos de interconexión, nodos de conexión y equipos asociados a la transmisión y gestión del tráfico de datos. Estos elementos se plantean como especializaciones físicas del concepto general de equipo o como nuevas abstracciones necesarias para representar adecuadamente la topología y organización de una red.
+
+La Capa de Redes y Comunicaciones se introduce en la notación NDTI como una extensión orientada a representar de manera más detallada y estructurada los elementos asociados a la conectividad dentro de la infraestructura de TI. Aunque ArchiMate contempla conceptos generales de red y comunicación, no proporciona un conjunto de elementos suficientemente específico para modelar dispositivos y componentes comúnmente utilizados en el contexto académico del área de Infraestructura de TI.
+
+Con el propósito de cubrir esta limitación, se define una capa especializada que agrupa elementos propios del dominio de redes y comunicaciones, tales como dispositivos de interconexión, nodos de conexión y equipos asociados a la transmisión y gestión del tráfico de datos. Estos elementos se plantean como especializaciones físicas del concepto general de equipo o como nuevas abstracciones necesarias para representar adecuadamente la topología y organización de una red.
+
+La separación de estos componentes en una capa independiente permite mejorar la claridad del modelo, facilitando la lectura, el análisis y la enseñanza de arquitecturas de red dentro del programa. Asimismo, esta organización favorece un uso más estructurado de la notación, alineado con las necesidades específicas de asignaturas relacionadas con redes, comunicaciones e infraestructura tecnológica.
+
+\begin{longtable}{|
+>{\centering\arraybackslash}m{1.8cm}|
+>{\centering\arraybackslash}m{2.6cm}|
+>{\centering\arraybackslash}m{2.1cm}|
+>{\raggedright\arraybackslash}m{4.3cm}|
+>{\centering\arraybackslash}m{2cm}|}
+
+\caption{Especificación de elementos de la Capa de Redes y Comunicaciones en la notación NDTI}
+\label{tab:capa_ryc_ndti} \\
+
+\hline
+\textbf{Ícono} & \textbf{Elemento} & \textbf{Clasificación} & \textbf{Descripción semántica} & \textbf{Origen} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Ícono} & \textbf{Elemento} & \textbf{Clasificación} & \textbf{Descripción semántica} & \textbf{Origen} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+% ==========================================================
+% ======== EXTENSIONES PROPUESTAS EN NDTI ==================
+% ==========================================================
+
+\hline
+\multicolumn{5}{|c|}{\textbf{Extensiones propuestas por el proyecto}} \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_node.png}
+& RC-01 Nodo de conexión
+& Estructural activo
+& Punto físico de interconexión dentro de una red de distribución que permite enlazar, concentrar o derivar conexiones entre múltiples dispositivos, equipos o segmentos de red. Puede representar puntos de acceso, panes de conexión (\textit{patch panels}), concentradores físicos, etc.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_router.png}
+& RC-02 Router
+& Especialización física de Equipo
+& Dispositivo físico de interconexión de redes encargado de dirigir el tráfico de datos entre diferentes segmentos de red.
+& Freepik \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_switch.png}
+& RC-03 Switch
+& Especialización física de Equipo
+& Dispositivo físico que permite la interconexión de múltiples dispositivos dentro de una red local, gestionando el tráfico mediante direcciones físicas.
+& Freepik \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_server.png}
+& RC-04 Servidor (Hardware)
+& Especialización física de Equipo
+& Equipo físico de alto desempeño destinado a proporcionar recursos computacionales, almacenamiento o servicios a otros dispositivos.
+& Freepik \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_modem.png}
+& RC-05 Módem
+& Especialización física de Equipo
+& Dispositivo físico encargado de modular y demodular señales para permitir la transmisión de datos a través de medios de comunicación externos.
+& Freepik \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_firewall.png}
+& RC-06 Firewall físico
+& Especialización física de Equipo
+& Dispositivo físico de seguridad de red que controla y filtra el tráfico de datos según políticas predefinidas.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_disk.png}
+& RC-07 Dispositivo de almacenamiento físico
+& Especialización física de Equipo
+& Equipo físico destinado al almacenamiento persistente de información, tales como sistemas NAS, SAN o arreglos de discos.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/fisica/nditi_generic.png}
+& RC-08 Dispositivo genérico físico
+& Especialización física de Equipo
+& Elemento físico no especificado utilizado para representar cualquier dispositivo de infraestructura tecnológica cuya naturaleza particular no se detalla en el modelo.
+& Google Fonts \\
+
+\end{longtable}
+
+
+
+\subsubsection{Capa Tecnológica}
 \noindent
-Según \cite{159342} un requisito funcional especifica una función que el sistema o que un componente del sistema es capaz de hacer. A continuación se definen los requisitos funcionales para la \textit{Grid App}.
-\input{tablas-images/pruebas/requisitosFuncionales.tex}
+
+La Capa Tecnológica en la notación NDTI representa el nivel en el que se abstraen los recursos computacionales y los servicios que soportan la ejecución de software dentro de la infraestructura de TI. A diferencia de la capa física, en este nivel se modelan los componentes lógicos, los entornos de ejecución y los comportamientos tecnológicos que permiten la operación de los sistemas.
+
+Esta capa se fundamenta directamente en la especificación de ArchiMate, adoptando sus principales elementos estructurales, de conectividad y de comportamiento, tales como nodos, software de sistema, servicios tecnológicos y procesos. Estos elementos proporcionan una base sólida y estandarizada para la representación de arquitecturas tecnológicas. No obstante, a partir de las necesidades identificadas en el contexto académico del programa, se incorporan extensiones específicas que permiten representar conceptos actuales ampliamente utilizados en la industria, como la virtualización y la contenedorización. Elementos como el nodo servidor, las máquinas virtuales, los contenedores de software y los mecanismos de seguridad lógica amplían la capacidad expresiva de la notación, facilitando la modelación de escenarios reales abordados en asignaturas del área de Infraestructura de TI.
+
+De esta manera, la capa tecnológica integra tanto los elementos propios de ArchiMate como las extensiones propuestas en el proyecto NDTI, manteniendo la coherencia conceptual.
+
+\begin{longtable}{|
+>{\centering\arraybackslash}m{1.8cm}|
+>{\centering\arraybackslash}m{2.6cm}|
+>{\centering\arraybackslash}m{2.1cm}|
+>{\raggedright\arraybackslash}m{4.3cm}|
+>{\centering\arraybackslash}m{2cm}|}
+
+\caption{Especificación de elementos de la Capa Física en la notación NDTI}
+\label{tab:capa_tecnologica_ndti} \\
+
+\hline
+\textbf{Ícono} & \textbf{Elemento} & \textbf{Clasificación} & \textbf{Descripción semántica} & \textbf{Origen} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Ícono} & \textbf{Elemento} & \textbf{Clasificación} & \textbf{Descripción semántica} & \textbf{Origen} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+% ==========================================================
+% ======== ELEMENTOS ADOPTADOS DE ARCHIMATE ===============
+% ==========================================================
+
+\hline
+\multicolumn{5}{|c|}{\textbf{Elementos adoptados de ArchiMate}} \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_node.png}
+& T-01 Nodo
+& Estructural activo
+& Recurso computacional capaz de ejecutar artefactos de software y alojar otros elementos tecnológicos dentro de la infraestructura.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_device.png}
+& T-02 Dispositivo
+& Estructural activo
+& Componente físico de hardware que proporciona capacidad de procesamiento, almacenamiento o conectividad.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_syssoft.png}
+& T-03 Software de Sistema
+& Estructural activo
+& Software base que gestiona los recursos del hardware y provee servicios fundamentales para la ejecución de aplicaciones.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_techco.png}
+& T-04 Colaboración Tecnológica
+& Estructural activo
+& Agrupación de nodos o recursos tecnológicos que cooperan para ofrecer una capacidad conjunta.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_techin.png}
+& T-05 Interfaz Tecnológica
+& Estructural activo
+& Punto de acceso a través del cual se exponen servicios o funcionalidades tecnológicas a otros elementos.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_path.png}
+& T-06 Camino
+& Conectividad
+& Canal lógico o físico que permite la comunicación entre nodos o dispositivos dentro de la infraestructura.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_comnet.png}
+& T-07 Red de Comunicación
+& Conectividad
+& Infraestructura de red que posibilita la transmisión estructurada de datos entre múltiples elementos tecnológicos.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_techfunc.png}
+& T-08 Función Tecnológica
+& Conductual
+& Comportamiento interno automatizado que describe capacidades ejecutadas por un nodo o sistema.
+& ArchiMate 3.x \\
+\hline
+
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_techpro.png}
+& T-09 Proceso Tecnológico
+& Conductual
+& Secuencia organizada de actividades técnicas orientadas a cumplir un objetivo operativo específico.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_techint.png}
+& T-10 Interacción Tecnológica
+& Conductual
+& Comportamiento colaborativo entre múltiples nodos o sistemas para ejecutar una función conjunta.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_techevent.png}
+& T-11 Evento Tecnológico
+& Conductual
+& Suceso identificable que desencadena o modifica el comportamiento de elementos tecnológicos.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_techserv.png}
+& T-12 Servicio Tecnológico
+& Conductual (Externo)
+& Capacidad tecnológica expuesta a otras capas como un servicio consumible.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/archi_arti.png}
+& T-13 Artefacto
+& Estructural pasivo
+& Objeto digital que es producido, utilizado o desplegado por elementos tecnológicos.
+& ArchiMate 3.x \\
+\hline
+
+% ==========================================================
+% ======== EXTENSIONES PROPUESTAS EN NDTI ==================
+% ==========================================================
+
+\hline
+\multicolumn{5}{|c|}{\textbf{Extensiones propuestas por el proyecto}} \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/nditi_lserver.png}
+& T-14 Nodo servidor
+& Estructural activo
+& Entorno lógico de ejecución asociado a recursos computacionales dentro de la infraestructura tecnológica. Representa instancias de servidor que operan sobre infraestructura física o virtualizada, tales como máquinas virtuales o contenedores.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/nditi_container.png}
+& T-15 Contenedor de software
+& Estructural activo
+& Entorno de ejecución ligero y aislado que encapsula aplicaciones y sus dependencias, permitiendo su despliegue consistente sobre una infraestructura compartida. Este elemento representa tecnologías de contenedorización como Docker y se ubica sobre nodos servidores o plataformas de virtualización, facilitando la portabilidad y escalabilidad de los sistemas.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/nditi_vm.png}
+& T-16 Máquina Virtual
+& Estructural activo
+& Entorno de ejecución virtualizado que opera sobre un servidor físico o plataforma de virtualización, permitiendo la ejecución aislada de sistemas operativos y aplicaciones dentro de la infraestructura tecnológica.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/nditi_lofw.png}
+& T-17 Firewall lógico
+& Estructural activo
+& Mecanismo de seguridad implementado mediante software que controla y filtra el tráfico de red entre diferentes componentes de la infraestructura tecnológica según reglas de seguridad definidas.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/tec/nditi_db.png}
+& T-18 Servicio de almacenamiento
+& Conductual (externo)
+& Servicio tecnológico encargado de proporcionar capacidades de almacenamiento y gestión de datos a otros componentes de la infraestructura o a capas superiores del modelo.
+& Google Fonts \\
+\hline
+
+
+\end{longtable}
+
+\subsubsection{Capa de Aplicación}
+\noindent
+
+La Capa de Aplicación en la notación NDTI representa el nivel en el que se modelan los sistemas de software y sus funcionalidades desde una perspectiva lógica. En esta capa se describen los componentes de aplicación, sus interacciones, los procesos que ejecutan y los datos que gestionan, permitiendo abstraer la lógica del sistema independientemente de la infraestructura tecnológica subyacente.
+
+Esta capa se fundamenta en los elementos definidos por ArchiMate para el modelado de aplicaciones, adoptando sus conceptos estructurales, conductuales y pasivos, tales como componentes de aplicación, interfaces, servicios, procesos, eventos y objetos de datos. Estos elementos proporcionan una base sólida y estandarizada para representar la arquitectura de software dentro de un sistema. Adicionalmente, con el fin de mejorar la capacidad expresiva de la notación, se incorporan extensiones específicas orientadas a la comprensión de arquitecturas modernas y al proceso de enseñanza. Entre estas extensiones se incluyen elementos auxiliares como restricciones y notas, que permiten complementar la semántica del modelo, así como elementos estructurales como el nodo funcional, que facilita la descomposición interna de los componentes de aplicación.
+
+Adicionalmente, se introduce el concepto de API o Gateway de aplicación, el cual permite representar de forma explícita los puntos de exposición de servicios en arquitecturas basadas en APIs, y el orquestador de aplicación, que modela la coordinación de flujos entre múltiples componentes. Estas incorporaciones buscan acercar la notación a escenarios reales de desarrollo de software, manteniendo al mismo tiempo coherencia con la estructura conceptual de ArchiMate.
+
+De esta manera, la capa de aplicación integra tanto los elementos propios del estándar como las extensiones propuestas en el proyecto NDTI, permitiendo una representación clara, consistente y alineada con las necesidades del programa en el área de Infraestructura de TI.
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\extrarowheight}{2pt}
+\fontsize{8.5pt}{10pt}\selectfont
+
+\begin{longtable}{|
+>{\centering\arraybackslash}m{1.8cm}|
+>{\centering\arraybackslash}m{2.6cm}|
+>{\centering\arraybackslash}m{2.1cm}|
+>{\raggedright\arraybackslash}m{4.3cm}|
+>{\centering\arraybackslash}m{2cm}|}
+
+\caption{Especificación de elementos de la Capa de Aplicación en la notación NDTI}
+\label{tab:capa_aplicacion_ndti} \\
+
+\hline
+\textbf{Ícono} & \textbf{Elemento} & \textbf{Clasificación} & \textbf{Descripción semántica} & \textbf{Origen} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Ícono} & \textbf{Elemento} & \textbf{Clasificación} & \textbf{Descripción semántica} & \textbf{Origen} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+% ==========================================================
+% ======== ELEMENTOS ADOPTADOS DE ARCHIMATE ===============
+% ==========================================================
+
+\hline
+\multicolumn{5}{|c|}{\textbf{Elementos adoptados de ArchiMate}} \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/archi_appcomp.png}
+& A-01 Componente de Aplicación
+& Estructural activo
+& Unidad modular de software que encapsula funcionalidad y datos dentro de un sistema.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/archi_appcollab.png}
+& A-02 Colaboración de Aplicación
+& Estructural activo
+& Conjunto de componentes de aplicación que trabajan de manera conjunta para ofrecer una funcionalidad integrada.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/archi_appinterface.png}
+& A-03 Interfaz de Aplicación
+& Estructural activo
+& Punto de acceso a través del cual un componente de aplicación expone su funcionalidad.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/archi_appfunc.png}
+& A-04 Función de Aplicación
+& Conductual
+& Comportamiento interno automatizado que describe capacidades ejecutadas por un componente de aplicación.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/archi_appinteract.png}
+& A-05 Interacción de Aplicación
+& Conductual
+& Comportamiento colaborativo entre múltiples componentes de aplicación.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/archi_appproc.png}
+& A-06 Proceso de Aplicación
+& Conductual
+& Secuencia estructurada de actividades ejecutadas por uno o varios componentes de aplicación.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/archi_appevent.png}
+& A-07 Evento de Aplicación
+& Conductual
+& Suceso que desencadena o modifica el comportamiento dentro de la aplicación.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/archi_appservice.png}
+& A-08 Servicio de Aplicación
+& Conductual (externo)
+& Funcionalidad expuesta por la aplicación para ser consumida por otras capas o sistemas.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/archi_dataobj.png}
+& A-09 Objeto de Datos
+& Estructural pasivo
+& Representación de datos utilizados o producidos por componentes de aplicación.
+& ArchiMate 3.x \\
+\hline
+
+% ==========================================================
+% ======== EXTENSIONES PROPUESTAS EN NDTI ==================
+% ==========================================================
+
+\hline
+\multicolumn{5}{|c|}{\textbf{Extensiones propuestas por el proyecto}} \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/ndti_constraint.png}
+& A-10 Restricción
+& Elemento auxiliar
+& Elemento que permite representar condiciones, reglas o limitaciones que afectan el comportamiento o la estructura de los componentes de aplicación. Se utiliza para complementar la semántica del modelo sin representar un componente ejecutable.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/ndti_note.png}
+& A-11 Nota
+& Elemento auxiliar
+& Elemento textual utilizado para añadir aclaraciones, comentarios o información adicional dentro del modelo, facilitando su comprensión sin alterar la semántica de los elementos principales.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/ndti_functional_node.png}
+& A-12 Nodo funcional
+& Elemento estructural
+& Elemento gráfico utilizado para subdividir un componente de aplicación en unidades internas que representan funcionalidades específicas, permitiendo una descomposición más detallada del comportamiento del sistema.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/ndti_api_gateway.png}
+& A-13 API / Gateway de Aplicación
+& Estructural activo
+& Componente de aplicación que centraliza la exposición de servicios a través de interfaces unificadas, gestionando aspectos como enrutamiento, autenticación, control de acceso y agregación de respuestas. Se modela como una especialización de la interfaz de aplicación, facilitando la representación de arquitecturas basadas en APIs.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/app/ndti_orchestrator.png}
+& A-14 Orquestador de Aplicación
+& Conductual
+& Elemento encargado de coordinar la ejecución de múltiples componentes o servicios de aplicación, definiendo el flujo de interacción entre ellos para cumplir un objetivo funcional específico. Permite representar patrones de orquestación en arquitecturas distribuidas.
+& Google Fonts \\
+\hline
+
+\end{longtable}
+
+
+\subsubsection{Capa de Negocio}
+\noindent
+
+La Capa de Negocio representa el nivel más abstracto de la notación NDTI y tiene como propósito modelar los elementos organizacionales, los procesos y la lógica operativa que dan sentido a la infraestructura tecnológica. En esta capa se describen los actores, roles, servicios y objetos de negocio, así como las interacciones y comportamientos que permiten la generación de valor dentro de un contexto organizacional.
+
+Desde el punto de vista conceptual, esta capa se fundamenta en los elementos definidos por ArchiMate para el modelado del dominio de negocio, manteniendo su semántica original y su estructura basada en elementos estructurales, conductuales y pasivos. Esto permite representar de manera coherente la relación entre los procesos de negocio y las capas inferiores de la arquitectura.
+
+No obstante, a partir del análisis de las necesidades del programa académico, se identificó la necesidad de complementar esta capa con elementos adicionales orientados a la representación explícita de flujos de proceso. En este sentido, la propuesta NDTI incorpora un conjunto de extensiones inspiradas en notaciones como BPMN y diagramas de actividades, las cuales permiten modelar de manera más clara aspectos como el inicio y fin de procesos, decisiones, paralelización, ciclos y organización por responsabilidades.
+
+Estas extensiones no sustituyen los elementos propios de ArchiMate, sino que actúan como un complemento visual y semántico que facilita la comprensión de los procesos de negocio, especialmente en contextos educativos. De esta manera, la Capa de Negocio en NDTI logra integrar la solidez estructural de ArchiMate con la expresividad de las notaciones de flujo, proporcionando una representación más completa, intuitiva y alineada con los objetivos formativos del área de Infraestructura de TI.
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\extrarowheight}{2pt}
+\fontsize{8.5pt}{10pt}\selectfont
+
+\begin{longtable}{|
+>{\centering\arraybackslash}m{1.8cm}|
+>{\centering\arraybackslash}m{2.6cm}|
+>{\centering\arraybackslash}m{2.1cm}|
+>{\raggedright\arraybackslash}m{4.3cm}|
+>{\centering\arraybackslash}m{2cm}|}
+
+\caption{Especificación de elementos de la Capa de Negocio en la notación NDTI}
+\label{tab:capa_negocio_ndti} \\
+
+\hline
+\textbf{Ícono} & \textbf{Elemento} & \textbf{Clasificación} & \textbf{Descripción semántica} & \textbf{Origen} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Ícono} & \textbf{Elemento} & \textbf{Clasificación} & \textbf{Descripción semántica} & \textbf{Origen} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+% ==========================================================
+% ======== ELEMENTOS ADOPTADOS DE ARCHIMATE ===============
+% ==========================================================
+
+\hline
+\multicolumn{5}{|c|}{\textbf{Elementos adoptados de ArchiMate}} \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_actor.png}
+& B-01 Actor de Negocio
+& Estructural activo
+& Entidad que realiza comportamientos dentro del negocio, pudiendo corresponder a una persona, organización o sistema.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_role.png}
+& B-02 Rol de Negocio
+& Estructural activo
+& Responsabilidad o función asumida por un actor dentro de un contexto organizacional específico.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_collab.png}
+& B-03 Colaboración de Negocio
+& Estructural activo
+& Conjunto de actores o roles que cooperan para alcanzar un objetivo común dentro del negocio.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_interface.png}
+& B-04 Interfaz de Negocio
+& Estructural activo
+& Punto de acceso mediante el cual un actor o rol expone servicios hacia otros actores o al entorno.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_process.png}
+& B-05 Proceso de Negocio
+& Conductual
+& Secuencia estructurada de actividades que se ejecutan para cumplir un objetivo del negocio.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_function.png}
+& B-06 Función de Negocio
+& Conductual
+& Conjunto de comportamientos agrupados según capacidades organizacionales dentro del negocio.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_interaction.png}
+& B-07 Interacción de Negocio
+& Conductual
+& Comportamiento colaborativo entre actores o roles en el contexto de una actividad de negocio.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_event.png}
+& B-08 Evento de Negocio
+& Conductual
+& Suceso que desencadena o afecta la ejecución de procesos o funciones dentro del negocio.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_service.png}
+& B-09 Servicio de Negocio
+& Conductual (externo)
+& Funcionalidad ofrecida por el negocio a actores externos o internos.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_object.png}
+& B-10 Objeto de Negocio
+& Estructural pasivo
+& Elemento de información relevante dentro del dominio del negocio.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_contract.png}
+& B-11 Contrato
+& Estructural pasivo
+& Acuerdo formal que define derechos, obligaciones y condiciones entre partes.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_representation.png}
+& B-12 Representación
+& Estructural pasivo
+& Forma perceptible o materializada de un objeto de negocio.
+& ArchiMate 3.x \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/archi_product.png}
+& B-13 Producto
+& Estructural compuesto
+& Conjunto de servicios y valor ofrecido por el negocio a sus clientes.
+& ArchiMate 3.x \\
+\hline
+
+% ==========================================================
+% ======== EXTENSIONES PROPUESTAS EN NDTI ==================
+% ==========================================================
+
+\hline
+\multicolumn{5}{|c|}{\textbf{Extensiones propuestas por el proyecto}} \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_start.png}
+& B-14 Inicio de flujo
+& Evento
+& Elemento que indica el punto de inicio de un proceso de negocio. Representa el momento en que se desencadena la ejecución de un flujo de actividades.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_end.png}
+& B-15 Fin de flujo
+& Evento
+& Elemento que indica la finalización de un proceso de negocio, representando el término de un flujo de actividades.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_lane.png}
+& B-16 Carril (Lane)
+& Elemento estructural
+& División visual de un proceso de negocio que organiza las actividades según actores, roles o áreas responsables, permitiendo una mejor comprensión de la asignación de responsabilidades.
+& Propuesta estudiantes \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_gateway.png}
+& B-17 Ramificación / Decisión
+& Elemento conductual
+& Nodo que permite dividir el flujo de un proceso en múltiples caminos según condiciones definidas, representando decisiones dentro del proceso de negocio.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_andor.png}
+& B-18 Operador lógico (AND/OR)
+& Elemento conductual
+& Elemento que permite representar condiciones lógicas dentro de un flujo de negocio, indicando ejecución paralela (AND) o selección alternativa (OR).
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_loop.png}
+& B-19 Bucle
+& Elemento conductual
+& Representación de la repetición de una o varias actividades dentro de un proceso de negocio hasta que se cumpla una condición específica.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_parallel.png}
+& B-20 Paralelización
+& Elemento conductual
+& Nodo que permite la ejecución simultánea de múltiples actividades dentro de un proceso de negocio, facilitando la representación de flujos concurrentes.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_condition.png}
+& B-21 Condicional
+& Elemento auxiliar
+& Anotación que especifica la condición lógica necesaria para que un flujo o actividad sea ejecutado dentro del proceso de negocio.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_multievent.png}
+& B-22 Evento múltiple
+& Evento
+& Representa la ocurrencia de múltiples eventos que pueden desencadenar o afectar el flujo de un proceso de negocio.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_frequency.png}
+& B-23 Frecuencia
+& Elemento auxiliar
+& Elemento que permite indicar la periodicidad o recurrencia de una actividad dentro de un proceso de negocio (por ejemplo: diario, semanal, por demanda).
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_independent.png}
+& B-24 Acción independiente
+& Conductual
+& Actividad de negocio que puede ejecutarse de manera autónoma sin depender directamente de otras acciones dentro del flujo.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_recurrent.png}
+& B-25 Acción recurrente
+& Conductual
+& Actividad de negocio que se ejecuta de manera repetitiva dentro de un proceso, generalmente asociada a condiciones o ciclos definidos.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_note.png}
+& B-26 Anotación de texto
+& Elemento auxiliar
+& Elemento utilizado para agregar información descriptiva o aclaratoria dentro del modelo sin afectar su semántica estructural o conductual.
+& Google Fonts \\
+\hline
+
+\end{longtable}
+
 
 \subsubsection{Requisitos no-funcionales}
 \noindent

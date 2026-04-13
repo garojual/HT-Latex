@@ -1,8 +1,9 @@
-\ChapterImageStar[cap:caracterizacion-universos]{Caracterización de los Universos HTCondor}{./images/fondo.png}\label{cap:caracterizacion-universos}
+\ChapterImageStar[cap:caracterizacion-universos]{Caracterización de Notaciones}{./images/fondo.png}\label{cap:caracterizacion-universos}
 \mbox{}\\
 
-En esta sección se presenta una descripción detallada de la herramienta ArchiMate, considerada un referente conceptual y metodológico fundamental para el desarrollo de la Notación de Diseño de Infraestructura de~\TI~(\NDITI). A través de esta caracterización se analizan sus principales elementos, capas, relaciones y principios de modelado, así como su potencial de adaptación a los requerimientos específicos de NDITI. De igual manera, se revisan sus fortalezas y limitaciones, con el fin de determinar en qué medida esta herramienta puede servir como base metodológica para la definición y representación visual de infraestructuras complejas en entornos académicos o institucionales.
+En esta sección se presenta una caracterización detallada de las herramientas de modelado de arquitectura e infraestructura identificadas como referentes clave por el cuerpo docente del área de Infraestructura del programa de Ingeniería de Sistemas y Computación de la Universidad del Quindío. A partir de la información recolectada mediante el formulario de encuesta, se analizan diversas soluciones que sirven como base conceptual y metodológica para el desarrollo de la Notación de Diseño de Infraestructura de \TI (\NDITI).
 
+A través de esta caracterización, se evalúan las capacidades de adaptación de cada herramienta frente a los requisitos técnicos y pedagógicos manifestados por los docentes del programa. El análisis se centra estrictamente en identificar las características, fortalezas y carencias de cada opción, con el propósito de determinar su idoneidad como base para el diseño de la nueva notación. Este diagnóstico técnico permite establecer qué elementos de los estándares actuales pueden ser integrados y cuáles presentan limitaciones en el marco del proyecto.
 
 \section{ArchiMate}
 
@@ -43,18 +44,18 @@ Tomando en cuenta ambas estructuras por capas mencionadas anteriormente, la jera
 \begin{itemize}
 	\item \textbf{Capa de Estrategia}
 	\item \textbf{Capa de Negocio}
-	\item \item \textbf{Capa de Aplicación}
-	\item \item \textbf{Capa de tecnología}
+	\item \textbf{Capa de Aplicación}
+	\item \textbf{Capa de tecnología}
 	\item \textbf{Capa de implementación/Migración}
 \end{itemize}
 
 
 \subsection{\textit{Elementos y relaciones clave}}
 
-En su docuemnto de especificación,~\cite{ArchiMate}~define también un conjunto limitado y coherente de elementos básicos y de relaciones que permiten modelar la arquitectura de la empresa de forma sistemática y comprensible. Estos elementos se presentan se presentan en la tabla~\ref{table:archimate-elements}.
+En su documento de especificación,~\cite{ArchiMate}~define también un conjunto limitado y coherente de elementos básicos y de relaciones que permiten modelar la arquitectura de la empresa de forma sistemática y comprensible. Estos elementos se presentan se presentan en la tabla~\ref{table:archimate-elements}.
 
 	\subsubsection{Elementos básicos por dominio}
-
+	
 	\begin{table}[H]
 	\centering
 	\renewcommand{\arraystretch}{1.3}
@@ -89,7 +90,7 @@ En su docuemnto de especificación,~\cite{ArchiMate}~define también un conjunto
 	\end{table}
 
 
-\section{Limitaciones de ArchiMate}
+\subsection{Limitaciones de UML}
 Si bien ArchiMate se ha consolidado como uno de los lenguajes de modelado más utilizados para representar arquitecturas empresariales de forma integrada y estandarizada, Diversos estudios y experiencias en la industria han identificado limitaciones relacionadas con la complejidad de su aprendizaje, el nivel de detalle técnico que ofrece, su enfoque predominantemente organizacional y las condiciones de uso de las herramientas que lo implementan, como se presenta a continuación.
 
 \begin{itemize}
@@ -113,6 +114,108 @@ El uso de ArchiMate no se limita a sus especificaciones teóricas: existen múlt
 	\item \item \textbf{Sparx Enterprise Architect:} Herramienta multipropósito con soporte para diversos lenguajes de modelado, entre ellos ArchiMate cuyo soporte es oficial. Al ser enfocada en multiples lenguajes permite operaciones como modelado completo, trazabilidad entre capas, vistas y almacenamiento en repositorio~\cite{EA_GUIDE01}.
 \end{itemize}
 
-Las herramientas mencionadas anteriormente estan enfocadas en facilitar la adopción de ArchiMate en organizaciones de dsitintos niveles de tamaño o madurez, permitiendo construir repositorios de arquitectura, definir vistas para stakeholders, realizar análisis de impacto y generar artefactos de modelado para las mismas.
+Las herramientas mencionadas anteriormente estan enfocadas en facilitar una adopción de ArchiMate en organizaciones de dsitintos niveles de tamaño o madurez, permitiendo construir repositorios de arquitectura, definir vistas para stakeholders, realizar análisis de impacto y generar artefactos de modelado para las mismas.
 
 Una vez terminada la caracterización de la herramienta ArchiMate, se puede evidenciar que, a pesar de ofrecer una estructura sólida para modelar arquitecturas empresariales, presenta limitaciones al representar dominios técnicos o de infraestructura de TI, donde puede resultar ambiguo o insuficientemente detallado. Su curva de aprendizaje elevada, la falta de precisión técnica y cierta ambigüedad semántica reducen su eficacia en escenarios que requieren especificaciones más formales. Estas limitaciones evidencian la necesidad de una notación complementaria, como la NDITI, que permita una representación más clara y ajustada al contexto de diseño de infraestructuras tecnológicas.
+
+\section{UML}
+
+Al igual que ArchiMate, el Lenguaje de Modelado Unificado (\UML) es un estándar abierto e independiente, gestionado por el Object Management Group (OMG), diseñado para al análisis, diseño e implementación  de sistemas basados en software y modelado de negocio~\cite{OMG01}. A diferencia de los lenguajes de arquitectura empresarial, UML se centra en un nivel de abstracción más detallado, permitiendo modelar tanto la estructura interna de los sistemas como su comportamiento dinámico e interacción con el entorno~\cite{Booch01}. Este lenguaje ha sido fundamental en la ingeniería de software desde su creación, y su versión actual, UML 2.5.1, lanzada en diciembre de 2017, continúa siendo el referente industrial para el modelado orientado a objetos~\cite{OMG02}.
+
+En el contexto de las NDITI,~\UML~representa un referente de alta precisión técnica debido a su capacidad para detallar especificaciones de software.
+
+
+\subsection{\textit{Objetivos Principales}}
+	
+\begin{itemize}
+	\item Ofrecer a los desarrolladores y arquitectos un lenguaje de modelado común, expresivo y estandarizado para crear y leer modelos de sistemas complejos sin depender de herramientas específicas~\cite{OMG03}
+	\item Facilitar la representación de los elementos de estructura y comportamiento dentro de un mismo marco de trabajo~\cite{Booch01}.
+	\item Fomentar la comunicación técnica y documentación para minimizar los errores de interpretación técnica~\cite{DBLP:series/utcs/SeidlSHK15}.
+\end{itemize}
+
+\subsection{Estructura del Lenguaje}
+
+Tomando como referencia el documento de especificación técnica~\cite{OMG02}, UML se organiza en una jerarquía de diagramas que abarcan las diferentes dimensiones del sistema, dicha jerarquía esta, a su vez, dividad principalmente en dos categorías principales:
+
+\begin{itemize}
+	\item \textbf{Diagramas estructurales:} Agrupan los diagramas que representan los aspectos estaticos de los sistemas, definiendo qué elementos lo componen y cómo se relacionan. De acuerdo con la guia de uso proporcionada por Sparx Systems~\cite{Sparx01} UML define siete tipos de diagramas Estructurales
+	\begin{itemize}
+		\item \textbf{Diagrama de clases:} Se enfoca en capturar la lógica  del sistema, incluyendo las clases y objetos que lo componen junto con sus atributos.
+		\item \textbf{Diagrama de estructura compuesta:} Refleja la colaboración interna entre clases, interfaces y componentes, buscando describir una funcionalidad.
+		\item \textbf{Diagrama de componentes:} Ilustra los componentes de un sistema, generalmente elementos de software, detallando su organización y dependencias.
+		\item \textbf{Diagrama de despliegue:} Muestra la arquitectura de ejecución de un sistema, centrando en como y donde debe de ser desplegado.
+		\item \textbf{Diagrama de objetos:} Representan las instancias de los objetos o clases y las relaciones que poseeen.
+		\item \textbf{Diagrama de paquetes:} Se enfoca en la representación de la organización de los elementos de un modelo en paquetes y las dependencias entre los mismos.
+		\item \textbf{Diagrama de perfiles:} Son diagramas creados en un paquete especial de perfiles, orientado a la ampliacion de los elementos y capacidades de UML sin modificar su lenguaje base.
+	\end{itemize}
+	\item \textbf{Diagramas de comportamiento:} Describen los aspectos dinámicos de los sistemas, definiendo como estos cambian a través del tiempo y como interactúan sus componentes. Al igual que el punto anterior, la guia de uso creada por Sparx Systems~\cite{Sparx01} tiene un capitulo enfocado a cubrir  este tipo de diagramas, en donde se definen siete tipos:
+	\begin{itemize}
+		\item \textbf{Diagrama de Actividades:} Modela el comportamiento de los sistemas y la manera en la que los mismos estan relacionados en el flujo general del sistema.
+		\item \textbf{Diagrama de Caso de Uso:} Se enfoca en capturar los casos de uso y las relaciones entre los actores y los sistemas; describiendo de esta manera los requisitos funcionales, la forma en que los agentes externos interactúan con un sistema y la manera en la que este último  responde.
+		\item \textbf{Diagrama de Maquina de Estados:} Ilustra los movientos de un elemento entre estados, clasificando este comportamiento segun los \textit{triggers} y las restricciones del sistema.
+		\item \textbf{Diagrama de sincronización:} Define el comportamietno de los objetos de un sistema dentro de un escala de tiempo, proporcionando una representación de los objetos que cambian de estado e interactúan en este lapso temporal.
+		\item \textbf{Diagrama de secuencia:} Representa de manera estructurada el comportamiento de un sistema en una serie de pasos secuenciales en el tiempo. Se centra en la representación del flujo del trabajo, el paso de mensajería y la cooperacion entre sus diferentes elementos.
+		\item \textbf{Diagrama de comunicación:} Muestra las interacciones entre los elementos de un sistema y las relaciones entre sus objetos al tiempo de la ejecución del mismo.
+		\item \textbf{Diagramas de vista de interacción:} Agrupa los diagramas de interacción (Sincronización, secuencia, comunicación, etc.) para ilustrar el flujo de un sistema a una escala mas global.  
+	\end{itemize}
+\end{itemize}
+
+\subsection{\textit{Elementos y relaciones clave}}
+
+En su documento de especificación, el OMG define también un conjunto de elemetos y conectores que permiten modelar sistemas con una semántica precisa~\cite{OMG02}. A diferencia de los lenguajes centrados en la arquitectura empresarial, los elementos de UML son altamente especializados para describir implementaciones técnicas.
+
+	\subsubsection{Elementos básicos por dominio técnico}
+	
+	\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.3}
+	\setlength{\tabcolsep}{8pt}
+	\begin{tabular}{@{}p{4cm}p{6cm}p{6cm}@{}}
+	\toprule
+	\textbf{Vista / Aspecto} & \textbf{Elementos principales} & \textbf{Relaciones típicas} \\ 
+	\midrule
+	\textbf{Estructural (Estática)} &
+	\textit{Class}, \textit{Interface}, \textit{Object}, \textit{Package}, \textit{Port}, \textit{Connector} &
+	\textit{Association}, \textit{Generalization}, \textit{Realization}, \textit{Aggregation} \\ 
+	\midrule
+	\textbf{Componentes} &
+	\textit{Component}, \textit{Artifact}, \textit{Subsystem}, \textit{Port}, \textit{Interface} &
+	\textit{Dependency}, \textit{Manifestation}, \textit{Usage}, \textit{Realization} \\ 
+	\midrule
+	\textbf{Despliegue e Infraestructura} &
+	\textit{Node}, \textit{Device}, \textit{Execution Environment}, \textit{Communication Path}, \textit{Deployment Spec} &
+	\textit{Deployment}, \textit{Association}, \textit{Communication Path}, \textit{Dependency} \\ 
+	\midrule
+	\textbf{Comportamiento} &
+	\textit{Use Case}, \textit{Actor}, \textit{Activity}, \textit{State}, \textit{Action}, \textit{Final Node} &
+	\textit{Include}, \textit{Extend}, \textit{Control Flow}, \textit{Object Flow} \\ 
+	\midrule
+	\textbf{Interacción} &
+	\textit{Lifeline}, \textit{Message}, \textit{Interaction}, \textit{Combined Fragment}, \textit{Gate} &
+	\textit{Sync Message}, \textit{Async Message}, \textit{Reply}, \textit{Create/Delete} \\ 
+	\bottomrule
+	\end{tabular}
+	\caption{Elementos y relaciones clave del lenguaje UML según sus diferentes vistas y diagramas.}
+	\label{table:uml-elements}
+	\end{table}
+
+\subsection{Limitaciones de ArchiMate}
+
+A pesar de que UML es considerado un estándar para la ingeniería de software, principalmente gracias a una precisión técnica superior, diversos autores han identificado limitaciones críticas relacionadas con su excesiva complejidad semántica, la dificultad de representar conceptos de infraestructura sin recurrir a extensiones y la carga cognitiva de su implementación, como se detalla a continuación:
+
+\begin{itemize}
+	\item \textbf{Complejidad y extensión:} Las versiones base de UML constan de hasta 14 tipos diferentes de diagramas y una cantidad de símbolos que supera rapidamente el centenar. Esto puede provocar dificultades en la comprensión de modelos de alto nivel por parte de \textit{stakeholders} no técnicos, requiriendo que tanto el lector como modelador posean un nivel mínimo de especialización debido a que UML como lenguaje en general, resulta mas complejo que otros metodos también orientados a objetos~\cite{Siau2001}.
+	\item \textbf{Enfoque centrado en el software:} Debido a su origen como herramienta basada en la programacion orientada a objetos, al momento de requerir el modelado de elementos fuera de este marco, se recomienda usar los estereotipos para estos casos, agrupando en este misma herramienta aspectos especializados de infraestructura como todos sus componentes fisicos~\cite{Ambler_2005}. Esto resulta en diagramas visualmente monótonos y menos claros en comparación con notaciones especializadas en infraestructura que cuentan con representaciones visuales de estos elementos.
+	\item \textbf{Fragmentación del modelo:} Debido a la gran cantidad de diagramas separados para representar la estructura del comportamiento de un sistema, la complejidad de mantener la consistencia entre modelos aumenta junto con la complejidad del sistema, aumentando el riesgo de incosistencias provocando que no se pueda garantizar la integridad del modelo~\cite{Booch01}.
+	\item \textbf{Dificultad en el modelado de redes:} UML presenta limitaciones intrínsecas para describir conceptos propios del area de redes, tales como topologías de red complejas, protocolos de comunicación o parámetros propios de las mismas, si bien~\cite{Saxena} et al. En su trabajo demuestran que es posible la representación de estos conceptos en UML requiere un esfuerzo de diseño adicional.
+\end{itemize}
+
+\subsection{Aplicaciones prácticas y herramientas compatibles}
+
+La versatilidad de UML permite el surgimiento de diversas aplicaciones de software orientados tanto a entornos profesionales como académicos. A continuación, se presenta una selección de herramientas relevantes:
+
+\begin{itemize}
+	\item \textbf{Visual Paradigm:} Herramienta multipropósito para el modelado visual de sistemas, contando con soporte para UML, modelado de bases de datos y gestión de proyectos. Usada también en entornos educativos debido a su edición comunitaria~\cite{VisualParadigm01}.
+	\item \textbf{StarUML:} Esta herramienta tiene como base la generacion de código a partir de diagramas y la extensión de las capacidades de UML mediante plugins, ya sean de terceros o creados personalmente. Debido a lo anterior, la herramienta base resulta ligera~\cite{StarUML01}.
+	\item \textbf{Sparx Enterprise Architect:} igual que con ArchiMate ofrece un soporte oficial y robusto para UML. Su enfoque principal es la trazabilidad completa, permitiendo conectar los requisitos del sistema con los modelos de diseño de manera centralizada~\cite{}.
+\end{itemize}
