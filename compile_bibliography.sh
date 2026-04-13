@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# LaTeX Bibliography Compilation Script with latexmk
-# This script uses latexmk to handle LaTeX compilation and bibliography processing
+# LaTeX Bibliography Compilation Script with pdflatex
+# This script uses pdflatex and bibtex to handle LaTeX compilation and bibliography processing
 # Author: Assistant
 # Version: 3.0
 
@@ -43,7 +43,7 @@ show_usage() {
     cat << EOF
 Usage: $0 [OPTIONS] [TEX_FILE]
 
-This script compiles LaTeX documents with bibliography support using latexmk.
+This script compiles LaTeX documents with bibliography support using pdflatex.
 All output files are generated in the build/ directory.
 
 OPTIONS:
@@ -66,7 +66,7 @@ The script performs the following steps:
 2. Copies bibliography files (.bib) and style files (.bst) to build/
 3. Checks for required files
 4. Optionally cleans auxiliary files in build/
-5. Uses latexmk to automatically handle compilation and bibliography processing
+5. Uses pdflatex and bibtex to handle compilation and bibliography processing
 6. Reports any remaining issues
 
 EOF
@@ -175,57 +175,57 @@ check_files() {
     print_success "File check completed"
 }
 
-# Function to run latexmk
-run_latexmk() {
-    print_status "Running latexmk to compile document with bibliography..."
+# Function to run pdflatex and bibtex
+run_compilation() {
+    print_status "Running pdflatex and bibtex to compile document with bibliography..."
 
-    local exit_code=0
-    local latexmk_args=(
-        "-pdf"                          # Generate PDF output
-        "-bibtex"                       # Use bibtex for bibliography
+    local pdflatex_args=(
         "-output-directory=$BUILD_DIR"  # Output to build directory
         "-file-line-error"             # Better error reporting
         "-halt-on-error"               # Stop on first error
         "-interaction=nonstopmode"     # Don't pause for user input
+        "-shell-escape"                # Allow minted to run
     )
 
-    # Add verbose or quiet flag
-    if [[ "$VERBOSE" == true ]]; then
-        latexmk_args+=("-verbose")
-    else
-        latexmk_args+=("-silent")
-    fi
+    execute_step() {
+        local step_name=$1
+        shift
+        print_status "Executing: $step_name..."
 
-    # Add force rebuild flag if requested
-    if [[ "$FORCE_REBUILD" == true ]]; then
-        latexmk_args+=("-gg")  # Force rebuild from scratch
-    fi
-
-    # Add the main tex file
-    latexmk_args+=("${MAIN_FILE}.tex")
-
-    if [[ "$VERBOSE" == true ]]; then
-        echo "Running: latexmk ${latexmk_args[*]}"
-        latexmk "${latexmk_args[@]}"
-        exit_code=$?
-    else
-        latexmk "${latexmk_args[@]}" > /dev/null 2>&1
-        exit_code=$?
-    fi
-
-    if [[ $exit_code -ne 0 ]]; then
-        print_error "latexmk compilation failed"
-        print_error "Check ${BUILD_DIR}/${MAIN_FILE}.log for details"
-        
-        # Show last few lines of log file for quick debugging
-        if [[ -f "${BUILD_DIR}/${MAIN_FILE}.log" ]]; then
-            print_error "Last few lines of log file:"
-            tail -10 "${BUILD_DIR}/${MAIN_FILE}.log"
+        local exit_code=0
+        if [[ "$VERBOSE" == true ]]; then
+            echo "Running: $@"
+            "$@"
+            exit_code=$?
+        else
+            "$@" > /dev/null 2>&1
+            exit_code=$?
         fi
-        exit $exit_code
+
+        # Don't strictly halt on bibtex errors as they might just be warnings treated strictly
+        if [[ $exit_code -ne 0 ]] && [[ "$step_name" != "bibtex" ]]; then
+            print_error "$step_name failed"
+            print_error "Check ${BUILD_DIR}/${MAIN_FILE}.log for details"
+
+            if [[ -f "${BUILD_DIR}/${MAIN_FILE}.log" ]]; then
+                print_error "Last few lines of log file:"
+                tail -10 "${BUILD_DIR}/${MAIN_FILE}.log"
+            fi
+            exit $exit_code
+        fi
+    }
+
+    # Sequence for full compilation with bibliography
+    execute_step "pdflatex (pass 1/3)" pdflatex "${pdflatex_args[@]}" "${MAIN_FILE}.tex"
+
+    if [[ -f "${BUILD_DIR}/${MAIN_FILE}.aux" ]]; then
+        execute_step "bibtex" bibtex "${BUILD_DIR}/${MAIN_FILE}"
     fi
 
-    print_success "latexmk compilation completed successfully"
+    execute_step "pdflatex (pass 2/3)" pdflatex "${pdflatex_args[@]}" "${MAIN_FILE}.tex"
+    execute_step "pdflatex (pass 3/3)" pdflatex "${pdflatex_args[@]}" "${MAIN_FILE}.tex"
+
+    print_success "pdflatex and bibtex compilation completed successfully"
 
     # Check bibtex output for issues if .blg file exists
     if [[ -f "${BUILD_DIR}/${MAIN_FILE}.blg" ]]; then
@@ -381,8 +381,8 @@ main() {
         clean_files
     fi
 
-    # Use latexmk to handle all compilation steps automatically
-    run_latexmk
+    # Use pdflatex and bibtex to handle all compilation steps automatically
+    run_compilation
 
     # Check for remaining issues
     if check_citations; then
