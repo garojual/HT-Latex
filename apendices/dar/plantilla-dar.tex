@@ -31,34 +31,36 @@
 
 \begin{table}[H]
 	\centering
-	\renewcommand{\arraystretch}{1.2} % Espaciado reducido
-	\fontsize{9pt}{10pt}\selectfont % Tamaño de fuente 8pt
+	\renewcommand{\arraystretch}{1.2}
+	\fontsize{9pt}{10pt}\selectfont
 	\caption{Plantilla análisis \DAR.}
 	\label{tab:plantilla-analisis_dar}
-	\begin{tabular}{|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{1.4cm}|>{\centering\arraybackslash}p{1.5cm}|}
+	
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline
-		{\scriptsize\textbf{Criterio}}                         & {\tiny\textbf{PARALLEL}}                                                   & {\tiny\textbf{CHECKPOINTING}}                          & {\tiny\textbf{POPULARITY}} & {\tiny\textbf{DOC}} & {\tiny\textbf{ROLE DIV}} & {\tiny\textbf{}} \\
+		\textbf{Notación} & \textbf{Popularidad} & \textbf{Documentación} & \textbf{Apalancamiento y Formalidad} & \textbf{Vigencia} & \textbf{Minimalismo} & \textbf{Promedio} \\
 		\hline
-		{\cellcolor[HTML]{E6E6E6}\scriptsize\textbf{Universo}} & \multicolumn{5}{c|}{\cellcolor[HTML]{E6E6E6}{\scriptsize\textbf{Puntaje}}} & \cellcolor[HTML]{E6E6E6}{\scriptsize\textbf{Promedio}}                                                                                                  \\
+		\multicolumn{1}{|c|}{\textbf{Conjunto}} & \multicolumn{5}{c|}{\textbf{Puntaje}} & \\
 		\hline
-		Vanilla                                                &                                                                            &                                                        &                            &                     &                          &                  \\
+		Vanilla   &  &  &  &  &  &  \\
 		\hline
-		Grid                                                   &                                                                            &                                                        &                            &                     &                          &                  \\
+		Grid      &  &  &  &  &  &  \\
 		\hline
-		Java                                                   &                                                                            &                                                        &                            &                     &                          &                  \\
+		Java      &  &  &  &  &  &  \\
 		\hline
-		Scheduler                                              &                                                                            &                                                        &                            &                     &                          &                  \\
+		Scheduler &  &  &  &  &  &  \\
 		\hline
-		Local                                                  &                                                                            &                                                        &                            &                     &                          &                  \\
+		Local     &  &  &  &  &  &  \\
 		\hline
-		Parallel                                               &                                                                            &                                                        &                            &                     &                          &                  \\
+		Parallel  &  &  &  &  &  &  \\
 		\hline
-		VM                                                     &                                                                            &                                                        &                            &                     &                          &                  \\
+		VM        &  &  &  &  &  &  \\
 		\hline
-		Container                                              &                                                                            &                                                        &                            &                     &                          &                  \\
+		Container &  &  &  &  &  &  \\
 		\hline
-		Docker                                                 &                                                                            &                                                        &                            &                     &                          &                  \\
+		Docker    &  &  &  &  &  &  \\
 		\hline
 	\end{tabular}
-	\vspace{5pt}
+	}
 \end{table}

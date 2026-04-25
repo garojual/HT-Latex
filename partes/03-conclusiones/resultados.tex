@@ -1,147 +1,183 @@
 \ChapterImageStar[cap:resultados]{Resultados}{./images/fondo.png}\label{cap:resultados}
 \mbox{}\\
 
-\section{Caracterización del Grupo \GRID e identificación de necesidades}
+\section{Caracterización del Grupo~\GRID~e identificación de necesidades}
 \noindent
 
-La caracterización integral del Grupo GRID permitió identificar sus capacidades tecnológicas actuales, estructura organizacional y necesidades específicas. Se determinó que el grupo cuenta con una infraestructura de computación distribuida basada en HTCondor, compuesta por un clúster de máquinas Raspberry Pi y una infraestructura virtualizada utilizando el hipervisor XCP-ng. 
+La caracterización del Grupo de Investigación en Redes, Información y Distribución (\GRID) se desarrolló con el objetivo de contextualizar la propuesta de la notación NDTI dentro del entorno académico en el cual será aplicada, así como identificar las necesidades específicas relacionadas con el modelado de arquitecturas de TI en el programa de Ingeniería de Sistemas y Computación.
 
-El análisis de \textit{stakeholders} reveló una estructura compleja de actores con distintos niveles de influencia, identificando al Grupo GRID como el interesado crítico, seguido por docentes de Ingeniería de Sistemas e investigadores. Se estableció que los principales beneficiarios serían estudiantes, grupos de investigación institucionales y la comunidad académica en general.
+El Grupo~\GRID~orienta su actividad investigativa hacia áreas como redes de computadores, sistemas operativos, sistemas distribuidos y seguridad informática. Estas áreas implican el análisis y diseño de sistemas complejos que abarcan múltiples niveles de abstracción, desde la infraestructura física hasta la lógica de aplicaciones y los procesos organizacionales. En consecuencia, el modelado de estos sistemas constituye una actividad fundamental tanto en el ámbito investigativo como en el formativo.
 
-La caracterización evidenció la necesidad de ampliar las capacidades computacionales existentes mediante la incorporación de universos HTCondor adicionales que complementen la infraestructura Vanilla actual, específicamente orientados hacia aplicaciones que requieren federación de recursos (Grid) y paralelización fuertemente acoplada (Parallel).
+A pesar de la relevancia del modelado dentro de estas áreas, no existe actualmente una notación unificada que permita representar de manera coherente los distintos componentes de la infraestructura de TI dentro del contexto académico del programa. Esta situación genera una fragmentación en la forma en que se conceptualizan y comunican las arquitecturas, dificultando la comprensión integral de los sistemas por parte de los estudiantes.
+
+Con el fin de identificar de manera precisa estas problemáticas, se realizó un proceso de recolección de información con los integrantes del Grupo \GRID, enfocado en analizar su relación con el currículo, las herramientas de modelado utilizadas, sus preferencias, y las dificultades asociadas a la representación de infraestructuras tecnológicas. Este análisis permitió evidenciar no solo la diversidad de enfoques existentes, sino también la necesidad de una herramienta que articule de forma clara los distintos niveles de la arquitectura.
+
+A partir de esta caracterización, se establecen los requerimientos funcionales y conceptuales que fundamentan el diseño de la notación NDTI, orientada a ofrecer una solución que combine claridad semántica, capacidad de integración multicapa y aplicabilidad en contextos educativos.
+
+En las siguientes subsecciones se presentan los resultados detallados de este proceso de caracterización, organizados en torno a diferentes dimensiones de análisis.
 
 \section{Revisión sistemática de la literatura}
 \noindent
 
-El estudio de mapeo sistemático (SMS) logró identificar y analizar 114 estudios relevantes de un total inicial de 847 documentos recuperados de cinco bases de datos académicas principales. El proceso metodológico riguroso aplicó criterios de inclusión y exclusión que redujeron el corpus inicial en un 43.44\%, seguido de la eliminación de duplicados y la aplicación de la técnica de bola de nieve.
+Con el propósito de fundamentar el desarrollo de la notación NDTI y garantizar decisiones de diseño respaldadas en evidencia, se llevó a cabo un \textbf{estudio de mapeo sistemático (SMS)} orientado a identificar, clasificar y analizar trabajos relacionados con notaciones, metodologías y herramientas de modelado en el contexto de la infraestructura de TI.
 
-Los resultados del SMS revelaron que la base de datos ACM fue la fuente más productiva con el 61.16\% de los artículos, mientras que IEEE y Taylor \& Francis mostraron menor productividad en las condiciones propuestas por este proyecto. El análisis temático identificó como tópicos predominantes: \textbf{Grid Computing, HPC, Cloud Computing, HTC y Parallel}, evidenciando una concentración de la investigación en estos dominios.
+Este estudio se desarrolló siguiendo un enfoque metodológico estructurado, basado en el modelo Goal-Question-Metric (GQM), el cual permitió definir de manera explícita las metas del análisis, las preguntas de investigación y las métricas utilizadas para evaluar los resultados. A partir de esta base, se diseñó una estrategia de búsqueda combinada que integró consultas en bases de datos académicas reconocidas (ACM, IEEE Xplore, Springer, ScienceDirect y Taylor \& Francis), junto con la técnica de búsqueda por bola de nieve, con el fin de ampliar la cobertura y garantizar la inclusión de estudios relevantes.
 
-La distribución de universos HTCondor en la literatura mostró una clara predominancia del universo Vanilla (61 menciones), seguido por Grid (39 menciones) y Parallel (26 menciones), proporcionando evidencia cuantitativa para el proceso de toma de decisiones posterior.
+Como resultado de la aplicación de las cadenas de búsqueda, se identificó un conjunto inicial de 13\,376 registros. Tras la aplicación de criterios de inclusión y exclusión, este conjunto se redujo a 559 estudios potencialmente relevantes. Posteriormente, la eliminación de duplicados y el proceso de priorización basado en métricas de calidad permitieron identificar 68 estudios directamente alineados con los objetivos de la investigación. Finalmente, mediante la aplicación de la estrategia de bola de nieve, se incorporaron 63 estudios adicionales, consolidando un corpus final de 131 artículos para su análisis.
+
+El análisis de los estudios seleccionados permitió identificar tendencias relevantes en el uso de metodologías, herramientas y enfoques de modelado en el ámbito de la infraestructura de TI. Entre los principales hallazgos se destaca la predominancia de enfoques centrados en modelos, metodologías y notaciones, así como la presencia de áreas relacionadas como HPC y HTC, las cuales evidencian la diversidad de contextos en los que se aplican soluciones de modelado.
+
+Asimismo, se observó una alta cobertura de las preguntas de investigación planteadas, donde el 90.07\% de los estudios abordaron aspectos relacionados con metodologías de modelado (RQ1), mientras que el 99.23\% evidenciaron el uso o análisis de herramientas tecnológicas asociadas (RQ2). Estos resultados reflejan un interés significativo en la literatura por el desarrollo de soluciones de modelado, aunque también ponen en evidencia la falta de estandarización y la fragmentación de enfoques en el diseño de infraestructura de TI.
+
+En conjunto, los resultados del SMS evidencian la necesidad de contar con una notación que integre múltiples dimensiones del modelado de infraestructura, proporcionando coherencia semántica, capacidad de integración entre capas y facilidad de uso en contextos académicos y prácticos. Esta necesidad constituye el principal fundamento para el desarrollo de la notación NDTI propuesta en este trabajo.
 
 \section{Análisis de Decisiones y Resolución (DAR)}
 \noindent
 
-La aplicación de la metodología DAR del modelo CMMI permitió evaluar objetivamente los universos HTCondor mediante criterios técnicos y organizacionales claramente definidos. Los criterios evaluados incluyeron: nivel de acoplamiento, capacidad de \textit{checkpointing}, popularidad académica, disponibilidad de documentación, división de roles, facilidad de implementación, compatibilidad con infraestructura existente, potencial educativo e investigativo, y soporte comunitario.
+La aplicación de la metodología DAR del modelo CMMI permitió evaluar de manera objetiva distintas notaciones de modelado arquitectónico mediante un conjunto de criterios técnicos, metodológicos y pedagógicos previamente definidos. Entre los criterios considerados se incluyeron la popularidad de la notación, la disponibilidad de documentación, el nivel de formalidad y respaldo institucional, la vigencia y el grado de minimalismo en su representación.
 
-El proceso de evaluación sistemática arrojó un empate técnico entre los universos \textbf{Grid} y \textbf{Parallel}, ambos obteniendo las puntuaciones más altas. Esta situación llevó a la decisión estratégica de implementar ambos universos, maximizando así el impacto y las capacidades de la infraestructura resultante.
+El proceso de evaluación sistemática evidenció que las notaciones \textbf{UML}, \textbf{BPMN} y \textbf{ArchiMate} presentan un desempeño similar en términos globales, obteniendo puntuaciones cercanas sin que exista una diferencia suficientemente significativa que permita seleccionar una única alternativa como dominante.
 
-Los criterios que favorecieron estos universos incluyeron su alto potencial para investigación y docencia, amplia documentación disponible, capacidades técnicas diferenciadas y complementariedad con la infraestructura Vanilla existente.
+Ante esta situación, se adoptó una decisión de diseño basada en la combinación de enfoques, seleccionando a \textit{ArchiMate} como eje estructural de la propuesta debido a su madurez como estándar, su capacidad de modelado multicapa y su cobertura de diferentes niveles de abstracción. Esta base se complementa con principios y elementos provenientes de \textit{UML} y \textit{BPMN}, con el fin de fortalecer aspectos específicos relacionados con la claridad estructural y la representación de procesos.
 
-\section{Diseño arquitectónico y especificación técnica}
+Los criterios que favorecieron esta decisión incluyen la amplia disponibilidad de documentación, el respaldo institucional de las notaciones evaluadas, su adopción en contextos académicos y profesionales, así como la complementariedad entre sus capacidades de modelado. De esta manera, la propuesta \NDITI~se fundamenta en una integración controlada de enfoques, orientada a maximizar su aplicabilidad en el contexto académico y técnico del proyecto.
+
+\section{Resultados de la evaluación}
 \noindent
+En esta sección se presentan los resultados obtenidos a partir de la aplicación del ejercicio de diagramación y la encuesta de percepción, organizados en dos dimensiones: (i) desempeño en la actividad de modelado y (ii) percepción de los participantes sobre la notación NDTI.
 
-Se desarrolló una arquitectura integral que articula la integración de los universos Grid y Parallel con la infraestructura HTCondor existente del Grupo GRID. El diseño arquitectónico contempla:
-
-\subsection{Arquitectura del universo Grid}
+\subsection{Resultados de la actividad de diagramación}
 \noindent
+El análisis de los diagramas se realizó de forma comparativa entre el grupo experimental (uso de la notación NDTI) y el grupo de referencia (diagramación libre), con base en los criterios definidos en la sección metodológica.
 
-Se especificó una arquitectura federada donde un \textit{grid manager} central coordina múltiples clústeres Vanilla independientes. La implementación incluye la configuración de un nodo coordinador (172.30.27.11) que ejecuta los \textit{daemons} especializados (SCHEDD, MASTER, GRIDMANAGER, COLLECTOR) y la adaptación de dos clústeres Vanilla (B y C) para funcionar como recursos Grid.
-
-La arquitectura permite la transparencia de ubicación, balanceo automático de carga, tolerancia a fallos y gestión unificada de credenciales a través de diferentes dominios administrativos.
-
-\subsection{Arquitectura del universo Parallel}
+\subsubsection{Resumen general de resultados}
 \noindent
+En la Tabla~\ref{tab:resumen_diagramacion} se presenta el resumen de los resultados obtenidos por ambos grupos en los criterios de evaluación.
 
-Se diseñó una infraestructura virtualizada completamente nueva utilizando máquinas virtuales con AlmaLinux 9.6 sobre el hipervisor XCP-ng existente. Esta implementación proporciona un entorno moderno y optimizado para aplicaciones \MPI que requieren comunicación fuertemente acoplada.
+\begin{table}[H]
+\centering
+\caption{Resumen comparativo de resultados en la actividad de diagramación}
+\label{tab:resumen_diagramacion}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Criterio} & \textbf{Grupo NDTI} & \textbf{Grupo libre} \\
+\hline
+Correspondencia con el enunciado & [X.X] & [X.X] \\
+Estructuración del modelo & [X.X] & [X.X] \\
+Representación de relaciones & [X.X] & [X.X] \\
+Completitud del modelo & [X.X] & [X.X] \\
+\hline
+\end{tabular}
+\end{table}
 
-La arquitectura incluye configuración especializada para OpenMPI, gestión de recursos paralelos y mecanismos de sincronización que garantizan la ejecución coordinada de procesos distribuidos.
-
-\section{Implementación del Producto Mínimo Viable (PMV)}
 \noindent
+Adicionalmente, estos resultados serán representados mediante un \textbf{gráfico de barras comparativo}, con el fin de visualizar las diferencias de desempeño entre ambos grupos por criterio evaluado.
 
-La materialización de la arquitectura propuesta se realizó mediante un PMV que integra todos los componentes del sistema diseñado:
+\FloatBarrier
 
-\subsection{Grid App - Interfaz de usuario}
+\subsubsection{Análisis cualitativo de los diagramas}
 \noindent
+A partir de la revisión de los diagramas elaborados por los participantes, se identificaron patrones relevantes en la forma en que ambos grupos abordaron la representación del problema.
 
-Se desarrolló una aplicación web con Flask que funciona como interfaz unificada para la gestión de trabajos en los diferentes universos HTCondor. La aplicación incluye:
+\paragraph{Grupo con notación NDTI}
+\noindent
+[Describir aquí los patrones observados, por ejemplo:
+- Uso consistente de capas
+- Mejores relaciones
+- Uso adecuado de elementos
+- Errores recurrentes en conectores específicos]
+
+\paragraph{Grupo sin notación}
+\noindent
+[Describir:
+- Representaciones informales
+- Falta de estructura
+- Ambigüedad en relaciones
+- Inconsistencias en la organización del modelo]
+
+\paragraph{Comparación entre grupos}
+\noindent
+[Interpretación directa:
+- Diferencias clave
+- Ventajas de la notación
+- Limitaciones observadas]
+
+\subsection{Resultados de la encuesta de percepción}
+\noindent
+La encuesta fue aplicada al grupo que utilizó la notación NDTI, con el fin de evaluar su experiencia en relación con los ejes definidos.
+
+\subsubsection{Resultados cuantitativos}
+\noindent
+En la Tabla~\ref{tab:resultados_encuesta} se presentan los promedios obtenidos por cada eje de evaluación.
+
+\begin{table}[H]
+\centering
+\caption{Resultados de la encuesta de percepción}
+\label{tab:resultados_encuesta}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Eje de evaluación} & \textbf{Promedio (1-5)} \\
+\hline
+Comprensión de la notación & [X.X] \\
+Uso de los elementos & [X.X] \\
+Expresividad y utilidad & [X.X] \\
+Experiencia general & [X.X] \\
+\hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\noindent
+Los resultados anteriores serán complementados mediante representaciones gráficas que permitan un análisis más detallado de la distribución de respuestas:
 
 \begin{itemize}
-    \item \textbf{Punto de envío}: Procesamiento inteligente de trabajos con generación de identificadores únicos, manejo de archivos \textit{multipart} y generación automática de \textit{submit files}.
-    \item \textbf{Monitoreo de estado}: Monitoreo en tiempo real del estado de trabajos distribuidos.
-    \item \textbf{Gestión de resultados}: Gestión y descarga de resultados de ejecución.
-    \item \textbf{Selección de clústeres}: Selección automática de recursos basada en tipo de trabajo y disponibilidad.
+    \item \textbf{Gráficos de barras tipo Likert} para cada afirmación evaluada, mostrando la distribución de respuestas en la escala de 1 a 5.
+    \item \textbf{Gráficos de barras agrupadas} por eje de evaluación, permitiendo comparar tendencias entre dimensiones (comprensión, uso, utilidad y experiencia).
+    \item \textbf{Diagramas de radar (opcional)} para visualizar de manera integrada el comportamiento de los diferentes ejes de evaluación.
 \end{itemize}
 
-\subsection{Infraestructura Grid implementada}
 \noindent
+\textit{Nota: Los valores y gráficos serán completados una vez se procesen las respuestas de la encuesta.}
 
-La implementación del universo Grid materializó la arquitectura federada diseñada:
-
-\begin{itemize}
-    \item \textbf{\textit{Grid Manager}}: Configurado exitosamente con \textit{daemons} especializados y políticas de distribución.
-    \item \textbf{Expansión de infraestructura}: Implementación de un segundo clúster Vanilla (Clúster C) demostrando escalabilidad.
-    \item \textbf{Federación funcional}: Capacidad demostrada de distribuir trabajos transparentemente entre múltiples pools HTCondor.
-\end{itemize}
-
-\subsection{Infraestructura Parallel implementada}
+\subsubsection{Análisis cualitativo de respuestas abiertas}
 \noindent
+Las respuestas abiertas de la encuesta fueron analizadas mediante categorización temática, agrupando las opiniones de los participantes en categorías representativas.
 
-Se estableció exitosamente un entorno de ejecución paralelo completamente funcional:
+\begin{table}[H]
+\centering
+\caption{Síntesis de resultados cualitativos}
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Categoría} & \textbf{Descripción} \\
+\hline
+Fortalezas & [Ej: claridad de capas, facilidad de interpretación, organización visual] \\
+\hline
+Dificultades & [Ej: confusión en algunos elementos, curva de aprendizaje inicial] \\
+\hline
+Oportunidades de mejora & [Ej: simplificación de símbolos, guías de uso, ejemplos] \\
+\hline
+\end{tabular}
+\end{table}
 
-\begin{itemize}
-    \item \textbf{Clúster virtualizado}: Implementación de múltiples VMs con configuración MPI optimizada.
-    \item \textbf{Integración OpenMPI}: Configuración y validación de comunicación entre procesos paralelos.
-    \item \textbf{Gestión de recursos}: Asignación coordinada de recursos para trabajos fuertemente acoplados.
-\end{itemize}
-
-\section{Validación técnica y funcional}
 \noindent
+Estas categorías podrán complementarse con un \textbf{gráfico de frecuencias} que indique la recurrencia de cada tipo de comentario.
 
-La validación integral del sistema implementado se realizó mediante tres escenarios de prueba específicos que cubrieron las funcionalidades críticas de ambos universos:
-
-\subsection{Validación del universo Grid}
+\subsection{Integración de resultados}
 \noindent
+La integración de los resultados permitió contrastar el desempeño observado en la actividad de diagramación con la percepción de los participantes sobre la notación NDTI.
 
-\textbf{ESC-01}: Ejecución exitosa de trabajos Grid con repeticiones múltiples, validando:
-\begin{itemize}
-    \item Correcta distribución de trabajos entre clústeres.
-    \item Gestión adecuada de archivos de entrada y salida.
-    \item Monitoreo efectivo de estado de trabajos distribuidos.
-\end{itemize}
-
-\textbf{ESC-02}: Validación de trabajos parametrizables con variables dinámicas, demostrando:
-\begin{itemize}
-    \item Capacidad de procesamiento de parámetros variables.
-    \item Flexibilidad en configuración de trabajos.
-    \item Integración correcta con la interfaz \textit{Grid App}.
-\end{itemize}
-
-\subsection{Validación del universo Parallel}
 \noindent
+[Ejemplo de lo que irá aquí cuando tengas datos:]
+Se analizará si un mayor nivel de comprensión percibida se traduce en un mejor desempeño en la construcción de diagramas, así como identificar posibles discrepancias entre percepción y aplicación práctica.
 
-\textbf{ESC-03}: Ejecución exitosa de algoritmo \textit{quicksort} paralelo, confirmando:
-\begin{itemize}
-    \item Funcionamiento correcto de comunicación \MPI.
-    \item Coordinación efectiva de procesos distribuidos.
-    \item Capacidades de sincronización y paralelización.
-\end{itemize}
-
-Todos los casos de prueba se ejecutaron exitosamente, validando tanto los requisitos funcionales como no funcionales especificados. Las pruebas confirmaron que el sistema es estable, reproducible y adecuado para su uso en escenarios académicos y de investigación.
-
-\section{Métricas de impacto y capacidades resultantes}
 \noindent
-
-La implementación exitosa del proyecto ha resultado en un incremento significativo de las capacidades computacionales del Grupo GRID:
-
+Asimismo, se buscará identificar relaciones entre:
 \begin{itemize}
-    \item \textbf{Expansión de recursos}: De un clúster Vanilla único a una infraestructura federada con tres \textit{pools} independientes.
-    \item \textbf{Diversificación de capacidades}: Soporte para tres universos HTCondor (Vanilla, Grid, Parallel).
-    \item \textbf{Escalabilidad demostrada}: Arquitectura probada capaz de incorporar recursos adicionales transparentemente.
-    \item \textbf{Interfaz unificada}: Acceso simplificado a recursos computacionales distribuidos mediante \textit{Grid App}.
+    \item Nivel de comprensión percibida y calidad del modelo construido.
+    \item Facilidad de uso y estructuración del diagrama.
+    \item Utilidad percibida y completitud del modelo.
 \end{itemize}
 
-\section{Contribuciones al conocimiento}
 \noindent
-
-Este proyecto genera varias contribuciones significativas:
-
-\begin{itemize}
-    \item \textbf{Metodológica}: Marco reproducible combinando caracterización contextual, revisión sistemática, evaluación DAR y diseño arquitectónico.
-    \item \textbf{Técnica}: Implementación funcional de múltiples universos HTCondor en infraestructura académica con recursos limitados.
-    \item \textbf{Académica}: Documentación completa de configuraciones y procedimientos para replicación en contextos similares.
-    \item \textbf{Institucional}: Fortalecimiento de capacidades de investigación y docencia en computación distribuida.
-\end{itemize}
-
-Los resultados demuestran que la incorporación de los universos Grid y Parallel en la infraestructura del Grupo \GRID representa una solución viable y eficiente para expandir el portafolio de servicios de computación distribuida, sin desestimar la inversión previa en tecnologías HTCondor y proporcionando una base sólida para el crecimiento futuro de las capacidades computacionales institucionales.
+\textit{Nota: La interpretación profunda de estos hallazgos se desarrollará en la sección de conclusiones.}

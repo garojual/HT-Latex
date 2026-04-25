@@ -1,29 +1,128 @@
 \ChapterImageStar[cap:disenio]{Diseño de la solución}{./images/fondo.png}\label{cap:disenio}
 \mbox{}\\
 
-El presente capítulo tiene como objetivo presentar una propuesta metodológica concreta para la definición de una notación unificada basada principalmente en ArchiMate aplicable en el contexto del programa de Ingeniería de Sistemas y Computación. En esta sección se especifica la estructura de la notación propuesta, detallando sus elementos seleccionados, capas definidas y reglas de representación que orientarán su uso en el área de Infraestructura de~\TI. Este diseño busca establecer las bases conceptuales para su implementación, promoviendo coherencia, claridad y sostenibilidad en la representación de la infraestructura tecnológica. Además, se pretende apoyar al grupo \GRID en el fortalecimiento de sus procesos formativos y en el cierre de las necesidades identificadas durante la caracterización.
+Este capítulo tiene como objetivo presentar una propuesta metodológica concreta para la definición de una notación unificada basada principalmente en \textit{ArchiMate} y aplicable en el contexto del programa de Ingeniería de Sistemas y Computación. También se especifica la estructura de la notación propuesta, detallando sus elementos seleccionados, capas definidas y reglas de representación que orientarán su uso en el área de Infraestructura de~\TI~del programa de Ingeniería de Sistemas y Computación de la Universidad del Quindío. Este diseño busca establecer las bases conceptuales para su implementación, promoviendo coherencia, claridad y sostenibilidad en la representación de la infraestructura tecnológica. Además, se pretende apoyar al grupo \GRID~en el fortalecimiento de sus procesos formativos y en el cumplimiento de las necesidades identificadas durante la caracterización.
 
-La notación definida en este capítulo se fundamenta principalmente en la especificación oficial de ArchiMate, desarrollada por The Open Group. ArchiMate proporciona un lenguaje estandarizado para el modelado de arquitecturas empresariales, organizado por capas y con una semántica claramente definida.
+La notación definida en este capítulo se fundamenta principalmente en la especificación oficial de \textit{ArchiMate}, desarrollada por The Open Group. Esta elección responde a su madurez como estándar, su capacidad para modelar arquitecturas mediante un enfoque multicapa y su cobertura de diferentes niveles de abstracción, lo que la convierte en una base adecuada para el contexto del proyecto.
 
-A partir de esta base, la propuesta NDTI adopta los conceptos estructurales y relacionales que resultan pertinentes para el contexto académico del área de Infraestructura de TI. No obstante, con el fin de atender necesidades específicas identificadas en el programa, se realizan ajustes controlados en ciertos elementos gráficos y relaciones, así como la incorporación de nuevos símbolos que amplían la capacidad expresiva de la notación.
+A partir de esta base, la propuesta~\NDITI~adopta los conceptos estructurales y relacionales que resultan pertinentes para el contexto académico del área de Infraestructura de~\TI. No obstante, con el fin de atender necesidades específicas identificadas en el programa y en coherencia con los resultados del análisis DAR donde se identificó que no existe una única notación dominante, se incorporan y adaptan principios de otras notaciones relevantes como \textit{UML} y \textit{BPMN}, con el objetivo de complementar aspectos específicos como la claridad estructural y la representación de procesos.
 
 Estas extensiones no modifican la lógica conceptual central de ArchiMate, sino que la adaptan al entorno universitario, buscando mayor claridad pedagógica, simplificación semántica y alineación con los contenidos del plan curricular.
 
 \section{Definición de capas}
 \noindent
-La notación propuesta en el marco del proyecto se organizará bajo un enfoque por capas, permitiendo representar la infraestructura de TI desde el nivel más concreto hasta el más abstracto, iniciando desde la capa física y culminando en la capa de negocio. . Esta estructura facilita la comprensión progresiva de los sistemas.
+La notación propuesta en el marco del proyecto se organizará bajo un enfoque por capas, permitiendo representar la infraestructura de~\TI desde el nivel más concreto hasta el más abstracto, iniciando desde la capa física y culminando en la capa de negocio. Esta estructura facilita la comprensión progresiva de los sistemas.
 
 En este sentido, se definieron cuatro capas principales: Capa Física, Capa Tecnológica, Capa de Aplicación y Capa de Negocio.
 
-\subsection{Capa Física}
+\subsubsection{Conectores transversales de la propuesta~\NDITI}
 \noindent
-La Capa Física constituye el nivel base de la notación NDTI y representa los componentes materiales que soportan la infraestructura tecnológica. En esta capa se modelan los elementos tangibles que permiten la operación de los sistemas de información, incluyendo equipos, espacios físicos, redes de distribución y recursos materiales involucrados en la prestación de servicios tecnológicos.
+
+Los conectores transversales de la propuesta~\NDITI~constituyen el mecanismo mediante el cual se establecen relaciones semánticas entre los distintos elementos del modelo, independientemente de la capa en la que se encuentren. A diferencia de los elementos estructurales y conductuales definidos en cada capa, estos conectores permiten articular la arquitectura de manera integral, facilitando la representación de dependencias, flujos de información, paralelización, ciclos, interacciones y jerarquías entre componentes.
+
+Desde el punto de vista conceptual, estas relaciones se fundamentan en una integración controlada de los conectores definidos en ArchiMate y~\UML{}, seleccionando aquellos que resultan más relevantes para la representación de sistemas en contextos académicos y de ingeniería. Esta aproximación permite mantener coherencia con estándares ampliamente reconocidos, al tiempo que simplifica su aplicación dentro del alcance de la propuesta~\NDITI. Los conectores definidos abarcan tanto relaciones estructurales como conductuales, permitiendo modelar desde asociaciones generales hasta mecanismos más específicos como la realización, la dependencia o el disparo de comportamientos. Adicionalmente, se incorporan representaciones visuales estandarizadas que facilitan la interpretación de los modelos, promoviendo claridad, consistencia y trazabilidad entre las distintas capas de la arquitectura.
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\extrarowheight}{2pt}
+\fontsize{8.5pt}{10pt}\selectfont
+
+\begin{longtable}{|
+>{\centering\arraybackslash}m{1.8cm}|
+>{\centering\arraybackslash}m{2.6cm}|
+>{\centering\arraybackslash}m{2.1cm}|
+>{\raggedright\arraybackslash}m{4.3cm}|
+>{\raggedright\arraybackslash}m{2cm}|}
+
+\caption{Relaciones transversales de la propuesta~\NDITI}
+\label{tab:relaciones_ndti} \\
+
+\hline
+\textbf{Ícono} & \textbf{Relación} & \textbf{Tipo} & \textbf{Descripción semántica} & \textbf{Regla de uso} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Ícono} & \textbf{Relación} & \textbf{Tipo} & \textbf{Descripción semántica} & \textbf{Regla de uso} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\includegraphics[width=1.1cm]{tablas-images/relaciones/ndti_assoc.png}
+& R-01 Asociación
+& Estructural
+& Relación general que indica que dos elementos están conectados sin especificar una semántica fuerte.
+& Usar cuando no se requiere especificar una relación específica. \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/relaciones/ndti_flow.png}
+& R-02 Flujo
+& Conductual
+& Representa el movimiento o transferencia de información, datos o control entre elementos.
+& Usar en procesos, eventos y comunicación entre componentes. \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/relaciones/ndti_dependency.png}
+& R-03 Dependencia
+& Estructural
+& Indica que un elemento depende de otro para su funcionamiento.
+& Usar cuando un elemento requiere otro sin contenerlo. \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/relaciones/ndti_realization.png}
+& R-04 Realización
+& Estructural
+& Indica que un elemento implementa o materializa a otro.
+& Ejemplo: un componente implementa un servicio. \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/relaciones/ndti_trigger.png}
+& R-05 Trigger
+& Conductual
+& Un elemento activa o inicia el comportamiento de otro.
+& Ejemplo: evento inicia un proceso. \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/relaciones/ndti_generalization.png}
+& R-06 Especialización
+& Estructural
+& Relación jerárquica donde un elemento hereda características de otro.
+& Usar para jerarquías o taxonomías. \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/relaciones/ndti_comm.png}
+& R-07 Comunicación
+& Conductual
+& Representa el intercambio de información entre elementos de forma bidireccional o colaborativa.
+& Usar en interacción entre componentes o actores. \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_loop.png}
+& R-08 Bucle
+& Elemento conductual
+& Representación de la repetición de una o varias actividades dentro de un proceso de negocio hasta que se cumpla una condición específica.
+& Google Fonts \\
+\hline
+
+\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_parallel.png}
+& R-09 Paralelización
+& Elemento conductual
+& Nodo que permite la ejecución simultánea de múltiples actividades dentro de un proceso de negocio, facilitando la representación de flujos concurrentes.
+& Google Fonts \\
+\hline
+
+\end{longtable}
+\normalsize
+
+\subsubsection{Capa Física}
+\noindent
+La Capa Física constituye el nivel base de la propuesta~\NDITI~y representa los componentes materiales que soportan la infraestructura tecnológica. En esta capa se modelan los elementos tangibles que permiten la operación de los sistemas de información, incluyendo equipos, espacios físicos, redes de distribución y recursos materiales involucrados en la prestación de servicios tecnológicos.
 
 Desde la perspectiva conceptual adoptada de ArchiMate, esta capa se fundamenta principalmente en elementos estructurales activos, pasivos y de conectividad pertenecientes a la capa tecnológica, manteniendo su semántica esencial pero orientándolos a su interpretación física. Esto permite representar de forma clara la infraestructura subyacente sobre la cual se construyen los demás niveles del modelo.
 
-Desde la perspectiva conceptual adoptada de ArchiMate, esta capa se fundamenta principalmente en elementos estructurales activos, pasivos y de conectividad pertenecientes a la capa tecnológica, manteniendo su semántica esencial pero orientándolos a su interpretación física. Esto permite representar de forma clara la infraestructura subyacente sobre la cual se construyen los demás niveles del modelo.
-
-De acuerdo a esto la especificación presentada a continuación define tanto los elementos adoptados directamente de ArchiMate como las extensiones propuestas en el proyecto NDTI, asegurando coherencia conceptual gráfica dentro del modelo.
+De acuerdo con lo anterior, la especificación presentada a continuación define tanto los elementos adoptados directamente de ArchiMate como las extensiones propuestas en el proyecto~\NDITI{}, asegurando coherencia conceptual gráfica dentro del modelo.
 
 \renewcommand{\arraystretch}{1.3}
 \setlength{\extrarowheight}{2pt}
@@ -36,7 +135,7 @@ De acuerdo a esto la especificación presentada a continuación define tanto los
 >{\raggedright\arraybackslash}m{4.3cm}|
 >{\centering\arraybackslash}m{2cm}|}
 
-\caption{Especificación de elementos de la Capa Física en la notación NDTI}
+\caption{Especificación de elementos de la Capa Física en la propuesta~\NDITI}
 \label{tab:capa_fisica_ndti} \\
 
 \hline
@@ -89,7 +188,7 @@ De acuerdo a esto la especificación presentada a continuación define tanto los
 \hline
 
 % ==========================================================
-% ======== EXTENSIONES PROPUESTAS EN NDTI ==================
+% ======== EXTENSIONES PROPUESTAS EN\NDITI ==================
 % ==========================================================
 
 \hline
@@ -100,23 +199,51 @@ De acuerdo a esto la especificación presentada a continuación define tanto los
 & F-05 Componente (Pasivo)
 & Estructural pasivo
 & Elemento físico susceptible de ser utilizado, transformado o consumido dentro de un proceso.
-& Propuesta NDTI \\
+& Google Fonts \\
 \hline
 
 \end{longtable}
+\normalsize
+
+\subsubsection{Ejemplo de aplicación}
+
+\noindent
+Ahora, se presenta un ejemplo que ilustra el uso de los elementos de la capa física dentro de un entorno de infraestructura tecnológica.
+
+\subsubsection{Enunciado}
+\noindent
+Una organización dispone de un centro de datos en el cual se encuentran alojados diversos equipos físicos que soportan la operación de sus servicios tecnológicos. Dichos equipos, que incluyen servidores, dispositivos de almacenamiento y otros componentes de infraestructura, requieren para su funcionamiento continuo de un suministro estable de energía eléctrica, el cual es proporcionado a través de una red de distribución interna diseñada para garantizar la disponibilidad y confiabilidad del servicio.
+
+Asimismo, la interconexión entre los diferentes equipos se realiza mediante el uso de cableado de red, considerado un componente pasivo fundamental dentro de la arquitectura tecnológica. Este cableado permite la transmisión de datos y la comunicación entre los distintos sistemas, contribuyendo al correcto desempeño de las operaciones del centro de datos. La adecuada instalación, organización y mantenimiento de estos elementos resulta clave para evitar interrupciones o degradaciones en el servicio.
+
+Adicionalmente, dentro del entorno físico del centro de datos se gestionan diversos materiales, tales como insumos de mantenimiento y suministros necesarios para la operación y conservación de la infraestructura. Estos recursos son utilizados en actividades de soporte preventivo y correctivo, asegurando que los equipos y componentes se mantengan en condiciones óptimas de funcionamiento a lo largo del tiempo.
+
+\paragraph{Diagrama}
+\noindent
+\begin{figure}[H]
+    \centering
+    \includegraphics[
+		width=\linewidth,
+        keepaspectratio]{tablas-images/diagramas/CapaFisicaSI.png}
+    \caption{Modelado en la capa física usando la propuesta~\NDITI}
+    \label{fig:capa_fisica_ejemplo}
+\end{figure}
+
+\noindent
+El diagrama permite representar la disposición de los elementos físicos dentro de la infraestructura, así como sus relaciones estructurales y de conectividad.
 
 \subsubsection{Capa de Redes y Comunicaciones}
 \noindent
 
-La Capa de Redes y Comunicaciones se introduce en la notación NDTI como una extensión orientada a representar de manera más detallada y estructurada los elementos asociados a la conectividad dentro de la infraestructura de TI. Aunque ArchiMate contempla conceptos generales de red y comunicación, no proporciona un conjunto de elementos suficientemente específico para modelar dispositivos y componentes comúnmente utilizados en el contexto académico del área de Infraestructura de TI.
+La Capa de Redes y Comunicaciones se introduce en la propuesta~\NDITI~como una extensión orientada a representar de manera más detallada y estructurada los elementos asociados a la conectividad dentro de la infraestructura de TI. Aunque ArchiMate contempla conceptos generales de red y comunicación, no proporciona un conjunto de elementos suficientemente específico para modelar dispositivos y componentes comúnmente utilizados en el contexto académico del área de Infraestructura de TI.
 
-Con el propósito de cubrir esta limitación, se define una capa especializada que agrupa elementos propios del dominio de redes y comunicaciones, tales como dispositivos de interconexión, nodos de conexión y equipos asociados a la transmisión y gestión del tráfico de datos. Estos elementos se plantean como especializaciones físicas del concepto general de equipo o como nuevas abstracciones necesarias para representar adecuadamente la topología y organización de una red.
-
-La Capa de Redes y Comunicaciones se introduce en la notación NDTI como una extensión orientada a representar de manera más detallada y estructurada los elementos asociados a la conectividad dentro de la infraestructura de TI. Aunque ArchiMate contempla conceptos generales de red y comunicación, no proporciona un conjunto de elementos suficientemente específico para modelar dispositivos y componentes comúnmente utilizados en el contexto académico del área de Infraestructura de TI.
-
-Con el propósito de cubrir esta limitación, se define una capa especializada que agrupa elementos propios del dominio de redes y comunicaciones, tales como dispositivos de interconexión, nodos de conexión y equipos asociados a la transmisión y gestión del tráfico de datos. Estos elementos se plantean como especializaciones físicas del concepto general de equipo o como nuevas abstracciones necesarias para representar adecuadamente la topología y organización de una red.
+Con el propósito de cubrir esta limitación, se define una capa especializada que agrupa elementos propios del dominio de redes y comunicaciones, tales como dispositivos de interconexión, nodos de conexión y equipos asociados a la transmisión y gestión del tráfico de datos. Estos elementos se plantean como especializaciones físicas del concepto general de equipo, o como nuevas abstracciones necesarias para representar adecuadamente la topología y organización de una red.
 
 La separación de estos componentes en una capa independiente permite mejorar la claridad del modelo, facilitando la lectura, el análisis y la enseñanza de arquitecturas de red dentro del programa. Asimismo, esta organización favorece un uso más estructurado de la notación, alineado con las necesidades específicas de asignaturas relacionadas con redes, comunicaciones e infraestructura tecnológica.
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\extrarowheight}{2pt}
+\fontsize{8.5pt}{10pt}\selectfont
 
 \begin{longtable}{|
 >{\centering\arraybackslash}m{1.8cm}|
@@ -125,7 +252,7 @@ La separación de estos componentes en una capa independiente permite mejorar la
 >{\raggedright\arraybackslash}m{4.3cm}|
 >{\centering\arraybackslash}m{2cm}|}
 
-\caption{Especificación de elementos de la Capa de Redes y Comunicaciones en la notación NDTI}
+\caption{Especificación de elementos de la Capa de Redes y Comunicaciones en la propuesta~\NDITI}
 \label{tab:capa_ryc_ndti} \\
 
 \hline
@@ -142,7 +269,7 @@ La separación de estos componentes en una capa independiente permite mejorar la
 \endfoot
 
 % ==========================================================
-% ======== EXTENSIONES PROPUESTAS EN NDTI ==================
+% ======== EXTENSIONES PROPUESTAS EN\NDITI ==================
 % ==========================================================
 
 \hline
@@ -152,70 +279,103 @@ La separación de estos componentes en una capa independiente permite mejorar la
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_node.png}
 & RC-01 Nodo de conexión
 & Estructural activo
-& Punto físico de interconexión dentro de una red de distribución que permite enlazar, concentrar o derivar conexiones entre múltiples dispositivos, equipos o segmentos de red. Puede representar puntos de acceso, panes de conexión (\textit{patch panels}), concentradores físicos, etc.
+& Punto físico de interconexión dentro de una red de distribución que permite enlazar, concentrar o derivar conexiones entre múltiples dispositivos, equipos o segmentos de red. Puede representar puntos de acceso, paneles de conexión (\textit{patch panels}), concentradores físicos, etc.
 & Google Fonts \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_router.png}
 & RC-02 Router
-& Especialización física de Equipo
+& Especialización física de equipo
 & Dispositivo físico de interconexión de redes encargado de dirigir el tráfico de datos entre diferentes segmentos de red.
 & Freepik \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_switch.png}
 & RC-03 Switch
-& Especialización física de Equipo
+& Especialización física de equipo
 & Dispositivo físico que permite la interconexión de múltiples dispositivos dentro de una red local, gestionando el tráfico mediante direcciones físicas.
 & Freepik \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_server.png}
 & RC-04 Servidor (Hardware)
-& Especialización física de Equipo
+& Especialización física de equipo
 & Equipo físico de alto desempeño destinado a proporcionar recursos computacionales, almacenamiento o servicios a otros dispositivos.
 & Freepik \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_modem.png}
 & RC-05 Módem
-& Especialización física de Equipo
+& Especialización física de equipo
 & Dispositivo físico encargado de modular y demodular señales para permitir la transmisión de datos a través de medios de comunicación externos.
 & Freepik \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_firewall.png}
 & RC-06 Firewall físico
-& Especialización física de Equipo
+& Especialización física de equipo
 & Dispositivo físico de seguridad de red que controla y filtra el tráfico de datos según políticas predefinidas.
 & Google Fonts \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_disk.png}
 & RC-07 Dispositivo de almacenamiento físico
-& Especialización física de Equipo
+& Especialización física de equipo
 & Equipo físico destinado al almacenamiento persistente de información, tales como sistemas NAS, SAN o arreglos de discos.
 & Google Fonts \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/fisica/nditi_generic.png}
 & RC-08 Dispositivo genérico físico
-& Especialización física de Equipo
+& Especialización física de equipo
 & Elemento físico no especificado utilizado para representar cualquier dispositivo de infraestructura tecnológica cuya naturaleza particular no se detalla en el modelo.
 & Google Fonts \\
 
 \end{longtable}
+\normalsize
 
+\subsubsection{Ejemplo de aplicación}
+
+\noindent
+A continuación, se presenta un ejemplo que ilustra la organización de una infraestructura de red empresarial.
+
+\subsubsection{Enunciado}
+
+Una organización dispone de una infraestructura de red que permite a sus usuarios acceder a diversos servicios internos mediante el uso de Internet como medio de conexión. Este acceso se soporta sobre una arquitectura que integra distintos componentes de red, los cuales trabajan de forma coordinada para garantizar la conectividad, la seguridad y la disponibilidad de los servicios ofrecidos.
+
+La conexión externa ingresa inicialmente a través de un módem, que actúa como punto de enlace con el proveedor de servicios de Internet. Posteriormente, el tráfico es dirigido hacia un firewall físico encargado de aplicar políticas de seguridad mediante el filtrado de paquetes, con el objetivo de controlar y proteger el acceso a la red interna. Una vez superado este control, la información es encaminada hacia un router, el cual gestiona el direccionamiento y la distribución del tráfico hacia los distintos segmentos de la red local.
+
+Dentro de la red interna, la distribución del cableado estructurado se organiza a través de un nodo de conexión central, como puede ser un \textit{patch panel}, que funciona como punto de interconexión entre los dispositivos de red y los equipos finales. Desde este nodo se establecen múltiples conexiones: por un lado, se enlaza un switch que se encarga de distribuir la conectividad dentro de la red local; por otro, se conectan directamente algunos dispositivos finales que requieren acceso a la red; y adicionalmente, se integra un servidor que proporciona servicios internos y facilita el intercambio de información entre los distintos equipos.
+
+Cabe destacar que todo el tráfico destinado a los dispositivos internos debe atravesar el nodo de conexión, consolidándolo como un elemento central dentro de la infraestructura. Asimismo, el switch desempeña un rol clave en la distribución eficiente de la comunicación entre los dispositivos conectados, mientras que el servidor interactúa continuamente con otros componentes de la red, proporcionando y recibiendo información necesaria para el funcionamiento de los servicios internos.
+
+\paragraph{Diagrama}
+\noindent
+\begin{figure}[H]
+    \centering
+    \includegraphics[
+		width=\linewidth,
+        keepaspectratio]{tablas-images/diagramas/capa-rycSI.png}
+    \caption{Modelado en la capa de redes y comunicaciones usando la propuesta~\NDITI}
+    \label{fig:capa_redes_ejemplo}
+\end{figure}
+
+\noindent
+El diagrama muestra la estructura jerárquica de la red y la forma en que los dispositivos se interconectan para permitir la comunicación entre componentes internos y externos.
 
 
 \subsubsection{Capa Tecnológica}
 \noindent
 
-La Capa Tecnológica en la notación NDTI representa el nivel en el que se abstraen los recursos computacionales y los servicios que soportan la ejecución de software dentro de la infraestructura de TI. A diferencia de la capa física, en este nivel se modelan los componentes lógicos, los entornos de ejecución y los comportamientos tecnológicos que permiten la operación de los sistemas.
+La Capa Tecnológica en la propuesta~\NDITI~representa el nivel en el que se abstraen los recursos computacionales y los servicios que soportan la ejecución de software dentro de la infraestructura de TI. A diferencia de la capa física, en este nivel se modelan los componentes lógicos, los entornos de ejecución y los comportamientos tecnológicos que permiten la operación de los sistemas.
 
-Esta capa se fundamenta directamente en la especificación de ArchiMate, adoptando sus principales elementos estructurales, de conectividad y de comportamiento, tales como nodos, software de sistema, servicios tecnológicos y procesos. Estos elementos proporcionan una base sólida y estandarizada para la representación de arquitecturas tecnológicas. No obstante, a partir de las necesidades identificadas en el contexto académico del programa, se incorporan extensiones específicas que permiten representar conceptos actuales ampliamente utilizados en la industria, como la virtualización y la contenedorización. Elementos como el nodo servidor, las máquinas virtuales, los contenedores de software y los mecanismos de seguridad lógica amplían la capacidad expresiva de la notación, facilitando la modelación de escenarios reales abordados en asignaturas del área de Infraestructura de TI.
+Esta capa se fundamenta directamente en la especificación de ArchiMate, adoptando sus principales elementos estructurales, de conectividad y de comportamiento, tales como nodos, software de sistema, servicios tecnológicos y procesos. Estos elementos proporcionan una base estandarizada para la representación de arquitecturas tecnológicas. No obstante, a partir de las necesidades identificadas en el contexto académico del programa, se incorporan extensiones específicas que permiten representar conceptos actuales ampliamente utilizados en la industria, como la virtualización y la contenedorización. Elementos como el nodo servidor, las máquinas virtuales, los contenedores de software y los mecanismos de seguridad lógica amplían la capacidad expresiva de la notación, facilitando la modelación de escenarios reales abordados en asignaturas del área de Infraestructura de TI.
 
-De esta manera, la capa tecnológica integra tanto los elementos propios de ArchiMate como las extensiones propuestas en el proyecto NDTI, manteniendo la coherencia conceptual.
+De esta manera, la capa tecnológica integra tanto los elementos propios de ArchiMate como las extensiones propuestas en el proyecto~\NDITI{}, manteniendo la coherencia conceptual.
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\extrarowheight}{2pt}
+\fontsize{8.5pt}{10pt}\selectfont
 
 \begin{longtable}{|
 >{\centering\arraybackslash}m{1.8cm}|
@@ -224,7 +384,7 @@ De esta manera, la capa tecnológica integra tanto los elementos propios de Arch
 >{\raggedright\arraybackslash}m{4.3cm}|
 >{\centering\arraybackslash}m{2cm}|}
 
-\caption{Especificación de elementos de la Capa Física en la notación NDTI}
+\caption{Especificación de elementos de la Capa Tecnológica en la propuesta~\NDITI}
 \label{tab:capa_tecnologica_ndti} \\
 
 \hline
@@ -341,7 +501,7 @@ De esta manera, la capa tecnológica integra tanto los elementos propios de Arch
 \hline
 
 % ==========================================================
-% ======== EXTENSIONES PROPUESTAS EN NDTI ==================
+% ======== EXTENSIONES PROPUESTAS EN\NDITI ==================
 % ==========================================================
 
 \hline
@@ -383,19 +543,49 @@ De esta manera, la capa tecnológica integra tanto los elementos propios de Arch
 & Google Fonts \\
 \hline
 
-
 \end{longtable}
+\normalsize
+
+\subsubsection{Ejemplo de aplicación}
+
+\noindent
+Posteriormente, se presenta un ejemplo que ilustra la ejecución de servicios tecnológicos sobre infraestructura virtualizada.
+
+\subsubsection{Enunciado}
+\noindent
+Una organización dispone de una infraestructura tecnológica orientada a la ejecución y soporte de servicios digitales internos, diseñada para ofrecer capacidades de procesamiento, almacenamiento y gestión de aplicaciones de manera eficiente. Esta infraestructura se estructura en distintos niveles que permiten abstraer los recursos físicos y optimizar su utilización mediante tecnologías de virtualización y contenedorización.
+
+En el nivel base, se cuenta con un servidor físico que proporciona los recursos de hardware necesarios para la operación del entorno. Sobre este servidor se implementa un nodo computacional que habilita la creación y ejecución de máquinas virtuales, permitiendo así la segmentación lógica de los recursos y la ejecución simultánea de múltiples entornos independientes. Dentro de estas máquinas virtuales se despliegan contenedores de software, los cuales encapsulan aplicaciones y sus dependencias, facilitando su portabilidad, escalabilidad y gestión.
+
+Los contenedores alojan diversos servicios tecnológicos que son consumidos dentro del sistema, entre los cuales se incluyen un servicio principal y un servicio de almacenamiento. Ambos servicios interactúan entre sí para el intercambio de información, asegurando la persistencia y disponibilidad de los datos necesarios para la operación. El acceso a estos servicios se encuentra protegido mediante un firewall lógico, el cual aplica políticas de seguridad sobre el tráfico interno, controlando las comunicaciones y reduciendo riesgos asociados a accesos no autorizados.
+
+Desde una perspectiva de comportamiento, el sistema está diseñado para responder a eventos tecnológicos que activan procesos automatizados. Estos procesos ejecutan funciones tecnológicas específicas que hacen uso de los servicios desplegados en la infraestructura, permitiendo la automatización de tareas y la orquestación de operaciones dentro del entorno. Finalmente, algunos de los componentes se agrupan mediante una colaboración tecnológica, la cual posibilita la interacción coordinada entre múltiples contenedores, permitiendo así la provisión de capacidades conjuntas y el cumplimiento de los objetivos funcionales del sistema.
+
+\paragraph{Diagrama}
+\noindent
+\begin{figure}[H]
+    \centering
+    \includegraphics[
+		width=\linewidth,
+        keepaspectratio
+	]{tablas-images/diagramas/capaTecSI.png}
+    \caption{Modelado en la capa tecnológica usando la propuesta~\NDITI}
+    \label{fig:capa_tecnologica_ejemplo}
+\end{figure}
+
+\noindent
+El diagrama permite observar la relación entre infraestructura lógica, servicios tecnológicos y comportamiento del sistema, evidenciando la integración de múltiples tipos de elementos dentro de la capa.
 
 \subsubsection{Capa de Aplicación}
 \noindent
 
-La Capa de Aplicación en la notación NDTI representa el nivel en el que se modelan los sistemas de software y sus funcionalidades desde una perspectiva lógica. En esta capa se describen los componentes de aplicación, sus interacciones, los procesos que ejecutan y los datos que gestionan, permitiendo abstraer la lógica del sistema independientemente de la infraestructura tecnológica subyacente.
+La Capa de Aplicación en la propuesta~\NDITI representa el nivel en el que se modelan los sistemas de software y sus funcionalidades desde una perspectiva lógica. En esta capa se describen los componentes de aplicación, sus interacciones, los procesos que ejecutan y los datos que gestionan, permitiendo abstraer la lógica del sistema independientemente de la infraestructura tecnológica subyacente.
 
 Esta capa se fundamenta en los elementos definidos por ArchiMate para el modelado de aplicaciones, adoptando sus conceptos estructurales, conductuales y pasivos, tales como componentes de aplicación, interfaces, servicios, procesos, eventos y objetos de datos. Estos elementos proporcionan una base sólida y estandarizada para representar la arquitectura de software dentro de un sistema. Adicionalmente, con el fin de mejorar la capacidad expresiva de la notación, se incorporan extensiones específicas orientadas a la comprensión de arquitecturas modernas y al proceso de enseñanza. Entre estas extensiones se incluyen elementos auxiliares como restricciones y notas, que permiten complementar la semántica del modelo, así como elementos estructurales como el nodo funcional, que facilita la descomposición interna de los componentes de aplicación.
 
 Adicionalmente, se introduce el concepto de API o Gateway de aplicación, el cual permite representar de forma explícita los puntos de exposición de servicios en arquitecturas basadas en APIs, y el orquestador de aplicación, que modela la coordinación de flujos entre múltiples componentes. Estas incorporaciones buscan acercar la notación a escenarios reales de desarrollo de software, manteniendo al mismo tiempo coherencia con la estructura conceptual de ArchiMate.
 
-De esta manera, la capa de aplicación integra tanto los elementos propios del estándar como las extensiones propuestas en el proyecto NDTI, permitiendo una representación clara, consistente y alineada con las necesidades del programa en el área de Infraestructura de TI.
+De esta forma, la capa de aplicación integra tanto los elementos propios del estándar como las extensiones propuestas en el proyecto\NDITI, permitiendo una representación clara, consistente y alineada con las necesidades del programa en el área de Infraestructura de TI.
 
 \renewcommand{\arraystretch}{1.3}
 \setlength{\extrarowheight}{2pt}
@@ -408,7 +598,7 @@ De esta manera, la capa de aplicación integra tanto los elementos propios del e
 >{\raggedright\arraybackslash}m{4.3cm}|
 >{\centering\arraybackslash}m{2cm}|}
 
-\caption{Especificación de elementos de la Capa de Aplicación en la notación NDTI}
+\caption{Especificación de elementos de la Capa de Aplicación en la propuesta~\NDITI}
 \label{tab:capa_aplicacion_ndti} \\
 
 \hline
@@ -496,7 +686,7 @@ De esta manera, la capa de aplicación integra tanto los elementos propios del e
 \hline
 
 % ==========================================================
-% ======== EXTENSIONES PROPUESTAS EN NDTI ==================
+% ======== EXTENSIONES PROPUESTAS EN\NDITI ==================
 % ==========================================================
 
 \hline
@@ -539,18 +729,49 @@ De esta manera, la capa de aplicación integra tanto los elementos propios del e
 \hline
 
 \end{longtable}
+\normalsize
 
+\subsubsection{Ejemplo de aplicación}
+
+\noindent
+Seguidamente, se presenta un ejemplo que ilustra la arquitectura de una aplicación basada en servicios.
+
+\subsubsection{Enunciado}
+\noindent
+Un sistema de comercio electrónico permite a los usuarios realizar transacciones de compra mediante la interacción con una API central, la cual actúa como punto de acceso unificado para los distintos servicios que conforman la solución. Esta arquitectura está diseñada para desacoplar las funcionalidades del sistema en componentes especializados, facilitando la escalabilidad, el mantenimiento y la evolución independiente de cada uno de ellos.
+
+En este contexto, el sistema incorpora un componente de tipo API Gateway que se encarga de exponer los servicios hacia el exterior, gestionando las solicitudes entrantes y direccionándolas de manera adecuada hacia los servicios internos correspondientes. A su vez, se dispone de un orquestador de aplicación cuya función principal es coordinar el flujo del proceso de compra, asegurando que las distintas etapas se ejecuten en el orden correcto y que la interacción entre los componentes sea consistente y controlada.
+
+Adicionalmente, la solución se compone de varios módulos independientes que atienden responsabilidades específicas, tales como la gestión de usuarios, la gestión de pedidos y el procesamiento de pagos. Cada uno de estos componentes expone sus funcionalidades a través de interfaces bien definidas, permitiendo su integración dentro del ecosistema del sistema y facilitando la comunicación entre ellos.
+
+El proceso de compra se materializa como una secuencia de actividades coordinadas que involucran múltiples componentes de la arquitectura. Durante la ejecución de dicho proceso, se generan, transforman y consumen diversos datos, tales como órdenes de compra, confirmaciones de transacción y otra información relevante, los cuales fluyen entre los distintos servicios para garantizar la correcta finalización de la operación.
+
+\paragraph{Diagrama}
+\noindent
+\FloatBarrier
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\linewidth,
+        keepaspectratio]{tablas-images/diagramas/capaAppSI.png}
+    \caption{Modelado en la capa de aplicación usando la propuesta~\NDITI}
+    \label{fig:capa_aplicacion_ejemplo}
+\end{figure}
+
+\FloatBarrier
+
+\noindent
+El diagrama representa la estructura lógica del sistema, las interacciones entre componentes y el flujo de ejecución de procesos dentro de la aplicación.
 
 \subsubsection{Capa de Negocio}
 \noindent
 
-La Capa de Negocio representa el nivel más abstracto de la notación NDTI y tiene como propósito modelar los elementos organizacionales, los procesos y la lógica operativa que dan sentido a la infraestructura tecnológica. En esta capa se describen los actores, roles, servicios y objetos de negocio, así como las interacciones y comportamientos que permiten la generación de valor dentro de un contexto organizacional.
+La Capa de Negocio representa el nivel más abstracto de la propuesta~\NDITI~y tiene como propósito modelar los elementos organizacionales, los procesos y la lógica operativa que dan sentido a la infraestructura tecnológica. En esta capa se describen los actores, roles, servicios y objetos de negocio, así como las interacciones y comportamientos que permiten la generación de valor dentro de un contexto organizacional.
 
 Desde el punto de vista conceptual, esta capa se fundamenta en los elementos definidos por ArchiMate para el modelado del dominio de negocio, manteniendo su semántica original y su estructura basada en elementos estructurales, conductuales y pasivos. Esto permite representar de manera coherente la relación entre los procesos de negocio y las capas inferiores de la arquitectura.
 
-No obstante, a partir del análisis de las necesidades del programa académico, se identificó la necesidad de complementar esta capa con elementos adicionales orientados a la representación explícita de flujos de proceso. En este sentido, la propuesta NDTI incorpora un conjunto de extensiones inspiradas en notaciones como BPMN y diagramas de actividades, las cuales permiten modelar de manera más clara aspectos como el inicio y fin de procesos, decisiones, paralelización, ciclos y organización por responsabilidades.
+No obstante, a partir del análisis de las necesidades del programa académico, se identificó la necesidad de complementar esta capa con elementos adicionales orientados a la representación explícita de flujos de proceso. En este sentido, la propuesta\NDITI incorpora un conjunto de extensiones inspiradas en notaciones como BPMN y diagramas de actividades, las cuales permiten modelar de manera más clara aspectos como el inicio y fin de procesos, decisiones y organización por responsabilidades.
 
-Estas extensiones no sustituyen los elementos propios de ArchiMate, sino que actúan como un complemento visual y semántico que facilita la comprensión de los procesos de negocio, especialmente en contextos educativos. De esta manera, la Capa de Negocio en NDTI logra integrar la solidez estructural de ArchiMate con la expresividad de las notaciones de flujo, proporcionando una representación más completa, intuitiva y alineada con los objetivos formativos del área de Infraestructura de TI.
+Estas extensiones no sustituyen los elementos propios de ArchiMate, sino que actúan como un complemento visual y semántico que facilita la comprensión de los procesos de negocio, especialmente en contextos educativos. En consecuencia, la Capa de Negocio en\NDITI logra integrar la solidez estructural de ArchiMate con la expresividad de las notaciones de flujo, proporcionando una representación más completa, intuitiva y alineada con los objetivos formativos del área de Infraestructura de TI.
 
 \renewcommand{\arraystretch}{1.3}
 \setlength{\extrarowheight}{2pt}
@@ -563,7 +784,7 @@ Estas extensiones no sustituyen los elementos propios de ArchiMate, sino que act
 >{\raggedright\arraybackslash}m{4.3cm}|
 >{\centering\arraybackslash}m{2cm}|}
 
-\caption{Especificación de elementos de la Capa de Negocio en la notación NDTI}
+\caption{Especificación de elementos de la Capa de Negocio en la propuesta~\NDITI}
 \label{tab:capa_negocio_ndti} \\
 
 \hline
@@ -679,7 +900,7 @@ Estas extensiones no sustituyen los elementos propios de ArchiMate, sino que act
 \hline
 
 % ==========================================================
-% ======== EXTENSIONES PROPUESTAS EN NDTI ==================
+% ======== EXTENSIONES PROPUESTAS EN\NDITI ==================
 % ==========================================================
 
 \hline
@@ -721,330 +942,123 @@ Estas extensiones no sustituyen los elementos propios de ArchiMate, sino que act
 & Google Fonts \\
 \hline
 
-\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_loop.png}
-& B-19 Bucle
-& Elemento conductual
-& Representación de la repetición de una o varias actividades dentro de un proceso de negocio hasta que se cumpla una condición específica.
-& Google Fonts \\
-\hline
-
-\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_parallel.png}
-& B-20 Paralelización
-& Elemento conductual
-& Nodo que permite la ejecución simultánea de múltiples actividades dentro de un proceso de negocio, facilitando la representación de flujos concurrentes.
-& Google Fonts \\
-\hline
-
-\includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_condition.png}
-& B-21 Condicional
-& Elemento auxiliar
-& Anotación que especifica la condición lógica necesaria para que un flujo o actividad sea ejecutado dentro del proceso de negocio.
-& Google Fonts \\
-\hline
-
 \includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_multievent.png}
-& B-22 Evento múltiple
+& B-19 Evento múltiple
 & Evento
 & Representa la ocurrencia de múltiples eventos que pueden desencadenar o afectar el flujo de un proceso de negocio.
 & Google Fonts \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_frequency.png}
-& B-23 Frecuencia
+& B-20 Frecuencia
 & Elemento auxiliar
 & Elemento que permite indicar la periodicidad o recurrencia de una actividad dentro de un proceso de negocio (por ejemplo: diario, semanal, por demanda).
 & Google Fonts \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_independent.png}
-& B-24 Acción independiente
+& B-21 Acción independiente
 & Conductual
 & Actividad de negocio que puede ejecutarse de manera autónoma sin depender directamente de otras acciones dentro del flujo.
 & Google Fonts \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_recurrent.png}
-& B-25 Acción recurrente
+& B-22 Acción recurrente
 & Conductual
 & Actividad de negocio que se ejecuta de manera repetitiva dentro de un proceso, generalmente asociada a condiciones o ciclos definidos.
 & Google Fonts \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_note.png}
-& B-26 Anotación de texto
+& B-23 Anotación de texto
 & Elemento auxiliar
 & Elemento utilizado para agregar información descriptiva o aclaratoria dentro del modelo sin afectar su semántica estructural o conductual.
 & Google Fonts \\
 \hline
 
 \end{longtable}
+\normalsize
 
+\subsubsection{Ejemplo de aplicación}
 
-\subsubsection{Requisitos no-funcionales}
 \noindent
-Según \cite{4384163} un requisito no-funcional es un atributo o una restricción de un sistema. A continuación se definen los requisitos no-funcionales para la \textit{Grid App}.
-\input{tablas-images/pruebas/requisitosNoFuncionales.tex}
+Seguidamente, se presenta un ejemplo que ilustra la ejecución de un proceso de negocio dentro de una organización.
 
-\subsection{Pruebas}
+\subsubsection{Enunciado}
 \noindent
-Para esta sección, se definen las pruebas y los pasos para ejecutar cada prueba.
-\input{tablas-images/pruebas/pruebas.tex}
+Una empresa de comercio electrónico gestiona el proceso de venta de productos a clientes mediante un flujo estructurado de actividades que permiten transformar una intención de compra en una transacción completada. Este proceso se inicia cuando un cliente realiza una solicitud de compra, la cual desencadena una serie de acciones coordinadas dentro de la organización para validar, procesar y confirmar la operación.
 
-\subsection{Casos de uso}
+En el desarrollo del proceso intervienen distintas áreas organizacionales, cada una con responsabilidades específicas. El cliente actúa como actor externo que origina la solicitud y recibe el resultado del proceso; el área de ventas se encarga de gestionar el pedido, verificar su validez y coordinar su avance; mientras que el área de finanzas asume la responsabilidad de procesar los pagos y generar la documentación asociada a la transacción económica. La interacción entre estas áreas permite asegurar la correcta ejecución del flujo y el cumplimiento de las condiciones necesarias para completar la compra.
+
+El proceso contempla varias etapas claramente definidas, entre las que se incluyen la validación del pedido, la evaluación de la disponibilidad de los productos solicitados, el procesamiento del pago, la generación de la factura y la posterior confirmación de la compra. Cada una de estas actividades contribuye al avance del flujo, asegurando que se cumplan tanto los requisitos operativos como los financieros antes de concretar la transacción.
+
+Adicionalmente, el flujo incorpora ciertas condiciones y comportamientos específicos que afectan su ejecución. En caso de que el procesamiento del pago no sea exitoso, el proceso se interrumpe y finaliza sin completar la compra. Asimismo, algunas actividades pueden ejecutarse de manera paralela, como la generación de la factura y la preparación del pedido, con el fin de optimizar los tiempos de respuesta. A lo largo del proceso se gestionan diversos objetos de negocio, tales como el pedido, la factura y el comprobante de pago, los cuales contienen la información relevante y sirven como soporte documental de cada etapa de la transacción.
+
+\subsubsection{Diagrama}
 \noindent
-Luego de tener las pruebas que se van a ejecutar al sistema de la \textit{Grid App} ya definidas, se procede con la creación de un caso de uso por cada prueba. Esto tiene 3 motivaciones en este trabajo; (1) Mostrar la utilidad del sistema para un usuario ficticio, (2) Limitar el alcance del prototipo a unos casos de uso concretos y (3) Guiar el desarrollo hacia situaciones reales y la utilidad para los \textit{stakeholders}.
+\FloatBarrier
 
-A continuación se definen los casos de uso:
-
-\subsubsection{Caso 1: \textit{Montecarlo} para $\pi$}
-\noindent
-\begin{itemize}
-    \item \textbf{Descripción:} En un laboratorio de investigación financiera, los analistas necesitan valuar instrumentos derivados complejos utilizando métodos \textit{Montecarlo} que requieren cientos de simulaciones. La infraestructura HTCondor distribuye estos cálculos estadísticos masivos a través de múltiples nodos, donde cada trabajo ejecuta una porción de las simulaciones para calcular aproximaciones de $\pi$ como prototipo, y luego consolida los resultados para obtener una mejor estimación que valide la confiabilidad del sistema en modelos de riesgo financiero.
-    \item \textbf{Escenario de prueba relacionado:} ESC-01
-\end{itemize}
-
-\subsubsection{Caso 2: Conteo de números primos}
-\noindent
-\begin{itemize}
-    \item \textbf{Descripción:} Un centro de criptografía debe analizar la distribución de números primos en intervalos grandes para evaluar la seguridad de algoritmos de encriptación RSA. HTCondor divide automáticamente estos rangos numéricos en sub intervalos que distribuye entre nodos heterogéneos, permitiendo el conteo concurrente de primos que demuestra la capacidad del sistema para manejar cargas computacionales intensivas.
-    \item \textbf{Escenario de prueba relacionado:} ESC-02
-\end{itemize}
-
-\subsubsection{Caso 3: \textit{Quicksort} Paralelo}
-\noindent
-\begin{itemize}
-    \item \textbf{Descripción:} Un instituto de genómica requiere ordenar cantidades enormes de datos de secuencias de ADN para identificar patrones de mutaciones genéticas. El algoritmo de \textit{quicksort} paralelo implementado con \MPI aprovechar los recursos agregados de memoria y procesamiento de múltiples máquinas bajo HTCondor, validando la capacidad de la infraestructura para coordinar trabajos que necesitan comunicación entre procesos (\IPC) en aplicaciones científicas.
-    \item \textbf{Escenario de prueba relacionado:} ESC-03
-\end{itemize}
-
-\section{Modelado del sistema en Archimate}
-\noindent
-ArchiMate es un lenguaje de modelado estándar, abierto e independiente de~\textit{The Open Group} que permite representar de manera estructurada y general las diferentes capas de una arquitectura empresarial: negocio, aplicación y tecnología \citep{josey2016introduction}. Esto permite tener una visión integrada que facilita la comunicación entre los distintos actores de un negocio y que muestre cómo los procesos, los sistemas de información y la infraestructura tecnológica se relacionan entre sí.
-A su vez, Archi es un Software que permite realizar diagramas de ArchiMate de forma sencilla y fue el Software elegido por el equipo de este proyecto para modelar las relaciones del proyecto con el negocio y varios elementos más. Archi permite dividir los modelos en vistas, que facilitan la organización y hacen más sencilla la labor de ampliar ciertos elementos o modelos importantes.
-
-Cabe recalcar que algunos de los elementos como la misión y la visión no se muestran de forma completa en las vistas debido a su gran extensión textual. Sin embargo, con el fin de mostrar información completa, se mencionan y describen a continuación.
-
-\begin{itemize}
-    \item \textbf{Misión:} El Grupo de Investigación en Redes, Información y Distribución - GRID tiene como objetivo principal la realización de proyectos de investigación en temas relacionados principalmente con soluciones informáticas en Infraestructura Computacional, la Ingeniería de Software, el Análisis de Datos y la Informática Educativa. Hacer investigación en los temas mencionados, así como realizar proyectos interdisciplinarios deberá redundar en conocimientos frescos y la adopción de nuevas tecnologías que contribuyan al desarrollo académico del Programa Ingeniería de Sistemas y Computación, la Maestría en Ingeniería, y la Maestría y el Doctorado en Educación de la Universidad del Quindío. Luego de 10 años de existencia, de haber superado exitosamente los procesos de formación a nivel doctoral y de maestría de nuestros integrantes y de haber logrado la categoría C en el escalafón nacional de Ministerio de Ciencia, Tecnología e Innovación, nuestros esfuerzos estarán centrados en: (1) la formación de estudiantes a nivel de pregrado, maestría y doctorado; (2) fortalecer los lazos de amistad y colaboración con investigadores y grupos de investigación a nivel nacional e internacional; (3) la realización de proyectos de investigación y desarrollo de productos de nuevo conocimiento que busquen dar solución a problemas de la sociedad; y (4) aumentar la visibilidad del grupo y mejorar la categoría en el escalafón de MinCiencias.
-    \item \textbf{Visión:} Para el año 2025, el Grupo de Investigación en Redes, Información y Distribución - GRID de la Facultad de Ingeniería de la Universidad del Quindío será un grupo consolidado y reconocido en la más alta categoría del escalafón nacional del Ministerio de Ciencia Tecnología e Innovación, que a través de sus aportes sea tenido en cuenta en la toma de decisiones a nivel regional y nacional; y con reconocimiento internacional mediante la realización de trabajos en colaboración con investigadores de otras universidades nacionales y extranjeras. Misión: Somos un grupo de profesores universitarios dedicados a realizar investigación en áreas tecnológicas orientadas a facilitar procesos y resolver problemas de la comunidad académica, de la sociedad que nos rodea y del sector productivo, mediante la adaptación de tecnologías o el desarrollo de soluciones informáticas en Infraestructura Computacional, la Ingeniería de Software, el Análisis de Datos y la Informática Educativa que constituyan un aporte al desarrollo social, económico y tecnológico de la región y el país.
-    \item \textbf{Objetivo estratégico 1:} Realizar proyectos de investigación en los temas relacionados con las áreas de interés del grupo, así como proyectos interdisciplinarios que permitan la adopción de conocimientos y nuevas tecnologías que contribuyan al desarrollo de la región, del país y de la comunidad académica mundial.
-    \item \textbf{Objetivo estratégico 2:} Establecer contactos con otros grupos de investigación interesados en temáticas similares, pertenecientes a otras instituciones de educación superior, tanto a nivel nacional como internacional.
-    \item \textbf{Objetivo estratégico 3:} Impulsar la investigación dentro de la Universidad del Quindío y la Facultad de Ingeniería, particularmente en el programa Ingeniería de Sistemas y Computación, el programa de Maestría en Ingeniería, y los programas de Maestría y Doctorado en Educación.
-    \item \textbf{Objetivo estratégico 4:} Establecer una comunidad académica con la participación de estudiantes de pregrado y posgrado, profesores y jóvenes investigadores.
-\end{itemize}
-
-\subsection{Vista de misión, visión y objetivos}
-\noindent
-        En la Figura \ref{fig:archiMVOView} se muestra las relaciones entre la misión, la visión y los objetivos estratégicos del negocio. Además, se muestran los ámbitos clave en los que se enfoca el negocio para cumplir con sus objetivos estratégicos. Esta última información se tomó de conversaciones informales con el representante del negocio para este proyecto, quien manifestó que estos son los enfoques que se le debe dar al proyecto y están dados por la organización a la que está adscrito el negocio, que para nuestro caso específico es el Grupo \GRID.\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.15]{tablas-images/archi/Mission-Values-Vision View.jpg}
-	\caption{Vista de misión, visión y objetivos}
-    \label{fig:archiMVOView}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[
+		width=\linewidth,
+        keepaspectratio
+	]{tablas-images/diagramas/CapaBusSI.png}
+    \caption{Modelado en la capa de negocio usando la propuesta~\NDITI}
+    \label{fig:capa_negocio_ejemplo}
 \end{figure}
 
-\subsection{Vista de mapa de valor estratégico}
-\noindent
-En la Figura \ref{fig:archiSVMView} se muestra el valor estratégico del negocio desde distintas perspectivas y su descomposición hacia otros valores más concretos. Todo esto con el fin de conocer que perspectivas son de más interés para el negocio y cuáles valores componen dichas perspectivas. Esto ocurre en capa de motivación, por lo que estos valores estratégicos identificados servirán como los principios orientadores de la estrategia del negocio.
+\FloatBarrier
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.15]{tablas-images/archi/Strategic Value Map View.jpg}
-	\caption{Vista de mapa de valor estratégico}
-    \label{fig:archiSVMView}
+\noindent
+El diagrama permite visualizar la secuencia de actividades, la asignación de responsabilidades y la interacción entre los distintos elementos del dominio de negocio.
+
+\subsection{Ejemplo integrador de la propuesta~\NDITI}
+\noindent
+La propuesta~\NDITI~permite representar de manera estructurada distintos aspectos de un sistema, integrando elementos de negocio, aplicación e infraestructura. 
+A continuación, se presenta un ejemplo que ilustra cómo estos elementos se relacionan dentro de un contexto de comercio electrónico.
+
+\subsubsection{Enunciado}
+\noindent
+Una empresa de comercio electrónico dispone de una plataforma digital que permite a los clientes realizar compras de productos a través de un entorno en línea. Este escenario se caracteriza por la integración de múltiples capas arquitectónicas que trabajan de manera coordinada para transformar una necesidad de negocio en una operación tecnológica concreta. El enfoque propuesto busca evidenciar cómo un proceso de negocio se despliega progresivamente a través de diferentes niveles de abstracción, manteniendo la trazabilidad entre ellos.
+
+En la capa de negocio, el proceso se inicia cuando un cliente realiza un pedido, lo que constituye el evento desencadenante del flujo principal. A partir de este punto, se activan una serie de actividades orientadas a gestionar la solicitud, validar la información y avanzar hacia la concreción de la compra. Este nivel representa las interacciones y objetivos propios de la organización, centrados en la entrega de valor al cliente y en la correcta ejecución del proceso comercial.
+
+Dicho evento de negocio activa la capa de aplicación, en la cual se implementan los servicios necesarios para soportar el proceso. Estos servicios de aplicación son responsables de ejecutar la lógica funcional requerida y se encuentran coordinados mediante un componente orquestador que gestiona la secuencia y dependencia de las operaciones. Asimismo, la exposición de estos servicios hacia consumidores internos o externos se realiza a través de un API Gateway, que actúa como punto de entrada unificado y mecanismo de control para las solicitudes.
+
+A su vez, la capa de aplicación se apoya en una capa tecnológica que proporciona las capacidades de ejecución necesarias. En este nivel, los servicios se despliegan en contenedores que se ejecutan sobre nodos servidores, permitiendo una gestión eficiente de los recursos y facilitando la escalabilidad del sistema. Estos nodos operan sobre software de sistema que habilita la virtualización y administración del entorno, y se comunican entre sí mediante una red tecnológica que soporta el intercambio de datos entre los distintos componentes.
+
+Finalmente, la capa tecnológica se sustenta sobre una infraestructura física compuesta por servidores, dispositivos de red y redes de distribución eléctrica y de comunicaciones. Esta capa representa el soporte tangible sobre el cual se construyen los demás niveles, garantizando la disponibilidad de recursos de hardware y conectividad. En conjunto, todas estas capas permiten ilustrar cómo un proceso de negocio se materializa de forma progresiva, desde una interacción inicial con el cliente hasta su ejecución sobre componentes físicos concretos dentro de la organización.
+
+\subsubsection{Diagrama}
+\noindent
+\FloatBarrier
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[
+		width=\linewidth,
+        keepaspectratio
+	]{tablas-images/diagramas/multicapaSI.png}
+    \caption{Modelado multicapa usando la propuesta~\NDITI}
+    \label{fig:ejemplo_multicapa}
 \end{figure}
 
-\subsection{Vista de objetivos}
+\FloatBarrier
+
+\subsubsection{Síntesis y cierre del capítulo}
 \noindent
-En la Figura \ref{fig:archiGoalsView} se muestra un desglose completo de los objetivos del negocio. Para este fin se usó una variación de una estrategia conocida como 5W, que usa cinco preguntas para obtener información completa sobre un elemento. Estas preguntas son: ¿Quién?, ¿Qué?, ¿Cuándo?, ¿Dónde? Y ¿Por qué? \citep{5WAmitava}. Para el desglose de los objetivos del negocio en esta vista del modelo se hizo necesarias solo cuatro preguntas como se muestra en la Figura \ref{fig:archiGoalsView}. Así, podemos ver como está compuesta la motivación del negocio y los elementos que están en torno a los objetivos estratégicos.
+En conjunto, la propuesta~\NDITI~presentada a lo largo de estas secciones consolida un marco integral para el modelado de arquitecturas de TI, articulando de manera coherente los distintos niveles de abstracción desde la infraestructura física hasta el dominio de negocio. 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.12]{tablas-images/archi/Goals View.jpg}
-	\caption{Vista de objetivos}
-    \label{fig:archiGoalsView}
-\end{figure}
+A partir de la adopción de los elementos fundamentales de ArchiMate, se garantiza una base conceptual sólida y alineada con estándares internacionales, mientras que las extensiones propuestas permiten adaptar la notación a las necesidades específicas del contexto académico, mejorando su capacidad expresiva y su aplicabilidad práctica.
 
-\subsection{Vista de servicio de negocio}
-\noindent
-En la Figura \ref{fig:archiBSView} se muestra la estructura del servicio de negocio que el proyecto relatado en este documento buscar intervenir, desde los objetivos estratégicos en cuanto a motivación hasta los componentes de aplicación, pasando por los servicios de aplicación y el servicio de negocio con una estructura mínima. Cabe recalcar que los nombres en inglés de algunos componentes corresponden a nombres propios que se le asignaron al componente
+La incorporación de capas especializadas, como Redes y Comunicaciones, junto con la inclusión de elementos modernos en la capa tecnológica (virtualización, contenedores) y mecanismos de mayor detalle en las capas de aplicación y negocio, evidencia un enfoque orientado a cerrar la brecha entre la teoría y los escenarios prácticos. 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.13]{tablas-images/archi/Business Service View.jpg}
-	\caption{Vista de servicio de negocio}
-    \label{fig:archiBSView}
-\end{figure}
+Asimismo, la integración de elementos inspirados en notaciones como BPMN y UML fortalece la representación de procesos, interacciones y relaciones, aportando claridad en la modelación de comportamientos complejos.
 
-\subsection{Vista de aplicación}
-\noindent
-En la Figura \ref{fig:archiAppView} se muestran de forma general, las características y procesos de las aplicaciones que componen la solución, además de la comunicación entre dichas aplicaciones y la información de intercambio. Sin embargo, la vista que nos ofrece ArchiMate en capa de aplicación puede ser un poco limitada cuando el objetivo es describir a detalle la forma en que funciona cada componente de la aplicación y del sistema en general. Por lo que se decide complementar este modelo con otros diagramas usando otros lenguajes de modelado un poco más adelante.
+Finalmente, los conectores transversales permiten unificar todas las capas dentro de un mismo modelo, asegurando la trazabilidad y consistencia entre los diferentes componentes de la arquitectura. 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.12]{tablas-images/archi/Application View.jpg}
-	\caption{Vista de aplicación}
-    \label{fig:archiAppView}
-\end{figure}
+De esta manera,~\NDITI~actúa como una propuesta estructurada que facilita la comprensión, el análisis y su aplicación en el ámbito académico.
 
-\subsection{Vista de infraestructura}
-\noindent
-En la Figura \ref{fig:archiInfrastructureView} se muestran de forma general, las características de los nodos de la infraestructura que componen la solución, además de las relaciones entre dichos nodos y su relación con las aplicaciones que corren en ellos. Sin embargo, al igual que pasa en la capa de aplicación, la vista que nos ofrece ArchiMate en capa de infraestructura puede ser un poco limitada cuando el objetivo es describir a detalle la forma en que funciona cada nodo de la infraestructura y su comunicación física. Por lo que se decide complementar este modelo con otros diagramas usando otros lenguajes de modelado un poco más adelante.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.103]{tablas-images/archi/Infrastructure View.jpg}
-	\caption{Vista de infraestructura}
-    \label{fig:archiInfrastructureView}
-\end{figure}
-
-\subsection{Vista por capas}
-\noindent
-El último modelo de ArchiMate que compone la solución es el mostrado en la Figura \ref{fig:archiLayeredView} en donde se unen de forma general los demás modelos mostrados anteriormente y se muestran sus relaciones a alto nivel. Todo esto con el fin de dar una visión general de las capas que componen la solución y así tener una idea global de la forma en que cada componente se comunica con los demás.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.125]{tablas-images/archi/Layered View.jpg}
-	\caption{Vista por capas}
-    \label{fig:archiLayeredView}
-\end{figure}
-
-\section{Modelado del software con el modelo C4}
-\noindent
-El modelo C4 es una herramienta que ayuda a los equipos de desarrollo de software a describir y comunicar la arquitectura del software a varios niveles de detalle. De forma general el modelo C4 tiene cuatro niveles, cada una con mayor nivel de detalle que la anterior. Para el caso de uso de este proyecto se optó por usar los tres primeros niveles, ya que se considera que el último nivel no da demasiado detalle visual para representar las interacciones en el ámbito de código, por lo que para este fin se usará otro diagrama presentado más adelante.
-
-\subsection{Nivel 1: Diagrama de contexto del sistema}
-\noindent
-El diagrama de contexto del sistema muestra de forma muy general y a muy alto nivel la solución que se propone. Lo que permite una visión global y generalizada, útil para comprender rápidamente los elementos de la solución.
-
-En la Figura \ref{fig:C4Nivel1} se muestra los elementos principales de la arquitectura, los nombres de dichos elementos, la interacción entre ellos y la comunicación que realizan con el usuario. Como se puede apreciar en el diagrama, el sistema está compuesto de tres aplicaciones y los tres universos de HTCondor que componen la solución. Cabe aclarar que la aplicación denominada \textit{Tablero App} ya estaba implementada en un clúster antes del inicio de este proyecto. Sin embargo, se adiciona a la arquitectura de la solución, ya que se hizo un esfuerzo para adaptar está en todos los clústeres Vanilla que componen la solución.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.1]{tablas-images/C4/Diagramas HTCondor-Nivel 1.drawio.png}
-	\caption{Diagrama de contexto del sistema}
-    \label{fig:C4Nivel1}
-\end{figure}
-
-\subsection{Nivel 2: Diagrama de contenedores}
-\noindent
-El diagrama de contenedores muestra los elementos básicos dentro de cada sistema de Software. Lo que permite ir un poco más allá y entender como funciona cada sistema de software por dentro y como interactúa con el resto de contenedores.
-
-En la Figura \ref{fig:C4Nivel2} se muestran los contenedores principales de la arquitectura, los nombres de dichos contenedores, la interacción entre ellos y la comunicación que realizan con el usuario. Como se puede apreciar en el diagrama, el sistema está compuesto por: (1) Un \textit{backend} que cumple dos funciones principales; la primera es renderizar las plantillas que se le van a mostrar al usuario pues estás contienen información dinámica que debe ser consultada y establecida por el servidor, la segunda es realizar toda la lógica de la aplicación como despertar otros procesos o construir los archivos maestros de HTCondor. Se optó por este enfoque en el diseño para propender por la simplicidad de la aplicación y su fácil portabilidad y despliegue en diferentes tipos de entornos. En el Apéndice XX se muestra el código de los componentes y la estructura de los directorios de este componente. (2) Un directorio dentro del sistema de archivos del equipo que sirve la aplicación \textit{Grid App} en donde se almacenan los resultados de los trabajos. (3) Los universos de HTCondor que se propusieron implementar en este proyecto, estos son, Parallel y Grid, pues el Vanilla ya estaba implementado y (4) una aplicación llamada \textit{Cluster Info App} en cada clúster de HTCondor que recoge métricas básicas y las expone en formato \JSON a través de una \API.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.1]{tablas-images/C4/Diagramas HTCondor-Nivel 2.drawio.png}
-	\caption{Diagrama de contenedores}
-    \label{fig:C4Nivel2}
-\end{figure}
-
-\subsection{Nivel 3: Diagrama de componentes}
-\noindent
-El diagrama de componentes muestra los elementos básicos dentro de cada contenedor. Lo que permite ir aún más allá y entender de forma profunda como están compuestos los elementos del Software y que realizan a nivel interno. Para este nivel de granularidad se decide dividir el diagrama de componentes en distintas partes. Con el fin de hacer más sencilla su lectura y comprensión.
-
-\subsubsection{Universo \textit{Vanilla}}
-\noindent
-En la Figura \ref{fig:C4Nivel3Vanilla} se muestran los componentes principales de la arquitectura del universo Vanilla en HTCondor. Además, se pueden apreciar los distintos procesos que sigue un trabajo desde su envío hasta la recepción de sus resultados.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.09]{tablas-images/C4/Diagramas HTCondor-Nivel 3 - Vanilla.drawio.png}
-	\caption{Diagrama de componentes para el universo Vanilla}
-    \label{fig:C4Nivel3Vanilla}
-\end{figure}
-
-\subsubsection{Universo \textit{Parallel}}
-\noindent
-En la Figura \ref{fig:C4Nivel3Parallel} se muestran los componentes principales de la arquitectura del universo Parallel en HTCondor. Además, se pueden apreciar los distintos procesos que sigue un trabajo desde su envío hasta la recepción de sus resultados. Es importante notar que ls comunicación y los componentes funcionan exactamente de la misma forma que en el universo Vanilla, con la unica diferencia que aquí, los trabajo se comunican a través de \MPI.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.09]{tablas-images/C4/Diagramas HTCondor-Nivel 3 - Parallel.drawio.png}
-	\caption{Diagrama de componentes para el universo Parallel}
-    \label{fig:C4Nivel3Parallel}
-\end{figure}
-
-\subsubsection{Universo \textit{Grid}}
-\noindent
-En la Figura \ref{fig:C4Nivel3Grid} se muestran los componentes principales de la arquitectura del universo Grid en HTCondor. Como se puede apreciar en el digrama este universo actua como un intermediario entre el usuario y el clúster que va a ejecutar su trabajo, permitiendo así interconectar multiples clústeres, donde reside el valor de este universo.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.1]{tablas-images/C4/Diagramas HTCondor-Nivel 3 - Grid.drawio.png}
-	\caption{Diagrama de componentes para el universo Grid}
-    \label{fig:C4Nivel3Grid}
-\end{figure}
-
-\subsubsection{Aplicaciones de Software}
-\noindent
-En la Figura \ref{fig:C4Nivel3Apps} se muestran los componentes principales de las aplicaciones que integran el sistema. Como se puede evidenciar en el diagrama, hay dos aplicaciones principales que conforman este sistema. La primera es la aplicación central \textit{Grid App} que ayuda a abstraer la complejidad de HTCondor con una interfaz \textit{web} más amigable, además, es la encargada de enviar los trabajos y recoger los resultados. La segunda es la \textit{Cluster Info App} que ayuda a exponer métricas de cada clúster, permitiendo así a la aplicación central obtener datos reales de cada clúster y permitir al usuario elegir el clúster con métricas más favorables para su caso de uso. Es importante aclarar que la aplicación \textit{Tablero App} también está disponible y funcionando en algunos de los clústeres que componen la solución. Sin embargo, dado que su única labor es mostrar métricas detalladas del clúster, se opta por no agregarlo al diagrama por dos razones: (1) para reducir su complejidad y (2) porque el desarrollo de esta aplicación no es resultado del desarrollo de este proyecto.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.09]{tablas-images/C4/Diagramas HTCondor-Nivel 3 - Apps.drawio.png}
-	\caption{Diagrama de componentes para las aplicaciones que componen el sistema}
-    \label{fig:C4Nivel3Apps}
-\end{figure}
-
-\section{Modelado de secuencia con UML}
-\UML es un lenguaje de modelado orientado a múltiples enfoques como la secuencia de eventos y la estructura de las clases \citep{10.1145/1125944.1125949}. Para el caso de este proyecto se usará para describir de forma concreta y estructurada la secuencia que siguen los componentes del Software en cada momento, así como las alternativas que toma el programa con base en la información disponible. De igual forma, se usará este lenguaje para modelar la estructura de las clases que transportan información a través del programa. Cabe aclarar que el sistema no se diseña con una orientación a objetos estricta. Sin embargo su forma principal de intercambio de información es a través de \JSON. Por lo que se hace necesario conocer y describir la forma de los objetos que se intercambian.
-
-\subsection{Diagrama de secuencia}
-\noindent
-En la Figura \ref{fig:UMLSecuencia} se muestran los procesos y llamados que se ejecutan en cada paso del sistema, desde las rutas que se visitan hasta la información que se transfiere en cada momento. Es importante añadir que la información de transferencia entre cada sistema de software es meramente ilustrativa y para dar mayor profundidad a dicha información, debe complementarse con el diagrama de clases presentado en la sección siguiente y el código de la aplicación presentado en el Apéndice XX.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.11]{tablas-images/UML/Diagramas HTCondor-Secuencia.drawio.png}
-	\caption{Diagrama de secuencia para el sistema}
-    \label{fig:UMLSecuencia}
-\end{figure}
-
-\subsection{Diagrama de clases}
-\noindent
-En la Figura \ref{fig:UMLClases} se muestra la composición de las clases en las que se basan los objetos que permiten intercambiar información a través de los sistemas. Debido a que el diseño no fue orientado a objetos, este diagrama solo pretende mostrar los elementos de información que intercambia el sistema y no pretende modelar la arquitectura general de los sistemas de software.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.1]{tablas-images/UML/Diagramas HTCondor-Objetos.drawio.png}
-	\caption{Diagrama de clases para el sistema}
-    \label{fig:UMLClases}
-\end{figure}
-
-\section{Modelado de infraestructura con modelos personalizados}
-Después de conocer como está compuesto el sistema de forma transversal con ArchiMate y en cuanto a software con C4 y \UML, se hace necesario un modelado más profundo de la infraestructura física y de red que compone la solución. Esto debido a que ArchiMate no da la profundidad necesaria para modelar esta clase de elementos, por lo que se opta por otras opciones con el fin de dar más profundidad al diseño y más claridad al lector sobre los elementos que componen la solución.
-
-A pesar de esto, el equipo del proyecto no halló ningún lenguaje de modelado ni sistema formal que se armonizara con la clase de modelado de infraestructura que se pretende realizar. Por lo que se opta por usar una herramienta de modelado llamada draw.io y figuras genéricas con información complementaria que permiten tener una idea general de la infraestructura que subyace la solución.
-
-\subsection{Modelo de infraestructura física}
-\noindent
-En la Figura \ref{fig:Fisica} se muestran los componentes de hardware principales que componen la solución. A su vez, se presentan las conexiones eléctricas que tiene cada elemento. Esto con el fin de mostrar la forma en que están conectados a la red eléctrica los componentes, ya que su conexión no es trivial y se hace necesaria documentación especializada que muestre este tipo de elementos.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.1]{tablas-images/personalizado/Diagramas HTCondor-Fisica.drawio.png}
-	\caption{Modelo de infraestructura física}
-    \label{fig:Fisica}
-\end{figure}
-
-\subsection{Modelo de enlace de datos}
-\noindent
-En la Figura \ref{fig:Enlace} se muestran las conexiones de red que tiene cada elemento. Esto con el fin de mostrar la forma en que están conectados los componentes a la red y a Internet, ya que su conexión no es trivial y se hace necesaria documentación especializada que muestre estás conexiones.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.1]{tablas-images/personalizado/Diagramas HTCondor-Enlace.drawio.png}
-	\caption{Modelo de enlace de datos}
-    \label{fig:Enlace}
-\end{figure}
-
-\subsection{Modelo de roles}
-\noindent
-Después de conocer como están conectados los elementos de infraestructura a nivel eléctrico y de red, se hace necesario plasmar la forma en que están conectados los elementos de forma lógica, que es la forma en que se comunican los elementos en el diseño de la solución. Además, se hace necesario mostrar los roles de HTCondor que ocupa cada elemento en su clúster. En la Figura \ref{fig:Roles} se plasman estos aspectos.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.088]{tablas-images/personalizado/Diagramas HTCondor-Roles.drawio.png}
-	\caption{Modelo de roles}
-    \label{fig:Roles}
-\end{figure}
+\FloatBarrier
