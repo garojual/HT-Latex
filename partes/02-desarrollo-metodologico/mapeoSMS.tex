@@ -3,13 +3,13 @@
 \mbox{}\\
 \section{Construcción de la bitácora}
 
-Con el propósito de establecer una base teórica sólida para el desarrollo de una notación de modelado de infraestructura de~\TI~(\NDITI) y de garantizar decisiones fundamentadas durante su diseño y validación, se llevó a cabo una revisión exhaustiva de la literatura relacionada con las principales notaciones y marcos de modelado empleados en el ámbito de la infraestructura de~\TI. Este proceso se desarrolló en múltiples etapas, orientadas a identificar las fortalezas, limitaciones y oportunidades de estandarización presentes en cada enfoque analizado.
+Con el propósito de establecer una base teórica sólida para el desarrollo de una notación de modelado de Infraestructura de~\TI~(\NDITI) y de sustentar las decisiones tomadas durante su diseño y validación, se llevó a cabo una revisión exhaustiva de la literatura relacionada con las principales Notaciónes y marcos de modelado empleados en el ámbito de la Infraestructura de~\TI. Este proceso se desarrolló en múltiples etapas, orientadas a identificar las fortalezas, limitaciones y oportunidades de estandarización presentes en cada enfoque analizado.
 
 \subsection{Planeación}
 
 Esta fase tuvo como propósito establecer los lineamientos generales del estudio de mapeo sistemático (\SMS), tomando como referencia la metodología propuesta por \cite{Sepulveda2021}.
-esta etapa se definieron las metas del estudio (ver cuadro~\ref{tab:metas}), junto con las preguntas de investigación (ver cuadro~\ref{tab:preguntas}) y las métricas de evaluación (ver cuadro~\ref{tab:metricas})que orientaron el proceso de análisis. Para garantizar la coherencia metodológica, se adoptó el enfoque
-Objetivo-Pregunta-Métrica (\textit{goal-question-metric}, GQM) que permite vincular de manera estructurada las metas del estudio con los indicadores y evidencias obtenidas.
+En esta etapa se definieron las metas del estudio (ver cuadro~\ref{tab:metas}), las preguntas de investigación (ver cuadro~\ref{tab:preguntas}) y las métricas de evaluación (ver cuadro~\ref{tab:metricas}) que orientaron el proceso de análisis. 
+Para garantizar la coherencia metodológica, se adoptó el enfoque Objetivo-Pregunta-Métrica (\textit{goal-question-metric}, GQM) que permite vincular de manera estructurada las metas del estudio con los indicadores y evidencias obtenidas.
 
 \subsubsection{Definición de metas para el \SMS}
 
@@ -22,7 +22,7 @@ Objetivo-Pregunta-Métrica (\textit{goal-question-metric}, GQM) que permite vinc
 		\hline
 		\textbf{Meta} & \textbf{Descripción}                                                                                                                                                                                                                                                                                                                                         \\ \hline
 		G1            & Clasificar los trabajos relacionados con metodologías, tecnologías, modelos y frameworks relacionados con~\NDITI~que satisfagan las necesidades identificadas en el contexto de computación, networking y los casos de negocios. \\ \hline
-		G2            & Identificar la tendencia de uso de herramientas tecnológicas en los trabajos relacionados con una notación de diseño en el contexto de diversas áreas de infraestructura de~\TI.                                                                                                                                                     \\ \hline
+		G2            & Identificar la tendencia de uso de herramientas tecnológicas en los trabajos relacionados con una notación de diseño en el contexto de diversas áreas de Infraestructura de~\TI.                                                                                                                                                     \\ \hline
 	\end{tabular}
 	\caption{Definición de metas del SMS}
 	\label{tab:metas}
@@ -40,11 +40,11 @@ Objetivo-Pregunta-Métrica (\textit{goal-question-metric}, GQM) que permite vinc
 		\textbf{Meta}                                                                                                                                                                                                                                                                                                                                    & \textbf{Pregunta} & \textbf{Descripción} & \textbf{Motivación}        \\ \hline
 
 		G1                                                                                                                                                                                                                                                                                                                                               & Q1                &
-		\textit{¿Cuáles son los trabajos relacionados con metodologías enfocadas a una notación de diseño de infraestructura de~\TI~que dan solución a necesidades identificadas en el contexto de computación, networking y los casos de negocios?} &
-		Las notaciones de diseño de infraestructura de~\TI~permiten modular esquemas según diversos criterios específicos. Sin embargo, de establecer criterios unificados que orienten dichas notaciones, existiría una facilidad en la construcción y comprensión de los modelos realizados. \\ \hline
+		\textit{ \textquestiondown Cuáles son los trabajos relacionados con metodologías enfocadas a una notación de diseño de Infraestructura de~\TI~que dan solución a necesidades identificadas en el contexto de computación, networking y los casos de negocios?} &
+		Las Notaciónes de diseño de Infraestructura de~\TI~permiten modular esquemas según diversos criterios específicos. Sin embargo, si se establecieran criterios unificados que orienten dichas Notaciónes, se facilitaría la construcción y comprensión de los modelos realizados. \\ \hline
 
 		G2                                                                                                                                                                                                                                                                                                                                               & Q2                &
-		\textit{¿Cuáles son los trabajos relacionados con herramientas tecnológicas de mayor tendencia asociados a notaciones de diseño en el contexto de la infraestructura de~\TI?}                                                                                                                                                                           &
+		\textit{ \textquestiondown Cuáles son los trabajos relacionados con herramientas tecnológicas de mayor tendencia asociados a Notaciónes de diseño en el contexto de la Infraestructura de~\TI?}                                                                                                                                                                           &
 		El estudio del impacto generado permite caracterizar de una manera más efectiva aquellas características fundamentales presentes en estas herramientas tecnológicas que optimizan el desarrollo de estos trabajos relacionados.                                                                                                                                                           \\ \hline
 	\end{tabular}
 	\caption{Definición de preguntas de investigación del SMS}
@@ -60,10 +60,10 @@ Objetivo-Pregunta-Métrica (\textit{goal-question-metric}, GQM) que permite vinc
 	\begin{tabular}{|c|p{13cm}|} % Total: 14cm
 		\hline
 		\textbf{Métrica} & \textbf{Descripción}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           \\ \hline
-		M1               & Cantidad de trabajos relacionados a metodologías asociadas a notaciones de diseño de \TI. \\ \hline
-		M2               & Cantidad de trabajos relacionados con herramientas asociadas a notaciones de diseño de \TI.                                                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
-		M3               & Cantidad de trabajos relacionados con enfoques asociadas a notaciones de diseño de \TI.                                                                                                                                                                                                                                                                                                                                                                                                           \\ \hline
-		M4               & Cantidad de trabajos relacionados con tendencias asociadas a notaciones de diseño de \TI.                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
+		M1               & Cantidad de trabajos relacionados a metodologías asociadas a Notaciónes de diseño de \TI. \\ \hline
+		M2               & Cantidad de trabajos relacionados con herramientas asociadas a Notaciónes de diseño de \TI.                                                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+		M3               & Cantidad de trabajos relacionados con enfoques asociados a Notaciónes de diseño de \TI.                                                                                                                                                                                                                                                                                                                                                                                                           \\ \hline
+		M4               & Cantidad de trabajos relacionados con tendencias asociadas a Notaciónes de diseño de \TI.                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 	\end{tabular}
 	\caption{Definición de métricas del SMS}
 	\label{tab:metricas}
@@ -102,7 +102,7 @@ En esta fase del proceso fue necesario definir un marco metodológico que facili
 		\hline
 		\textbf{Componente} & \textbf{Descripción}                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
 
-		Población           & Trabajos relacionados con metodologías, herramientas y tecnologías asociadas con notaciones de diseño de \TI.                                                  \\ \hline
+		Población           & Trabajos relacionados con metodologías, herramientas y tecnologías asociadas con Notaciónes de diseño de \TI.                                                  \\ \hline
 
 		Intervención        & Identificación y clasificación de los trabajos de \NDITI según una taxonomía establecida. \\ \hline
 
@@ -111,7 +111,7 @@ En esta fase del proceso fue necesario definir un marco metodológico que facili
 		\textbf{2.} Verificar trabajos asociados con \NDITI's a través de la relación de estos con los parámetros de título, abstract y keywords.
 		\textbf{3.} Analizar la tendencia de uso de \NDITI's mediante trabajos asociados al contexto de computación, networking y los casos de negocios.                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 		Salida              & Taxonomía de clasificación de trabajos relacionados con NDITI según metodologías, herramientas y/o tecnologías.                       \\ \hline
-		Contexto            & Computación, networking y casos de negocios con relación a metodologías, herramientas y tecnologías asociadas con notaciones de diseño de TI.                                                                                                                     \\ \hline
+		Contexto            & Computación, networking y casos de negocios con relación a metodologías, herramientas y tecnologías asociadas con Notaciónes de diseño de TI.                                                                                                                     \\ \hline
 	\end{tabular}
 	\caption{Modelo PICOC}
 	\label{table:modelo-picoc}
@@ -132,14 +132,14 @@ En esta fase del proceso fue necesario definir un marco metodológico que facili
 		- Metodología \newline
 		- Herramienta \newline
 		- Tecnología \newline
-		- Notaciones \newline
+		- Notaciónes \newline
 		- Diseño \newline
 		- \TI 													   \\
 		\hline
 		Intervención                    &
 		- Identificación  \newline
 		- Clasificación  \newline
-		- Taxonomia                                               \\
+		- Taxonomía                                               \\
 		\hline
 		Criterios de aceptación         &
 		- Casos de estudio culminados                             \\
@@ -159,7 +159,7 @@ En esta fase del proceso fue necesario definir un marco metodológico que facili
 		- Metodología  \newline
 		- Herramienta  \newline
 		- Tecnología  \newline
-		- Notacion \newline
+		- Notación \newline
 		- Diseño \newline
 		- \TI                                               \\
 		\hline
@@ -168,7 +168,7 @@ En esta fase del proceso fue necesario definir un marco metodológico que facili
 	\label{table:keywords-picoc}
 \end{table}
 
-Las palabras clave definidas a partir del modelo PICOC (ver cuadro~\ref{table:keywords-picoc}) fueron ampliadas mediante la incorporación de sinónimos y términos relacionados, los cuales se presentan en el cuadro~\ref{tab:keywords} y fueron utilizadas para construir las cadenas de búsqueda específicas aplicadas en cada una de las bases de datos seleccionadas.
+Las palabras clave definidas a partir del modelo PICOC (ver cuadro~\ref{table:keywords-picoc}) fueron ampliadas mediante la incorporación de sinónimos y términos relacionados, los cuales se presentan en el cuadro~\ref{tab:keywords} y fueron utilizados para construir las cadenas de búsqueda específicas aplicadas en cada una de las bases de datos seleccionadas.
 
 %# TABLA Keywoords para las cadenas de búsqueda,
 \begin{table}[H]
@@ -196,7 +196,7 @@ Las palabras clave definidas a partir del modelo PICOC (ver cuadro~\ref{table:ke
 
 
 \noindent
-Con el propósito de filtrar los resultados y enfocarse en estudios relevantes garantizando su calidad, se establecieron criterios de inclusión y exclusión, los cuales se detallan en el cuadro~\ref{table:criterios-inclusion-exclusion}. Estos parámetros permitieron filtrar los resultados obtenidos, priorizando los artículos que se alinean con los objetivos del~\SMS~y excluyendo aquellos que no contribuyen significativamente al análisis.
+Con el propósito de filtrar los resultados y enfocarse en estudios relevantes garantizando su calidad, se establecieron criterios de inclusión y exclusión, los cuales se detallan en el cuadro~\ref{table:criterios-inclusión-exclusion}. Estos parámetros permitieron filtrar los resultados obtenidos, priorizando los artículos que se alinean con los objetivos del~\SMS~y excluyendo aquellos que no contribuyen significativamente al análisis.
 
 % TABLA Criterios de inclusión y exclusión
 \begin{table}[H]
@@ -214,7 +214,7 @@ Con el propósito de filtrar los resultados y enfocarse en estudios relevantes g
 		Idioma              & Inglés                     & -                                                                                                                           \\
 		\hline
 	\end{tabular}
-	\label{table:criterios-inclusion-exclusion}
+	\label{table:criterios-inclusión-exclusion}
 \end{table}
 
 
@@ -234,7 +234,7 @@ Las cadenas de búsqueda específicas para cada base de datos se encuentran en l
 
 \subsubsection{Métricas de la búsqueda sin criterios de inclusión/exclusión}\label{subsubsec:resumenBusqueda}
 \noindent
-La Tabla~\ref{table:bases-sin-exclusion} presenta el número de publicaciones identificadas en las principales bases de datos consultadas durante la revisión inicial de literatura, antes de aplicar los criterios de inclusión y exclusión. En total se recuperaron 847 registros, distribuidos de la siguiente manera: ACM (2166), IEEE (1990), Springer (3961), Science Direct (5524) y Taylor \& Francis (5). Estos resultados se evidencian en el apéndice~\ref{sec:busqueda-sin-criterios}.
+La Tabla~\ref{table:bases-sin-exclusion} presenta el número de publicaciones identificadas en las principales bases de datos consultadas durante la revisión inicial de literatura, antes de aplicar los criterios de inclusión y exclusión. En total se recuperaron 13376 registros, distribuidos de la siguiente manera: ACM (2166), IEEE (1990), Springer (3961), Science Direct (5524) y Taylor \& Francis (5). Estos resultados se evidencian en el apéndice~\ref{sec:busqueda-sin-criterios}.
 
 % TABLA Resultados de busqueda sin exclusión
 \begin{table}[H]
@@ -259,7 +259,7 @@ La Tabla~\ref{table:bases-sin-exclusion} presenta el número de publicaciones id
 
 \subsubsection{Métricas de la búsqueda con criterios de inclusión/exclusión}\label{subsec:resumenBusquedaCriterios}
 \noindent
-Esta búsqueda llevó a cabo aplicando los criterios de inclusión y exclusión previamente establecidos, manteniendo las mismas cadenas de búsqueda utilizadas en la fase inicial. La diferencia principal radica en la aplicación de filtros. Para ver las capturas de pantalla veáse el apéndice~\ref{sec:busqueda-con-criterios}.
+Esta búsqueda se llevó a cabo aplicando los criterios de inclusión y exclusión previamente establecidos, manteniendo las mismas cadenas de búsqueda utilizadas en la fase inicial. La diferencia principal radica en la aplicación de filtros. Para ver las capturas de pantalla véase el apéndice~\ref{sec:busqueda-con-criterios}.
 La Tabla~\ref{table:bases-con-exclusion} resume los resultados obtenidos tras la aplicación de dichos criterios. En contraste con la búsqueda inicial, esta fase permitió reducir considerablemente la cantidad de publicaciones relevantes. En total se identificaron 976 documentos, distribuidos en las bases de datos de la siguiente manera: ACM (135), IEEE (63), Springer (127), Science Direct (231) y Taylor \& Francis (3).
 
 % TABLA Bases de datos con inclusión
@@ -279,7 +279,7 @@ La Tabla~\ref{table:bases-con-exclusion} resume los resultados obtenidos tras la
 	\end{tabular}
 \end{table}
 
-El fruto del proceso logrado en la búsqueda de bases de datos puede verse en la figura \ref{fig:resumen-busqueda-bases-de-datos}. Como se puede observar, luego de aplicación de los criterios de exclusión, se perdieron 12817 estudios, un perdida porcentual del 95.73\% respecto los resultados de la búsqueda inicial.
+El fruto del proceso logrado en la búsqueda de bases de datos puede verse en la figura \ref{fig:resumen-busqueda-bases-de-datos}. Como se puede observar, luego de aplicación de los criterios de exclusión, se perdieron 12817 estudios, una pérdida porcentual del 95.73\% respecto los resultados de la búsqueda inicial.
 
 % FIGURA de resultados de ambos procesos de busqueda con y sin criterios.
 \begin{figure}[H]
@@ -293,7 +293,7 @@ El fruto del proceso logrado en la búsqueda de bases de datos puede verse en la
 
 \section{Eliminación de duplicados}\label{sec:eliminacionDuplicados}
 \noindent
-La eliminación de estudios duplicados se efectuó mediante la herramienta de gestión bibliográfica Mendeley. Tras la recopilación inicial, todos los artículos fueron importados a dicha plataforma, la cual identificó y eliminó automáticamente las publicaciones redundantes. Este proceso resultó en la exclusión de \textbf{sesenta y tres} artículos duplicados, reduciendo el total de estudio a 496. La figura \ref{fig:eliminacion-duplicados} presenta una visualización gráfica de estos resultados.
+La eliminación de estudios duplicados se efectuó mediante la herramienta de gestión bibliográfica Mendeley. Tras la recopilación inicial, todos los artículos fueron importados a dicha plataforma, la cual identificó y eliminó automáticamente las publicaciones redundantes. Este proceso resultó en la exclusión de \textbf{sesenta y tres} artículos duplicados, reduciendo el total de estudios a 496. La figura \ref{fig:eliminacion-duplicados} presenta una visualización gráfica de estos resultados.
 
 
 % FIGURA Eliminación de duplicados
@@ -322,7 +322,7 @@ Este proceso inició con un total de 496 artículos, los cuales fueron evaluados
 \section{Estrategia de búsqueda usando bola de nieve}\label{sec:bolaDeNieve}
 \noindent
 
-En esta etapa, se seleccionaron los artículos cuya evaluación~\SCI~es alta, obteniendo un total de 15 artículos que constituyeron la línea base para el proceso de búsqueda por bola de nieve. A partir de esta base, se aplicó la estrategia de bola de nieve en ambas direcciones: hacia adelante (revisando referencias citadas por los artículos base) y hacia atrás (identificando artículos que citan a los de la base). Esta estrategia permitio la inclusion de cuarenta y dos estudios mediante la técnica hacia adelante y veintiún estudios mediante la técnica hacia adelante. En total, el proceso de bola de nieve generó 63 artículos adicionales. Sumando estos resultados a los 68 artículos previamente filtrados por \SCI, se obtuvo un corpus final de 131 artículos para el análisis.
+En esta etapa, se seleccionaron los artículos cuya evaluación~\SCI~es alta, obteniendo un total de 15 artículos que constituyeron la línea base para el proceso de búsqueda por bola de nieve. A partir de esta base, se aplicó la estrategia de bola de nieve en ambas direcciones: hacia adelante (revisando referencias citadas por los artículos base) y hacia atrás (identificando artículos que citan a los de la base). Esta estrategia permitió la inclusión de cuarenta y dos estudios mediante la técnica hacia adelante y veintiún estudios mediante la técnica hacia atrás. En total, el proceso de bola de nieve generó 63 artículos adicionales. Sumando estos resultados a los 68 artículos previamente filtrados por \SCI, se obtuvo un corpus final de 131 artículos para el análisis.
 
 El resumen de este proceso puede verse en la figura \ref{fig:resumen-snowball}
 
@@ -404,12 +404,12 @@ A continuación se presentan las gráficas de los resultados de la búsqueda. En
 
 \subsection{Diferencias entre estrategias}
 
-En la figura \ref{fig:plot-estrategia_vs_articulos} se pude apreciar la cantidad de artículos obtenido por cada
+En la figura \ref{fig:plot-estrategia_vs_articulos} se puede apreciar la cantidad de artículos obtenidos por cada
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.3] {tablas-images/sms/plot-estrategia_vs_articulos.png}
-	\caption{Diagrama del proceso de eliminación de resultados}\label{fig:plot-estrategia_vs_articulos}
+	\caption{Diagrama diferencas entre las estrategias}\label{fig:plot-estrategia_vs_articulos}
 \end{figure}
 
 \subsection{Tópicos frecuentes en los estudios}
@@ -420,7 +420,7 @@ Del conjunto de 131 estudios analizados, se identificaron tópicos recurrentes m
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.3] {tablas-images/sms/plot-topicos.png}
-	\caption{Diagrama del proceso de eliminación de resultados}\label{fig:plot-topicos}
+	\caption{Diagrama de tópicos frecuentes en los estudios }\label{fig:plot-topicos}
 \end{figure}
 
 
@@ -430,18 +430,18 @@ Respecto al Cumplimiento con las preguntas de investigación (RQ) planteadas en 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.3] {tablas-images/sms/plot-venn-RQs.png}
-	\caption{Diagrama del proceso de eliminación de resultados}\label{fig:plot-venn-RQs}
+	\caption{Diagrama de conformidad con las preguntas de investigación}\label{fig:plot-venn-RQs}
 \end{figure}
 
 
 \subsection{Taxonomía}
 
-Con base en los resultados obetenidos hasta ahora en el proceso \SMS se consideró oportuno la construcción de un taxonomía que ayudase a clasificar aquellos topicos frecuentes encontrados en la literatura alrededor de las notaciones de diseño de infraestructura de TI. Dicha taxonomía se puede ver en la figura \ref{fig:taxonomia}
+Con base en los resultados obtenidos hasta ahora en el proceso~\SMS~se consideró oportuno construir una taxonomía que ayudase a clasificar aquellos tópicos frecuentes encontrados en la literatura alrededor de las Notaciónes de diseño de Infraestructura de TI. Dicha taxonomía se puede ver en la figura \ref{fig:Taxonomía}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.15] {tablas-images/sms/taxonomia.png}
-	\caption{Taxonomía de los tópicos identificados en el \SMS}\label{fig:taxonomia}
+	\caption{Taxonomía de los tópicos identificados en el \SMS}\label{fig:Taxonomia}
 \end{figure}
 
 
@@ -451,7 +451,7 @@ Con base en los resultados obetenidos hasta ahora en el proceso \SMS se consider
 \section{Información de la herramienta}
 
 \noindent
-La herramienta utilizada para este proceso de revisión de la literatura fue \textbf{SMS-BUILDER}, desarrollada por el Dr. Christian Andres Candela Uribe la cual se encuentra disponible en \textit{Docker Hub}. La imagen puede consultarse en el siguiente enlace:
+La herramienta utilizada para este proceso de revisión de la literatura fue \textbf{SMS-BUILDER}, desarrollada por el Dr. Christian Andrés Candela Uribe, la cual se encuentra disponible en \textit{Docker Hub}. La imagen puede consultarse en el siguiente enlace:
 
 \begin{center}
 	\href{https://hub.docker.com/r/griduq/sms-builder}{\texttt{https://hub.docker.com/r/griduq/sms-builder}}
@@ -474,4 +474,12 @@ Adicionalmente, se implementaron procesos de respaldo como medida de seguridad. 
 
 \section{Conclusiones de la revisión sistemática de la literatura}
 \noindent
-Esta revisión sistemática de la literatura sobre Notaciones de Diseño de infraestructura de TI logró identificar y analizar 131 estudios relevantes de un total inicial de 559 documentos recuperados de cinco bases de datos académicas principales. El proceso metodológico incluyó la aplicación de criterios de inclusión y exclusión que redujeron el corpus inicial en un 95.73\%, seguido de la eliminación de duplicados y la aplicación de estrategias complementarias como la búsqueda por bola de nieve. Los resultados revelan que la base de datos Science Direct fue la fuente más productiva con el 41.29\% de los artículos iniciales, mientras que Taylor \& Francis no proporcionaron casi contribuciones significativas con las cadenas de búsqueda empleadas, representando unicamente el 0.03\%. El análisis temático identificó como tópicos predominantes \textbf{Model, \HPC, Methodology, \HTC, y Notation}, evidenciando una concentración de la investigación en estas áreas específicas. Respecto al cumplimiento de las preguntas de investigación, 118 estudios seleccionados (90.07\%) respondieron a RQ1 (trabajos relacionados con metodologíasenfocatadas a una \NDITI), mientras que 130 estudios (99.23\%) abordaron RQ2 (Trabajos relacionados con herramientas tecnológicas de mayor tendencia), lo que sugiere un interes significativo en la literatura tanto sobre las metodologías como tecnologías que guardan relación con las~\NDITI~en diferentes contextos. La distribución temporal de las publicaciones y la diversidad de métricas de calidad aplicadas confirman la relevancia y actualidad del tema de investigación, proporcionando una base sólida para el desarrollo de taxonomías y marcos de trabajo en el dominio de infraestructura de TI.
+Esta revisión sistemática de la literatura sobre Notaciónes de Diseño de Infraestructura de TI permitió identificar y analizar 131 estudios relevantes de un total inicial de 13376 documentos recuperados de cinco bases de datos académicas principales. 
+
+El proceso metodológico incluyó la aplicación de criterios de inclusión y exclusión que redujeron el corpus inicial en un 95.73\%, seguido de la eliminación de duplicados y la aplicación de estrategias complementarias como la búsqueda por bola de nieve. 
+
+Los resultados revelan que la base de datos Science Direct fue la fuente más productiva con el 41.29\% de los artículos iniciales, mientras que Taylor \& Francis no proporcionaron casi contribuciones significativas con las cadenas de búsqueda empleadas, representando únicamente el 0.03\%. 
+
+El análisis temático identificó como tópicos predominantes \textbf{Archimate, \UML{} y BPMN}, evidenciando una concentración de la investigación en estas áreas específicas. 
+
+Respecto al cumplimiento de las preguntas de investigación, 118 estudios seleccionados (90.07\%) respondieron a RQ1 (trabajos relacionados con metodologías enfocadas a una~\NDITI), mientras que 130 estudios (99.23\%) abordaron RQ2 (Trabajos relacionados con herramientas tecnológicas de mayor tendencia), lo que sugiere un interés significativo en la literatura tanto metodologías como tecnologías relacionadas con~\NDITI~en diferentes contextos. La distribución temporal de las publicaciones y la diversidad de métricas de calidad aplicadas confirman la relevancia y actualidad del tema de investigación, proporcionando una base sólida para el desarrollo de taxonomías y marcos de trabajo en el dominio de Infraestructura de~\TI.
