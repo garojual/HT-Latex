@@ -4,32 +4,32 @@
 \section{Caracterización del Grupo~\GRID~e identificación de necesidades}
 \noindent
 
-La caracterización del Grupo de Investigación en Redes, Información y Distribución (\GRID) se desarrolló con el objetivo de contextualizar la propuesta de la notación NDTI dentro del entorno académico en el cual será aplicada, así como identificar las necesidades específicas relacionadas con el modelado de arquitecturas de TI en el programa de Ingeniería de Sistemas y Computación.
+La caracterización del Grupo de Investigación en Redes, Información y Distribución (\GRID) se desarrolló con el objetivo de contextualizar la propuesta de la notación~\NDITI~dentro del entorno académico en el cual será aplicada, así como identificar las necesidades específicas relacionadas con el modelado de arquitecturas de TI en el programa de Ingeniería de Sistemas y Computación.
 
 El Grupo~\GRID~orienta su actividad investigativa hacia áreas como redes de computadores, sistemas operativos, sistemas distribuidos y seguridad informática. Estas áreas implican el análisis y diseño de sistemas complejos que abarcan múltiples niveles de abstracción, desde la infraestructura física hasta la lógica de aplicaciones y los procesos organizacionales. En consecuencia, el modelado de estos sistemas constituye una actividad fundamental tanto en el ámbito investigativo como en el formativo.
 
-A pesar de la relevancia del modelado dentro de estas áreas, no existe actualmente una notación unificada que permita representar de manera coherente los distintos componentes de la infraestructura de TI dentro del contexto académico del programa. Esta situación genera una fragmentación en la forma en que se conceptualizan y comunican las arquitecturas, dificultando la comprensión integral de los sistemas por parte de los equipos de trabajo.
+A pesar de la relevancia del modelado dentro de estas áreas, no existe actualmente una notación unificada que permita representar de manera coherente los distintos componentes de la Infraestructura de~\TI dentro del contexto académico del programa. Esta situación genera una fragmentación en la forma en que se conceptualizan y comunican las arquitecturas, dificultando la comprensión integral de los sistemas por parte de los equipos de trabajo.
 
-Con el fin de identificar de manera precisa estas problemáticas, se realizó un proceso de recolección de información con los integrantes del Grupo \GRID, enfocado en analizar su relación con el currículo, las herramientas de modelado utilizadas, sus preferencias, y las dificultades asociadas a la representación de infraestructuras tecnológicas. Este análisis permitió evidenciar no solo la diversidad de enfoques existentes, sino también la necesidad de una herramienta que articule de forma clara los distintos niveles de la arquitectura.
+Con el fin de identificar de manera precisa estas problemáticas, se realizó un proceso de recolección de información con los integrantes del Grupo \GRID, enfocado en analizar su relación con el currículo, las herramientas de modelado utilizadas, sus preferencias, y las dificultades asociadas a la representación de infraestructuras tecnológicas. Este análisis permitió demostrar no solo la diversidad de enfoques existentes, sino también la necesidad de una herramienta que articule de forma clara los distintos niveles de la arquitectura.
 
-A partir de esta caracterización, se establecen los requerimientos funcionales y conceptuales que fundamentan el diseño de la notación NDTI, orientada a ofrecer una solución que combine claridad semántica, capacidad de integración multicapa y aplicabilidad en contextos educativos.
+A partir de esta caracterización, se establecen los requerimientos funcionales y conceptuales que fundamentan el diseño de la notación~\NDITI{}, orientada a representar con claridad los distintos niveles de la infraestructura, integrando capas y adaptándose a contextos formativos.
 
 En las siguientes subsecciones se presentan los resultados detallados de este proceso de caracterización, organizados en torno a diferentes dimensiones de análisis.
 
 \section{Revisión sistemática de la literatura}
 \noindent
 
-Con el propósito de fundamentar el desarrollo de la notación NDTI y garantizar decisiones de diseño respaldadas en evidencia, se llevó a cabo un \textbf{estudio de mapeo sistemático (SMS)} orientado a identificar, clasificar y analizar trabajos relacionados con notaciones, metodologías y herramientas de modelado en el contexto de la infraestructura de TI.
+Con el propósito de fundamentar el desarrollo de la notación~\NDITI~y garantizar decisiones de diseño respaldadas en evidencia, se llevó a cabo un \textbf{estudio de mapeo sistemático (SMS)} orientado a identificar, clasificar y analizar trabajos relacionados con notaciones, metodologías y herramientas de modelado en el contexto de la Infraestructura de~\TI.
 
 Este estudio se desarrolló siguiendo un enfoque metodológico estructurado, basado en el modelo Goal-Question-Metric (GQM), el cual permitió definir de manera explícita las metas del análisis, las preguntas de investigación y las métricas utilizadas para evaluar los resultados. A partir de esta base, se diseñó una estrategia de búsqueda combinada que integró consultas en bases de datos académicas reconocidas (ACM, IEEE Xplore, Springer, ScienceDirect y Taylor \& Francis), junto con la técnica de búsqueda por bola de nieve, con el fin de ampliar la cobertura y garantizar la inclusión de estudios relevantes.
 
 Como resultado de la aplicación de las cadenas de búsqueda, se identificó un conjunto inicial de 13\,376 registros. Tras la aplicación de criterios de inclusión y exclusión, este conjunto se redujo a 559 estudios potencialmente relevantes. Posteriormente, la eliminación de duplicados y el proceso de priorización basado en métricas de calidad permitieron identificar 68 estudios directamente alineados con los objetivos de la investigación. Finalmente, mediante la aplicación de la estrategia de bola de nieve, se incorporaron 63 estudios adicionales, consolidando un corpus final de 131 artículos para su análisis.
 
-El análisis de los estudios seleccionados permitió identificar tendencias relevantes en el uso de metodologías, herramientas y enfoques de modelado en el ámbito de la infraestructura de TI. Entre los principales hallazgos se destaca la predominancia de enfoques centrados en modelos, metodologías y notaciones, así como la presencia de áreas relacionadas como HPC y HTC, las cuales evidencian la diversidad de contextos en los que se aplican soluciones de modelado.
+El análisis de los estudios seleccionados permitió identificar tendencias relevantes en el uso de metodologías, herramientas y enfoques de modelado en el ámbito de la Infraestructura de~\TI. Entre los principales hallazgos se destaca la predominancia de enfoques centrados en modelos, metodologías y notaciones, las cuales evidencian la diversidad de contextos en los que se aplican soluciones de modelado.
 
-Asimismo, se observó una alta cobertura de las preguntas de investigación planteadas, donde el 90.07\% de los estudios abordaron aspectos relacionados con metodologías de modelado (RQ1), mientras que el 99.23\% evidenciaron el uso o análisis de herramientas tecnológicas asociadas (RQ2). Estos resultados reflejan un interés significativo en la literatura por el desarrollo de soluciones de modelado, aunque también ponen en evidencia la falta de estandarización y la fragmentación de enfoques en el diseño de infraestructura de TI.
+Asimismo, se observó una alta cobertura de las preguntas de investigación planteadas, donde el 90.07\% de los estudios abordaron aspectos relacionados con metodologías de modelado (RQ1), mientras que el 99,23\% evidenciaron el uso o análisis de herramientas tecnológicas asociadas (RQ2). Estos resultados reflejan un interés significativo en la literatura por el desarrollo de soluciones de modelado, aunque también ponen en evidencia la falta de estandarización y la fragmentación de enfoques en el diseño de Infraestructura de~\TI.
 
-En conjunto, los resultados del SMS evidencian la necesidad de contar con una notación que integre múltiples dimensiones del modelado de infraestructura, proporcionando coherencia semántica, capacidad de integración entre capas y facilidad de uso en contextos académicos y prácticos. Esta necesidad constituye el principal fundamento para el desarrollo de la notación NDTI propuesta en este trabajo.
+En conjunto, los resultados del SMS evidencian la necesidad de contar con una notación que integre múltiples dimensiones del modelado de infraestructura, proporcionando coherencia semántica, capacidad de integración entre capas y facilidad de uso en contextos académicos y prácticos. Esta necesidad constituye el principal fundamento para el desarrollo de la notación~\NDITI~propuesta en este trabajo.
 
 \section{Análisis de Decisiones y Resolución (DAR)}
 \noindent
@@ -40,15 +40,15 @@ El proceso de evaluación sistemática evidenció que las notaciones \textbf{UML
 
 Ante esta situación, se adoptó una decisión de diseño basada en la combinación de enfoques, seleccionando a \textit{ArchiMate} como eje estructural de la propuesta debido a su madurez como estándar, su capacidad de modelado multicapa y su cobertura de diferentes niveles de abstracción. Esta base se complementa con principios y elementos provenientes de \textit{UML} y \textit{BPMN}, con el fin de fortalecer aspectos específicos relacionados con la claridad estructural y la representación de procesos.
 
-Los criterios que favorecieron esta decisión incluyen la amplia disponibilidad de documentación, el respaldo institucional de las notaciones evaluadas, su adopción en contextos académicos y profesionales, así como la complementariedad entre sus capacidades de modelado. De esta manera, la propuesta \NDITI~se fundamenta en una integración controlada de enfoques, orientada a maximizar su aplicabilidad en el contexto académico y técnico del proyecto.
+Los criterios que favorecieron esta decisión incluyen la disponibilidad de documentación, el respaldo institucional y la complementariedad de sus capacidades. De esta manera, la propuesta \NDITI~se fundamenta en una integración controlada de enfoques, orientada a maximizar su aplicabilidad en el contexto académico y técnico del proyecto.
 
 \section{Resultados de la evaluación}
 \noindent
-En esta sección se presentan los resultados obtenidos a partir de la aplicación del ejercicio de diagramación y la encuesta de percepción, organizados en dos dimensiones: (i) desempeño en la actividad de modelado y (ii) percepción de los participantes sobre la notación NDTI.
+En esta sección se presentan los resultados obtenidos a partir de la aplicación del ejercicio de diagramación y la encuesta de percepción, organizados en dos dimensiones: (i) desempeño en la actividad de modelado y (ii) percepción de los participantes sobre la notación~\NDITI.
 
 \subsection{Resultados de la actividad de diagramación}
 \noindent
-El análisis de los diagramas se realizó de forma comparativa entre el grupo experimental (uso de la notación NDTI) y el grupo de referencia (diagramación libre), con base en los criterios definidos en la sección metodológica.
+El análisis de los diagramas se realizó de forma comparativa entre el grupo experimental (uso de la notación~\NDITI) y el grupo de referencia (diagramación libre), con base en los criterios definidos en la sección metodológica.
 
 \subsubsection{Resumen general de resultados}
 \noindent
@@ -62,16 +62,16 @@ En la Tabla~\ref{tab:resumen_diagramacion} se presenta el resumen de los resulta
 \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|}
 
 \hline
-\multirow{2}{*}{\textbf{Criterio}} & \multicolumn{5}{c|}{\textbf{Grupo NDTI}} & \multirow{2}{*}{\textbf{Prom.}} & \multicolumn{5}{c|}{\textbf{Grupo Libre}} & \multirow{2}{*}{\textbf{Prom.}} \\
+\multirow{2}{*}{\textbf{Criterio}} & \multicolumn{5}{c|}{\textbf{Grupo~\NDITI}} & \multirow{2}{*}{\textbf{Prom.}} & \multicolumn{5}{c|}{\textbf{Grupo Libre}} & \multirow{2}{*}{\textbf{Prom.}} \\
 \cline{2-6} \cline{8-12}
  & G1 & G2 & G3 & G4 & G5 & & G1 & G2 & G3 & G4 & G5 & \\
 \hline
-Correspondencia con el enunciado & 5 & 4 & 4 & 5 & 5 & \textbf{4.6} & 3 & 4 & 4 & 3 & 4 & \textbf{3.6} \\
-Estructuración del modelo        & 5 & 4 & 4 & 5 & 5 & \textbf{4.6} & 2 & 4 & 3 & 2 & 4 & \textbf{3.0} \\
-Representación de relaciones     & 4 & 4 & 3 & 4 & 5 & \textbf{4.0} & 3 & 5 & 4 & 2 & 3 & \textbf{3.4} \\
-Completitud del modelo           & 5 & 4 & 4 & 5 & 5 & \textbf{4.6} & 3 & 4 & 4 & 3 & 3 & \textbf{3.4} \\
+Correspondencia con el enunciado & 5 & 4 & 4 & 5 & 5 & \textbf{4,6} & 3 & 4 & 4 & 3 & 4 & \textbf{3,6} \\
+Estructuración del modelo        & 5 & 4 & 4 & 5 & 5 & \textbf{4,6} & 2 & 4 & 3 & 2 & 4 & \textbf{3,0} \\
+Representación de relaciones     & 4 & 4 & 3 & 4 & 5 & \textbf{4,0} & 3 & 5 & 4 & 2 & 3 & \textbf{3,4} \\
+Completitud del modelo           & 5 & 4 & 4 & 5 & 5 & \textbf{4,6} & 3 & 4 & 4 & 3 & 3 & \textbf{3,4} \\
 \hline
-\textbf{Promedio por grupo}      & 4.75 & 4.0 & 3.75 & 4.75 & 5.0 & \textbf{4.45} & 2.75 & 4.25 & 3.75 & 2.50 & 3.50 & \textbf{3.35} \\
+\textbf{Promedio por grupo}      & 4,75 & 4,0 & 3,75 & 4,75 & 5,0 & \textbf{4,45} & 21,75 & 4,25 & 3,75 & 21,50 & 3,50 & \textbf{3,35} \\
 \hline
 
 \end{tabular}
@@ -88,17 +88,17 @@ Los puntajes presentados corresponden a una escala de evaluación de 1 a 5, defi
 \noindent
 A partir de la revisión de los diagramas elaborados por los participantes, se identificaron patrones relevantes en la forma en que ambos grupos abordaron la representación del problema.
 
-\subsubsection{Grupo con notación NDTI}
+\subsubsection{Grupo con notación~\NDITI}
 \noindent
-Los diagramas elaborados por los participantes que utilizaron la notación NDTI evidencian un alto nivel de consistencia en la organización del modelo. En la mayoría de los casos, se observa una separación clara entre los elementos correspondientes a las capas de negocio, aplicación e infraestructura, lo cual facilita la comprensión general del sistema representado.
+Los diagramas elaborados por los participantes que utilizaron la notación~\NDITI~evidencian un alto nivel de consistencia en la organización del modelo. En la mayoría de los casos, se observa una separación clara entre los elementos correspondientes a las capas de negocio, aplicación e infraestructura, lo cual facilita la comprensión general del sistema representado.
 
 Adicionalmente, los modelos presentan una estructura uniforme en la disposición de los componentes, manteniendo una lógica jerárquica que permite identificar fácilmente la interacción entre los diferentes niveles del sistema. En cuanto a las relaciones, se evidencia una representación mayoritariamente coherente, con direcciones bien definidas y una interpretación consistente del flujo entre los elementos.
 
-En términos de completitud, cuatro de los cinco subgrupos lograron incluir la totalidad de los componentes principales del problema, obteniendo valoraciones de 4 y 5 en este criterio. El subgrupo con menor desempeño global (G3, promedio 3.75) presentó dificultades específicas en la representación de relaciones entre capas y en la representación del cliente como actor externo en la capa de negocio, lo cual sugiere que, pese a la guía que ofrece la notación, la interpretación de algunos elementos específicos puede requerir mayor acompañamiento en etapas iniciales de uso. Cabe destacar que el criterio de representación de relaciones fue el más variable dentro del grupo, con puntajes entre 3 y 5, lo que indica que este aspecto representa el principal reto de apropiación de la notación.
+En términos de completitud, cuatro de los cinco subgrupos lograron incluir la totalidad de los componentes principales del problema, obteniendo valoraciones de 4 y 5 en este criterio. El subgrupo con menor desempeño global (G3, promedio 3,75) presentó dificultades específicas en la representación de relaciones entre capas y en la representación del cliente como actor externo en la capa de negocio, lo cual sugiere que, pese a la guía que ofrece la notación, la interpretación de algunos elementos específicos puede requerir mayor acompañamiento en etapas iniciales de uso. Cabe destacar que el criterio de representación de relaciones fue el más variable dentro del grupo, con puntajes entre 3 y 5, lo que indica que este aspecto representa el principal reto de apropiación de la notación.
 
 \subsubsection{Grupo sin notación}
 \noindent
-En el grupo que no utilizó la notación NDTI se observa una mayor variabilidad en los diagramas producidos. Algunos participantes adoptaron enfoques cercanos a notaciones conocidas como ArchiMate, lo que permitió obtener representaciones relativamente estructuradas. Sin embargo, en otros casos se evidencian modelos más informales, con menor consistencia en la organización de los elementos.
+En el grupo que no utilizó la notación~\NDITI~se observa una mayor variabilidad en los diagramas producidos. Algunos participantes adoptaron enfoques cercanos a notaciones conocidas como ArchiMate, lo que permitió obtener representaciones relativamente estructuradas. Sin embargo, en otros casos se evidencian modelos más informales, con menor consistencia en la organización de los elementos.
 
 Una de las principales dificultades identificadas corresponde a la falta de una separación clara entre niveles del sistema, lo que genera mezclas entre componentes de negocio, aplicación e infraestructura. Asimismo, las relaciones entre elementos tienden a ser más ambiguas, debido al uso de conectores genéricos sin una semántica claramente definida.
 
@@ -106,16 +106,16 @@ En cuanto a la completitud, aunque varios diagramas logran capturar los elemento
 \noindent
 Es importante destacar que algunos participantes del grupo de referencia recurrieron a notaciones previamente conocidas, particularmente ArchiMate en su forma básica, lo cual influyó positivamente en la calidad de ciertos diagramas. Este comportamiento sugiere que la experiencia previa con lenguajes de modelado puede mitigar parcialmente la ausencia de una notación definida, aunque no elimina la variabilidad en los resultados.
 
-La variabilidad interna del grupo libre es notablemente mayor que la del grupo NDTI. Los promedios individuales oscilan entre 2.50 (G4) y 4.25 (G2), una diferencia de 1.75 puntos, frente a un rango de 1.25 puntos en el grupo NDTI (entre 3.75 y 5.0). El subgrupo con mejor desempeño del grupo libre (G2) obtuvo incluso la valoración más alta en representación de relaciones de todos los diagramas evaluados (5), gracias al uso de etiquetas textuales que describían explícitamente el tipo de relación entre elementos. Sin embargo, este caso aislado refuerza la conclusión general: la calidad del modelo en ausencia de notación depende en gran medida de la iniciativa y el conocimiento previo de los participantes, mientras que la notación NDTI ofrece un piso mínimo de calidad más elevado y consistente.
+La variabilidad interna del grupo libre es notablemente mayor que la del grupo~\NDITI. Los promedios individuales oscilan entre 21,50 (G4) y 4,25 (G2), una diferencia de 1,75 puntos, frente a un rango de 1,25 puntos en el grupo~\NDITI~(entre 3,75 y 5,0). El subgrupo con mejor desempeño del grupo libre (G2) obtuvo incluso la valoración más alta en representación de relaciones de todos los diagramas evaluados (5), gracias al uso de etiquetas textuales que describían explícitamente el tipo de relación entre elementos. Sin embargo, este caso aislado refuerza la conclusión general: la calidad del modelo en ausencia de notación depende en gran medida de la iniciativa y el conocimiento previo de los participantes, mientras que la notación~\NDITI~ofrece un piso mínimo de calidad más elevado y consistente.
 
 \subsubsection{Comparación entre grupos}
 \noindent
-La comparación entre ambos grupos permite identificar diferencias claras en la calidad y consistencia de los diagramas generados. El grupo que utilizó la notación NDTI presenta modelos más estructurados, con una organización por capas claramente definida y una mayor uniformidad en la representación de elementos y relaciones.
+La comparación entre ambos grupos permite identificar diferencias claras en la calidad y consistencia de los diagramas generados. El grupo que utilizó la notación~\NDITI~presenta modelos más estructurados, con una organización por capas claramente definida y una mayor uniformidad en la representación de elementos y relaciones.
 
 Por el contrario, el grupo sin notación muestra una mayor dispersión en los enfoques utilizados. Aunque algunos diagramas alcanzan un nivel adecuado de representación —principalmente aquellos influenciados por notaciones existentes—, en general se observa una menor claridad estructural y una mayor ambigüedad en las relaciones.
 
 \noindent
-Estos resultados sugieren que el uso de una notación definida como NDTI contribuye significativamente a mejorar la organización, la coherencia y la interpretabilidad de los modelos de infraestructura, reduciendo la variabilidad interna y facilitando la construcción de diagramas más consistentes. Esta diferencia es especialmente marcada en el criterio de estructuración del modelo, donde el grupo NDTI superó al grupo libre en 1.6 puntos en promedio, y donde la dispersión interna del grupo libre (puntajes entre 2 y 4) contrasta con la homogeneidad del grupo NDTI (puntajes entre 4 y 5 en cuatro de cinco subgrupos).
+Estos resultados sugieren que el uso de una notación definida como~\NDITI~contribuye significativamente a mejorar la organización, la coherencia y la interpretabilidad de los modelos de infraestructura, reduciendo la variabilidad interna y facilitando la construcción de diagramas más consistentes. Esta diferencia es especialmente marcada en el criterio de estructuración del modelo, donde el grupo~\NDITI~superó al grupo libre en 1,6 puntos en promedio, y donde la dispersión interna del grupo libre (puntajes entre 2 y 4) contrasta con la homogeneidad del grupo~\NDITI~(puntajes entre 4 y 5 en cuatro de cinco subgrupos).
 
 \noindent
 Las diferencias descritas pueden observarse en los ejemplos representativos presentados a continuación, donde se evidencian los patrones identificados en cada grupo.
@@ -124,14 +124,14 @@ Las diferencias descritas pueden observarse en los ejemplos representativos pres
 \centering
 \includegraphics[width=\linewidth,
         keepaspectratio]{tablas-images/diagramas/evaluacion/1S.png}
-\caption{Ejemplo de diagrama elaborado con la notación NDTI}
+\caption{Ejemplo de diagrama elaborado con la notación~\NDITI}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth,
         keepaspectratio]{tablas-images/diagramas/evaluacion/4S.png}
-\caption{Ejemplo de diagrama elaborado con la notación NDTI}
+\caption{Ejemplo de diagrama elaborado con la notación~\NDITI}
 \end{figure}
 
 \begin{figure}[H]
@@ -150,7 +150,7 @@ Las diferencias descritas pueden observarse en los ejemplos representativos pres
 
 \subsection{Resultados de la encuesta de percepción}
 \noindent
-La encuesta fue aplicada al grupo que utilizó la notación NDTI, con el fin de evaluar su experiencia en relación con los ejes definidos. La misma fue aplicada a los participantes del grupo experimental, conformado por cinco equipos de trabajo. De estos, se obtuvo respuesta por parte de cuatro equipos, lo que corresponde a una tasa de respuesta del 80\%. Los resultados presentados a continuación se basan en las respuestas recolectadas.
+La encuesta fue aplicada al grupo que utilizó la notación~\NDITI{} conformado por cinco equipos de trabajo con el fin de evaluar su experiencia en relación con los ejes definidos. De estos, se obtuvo respuesta por parte de cuatro equipos, lo que corresponde a una tasa de respuesta del 80\%. Los resultados presentados a continuación se basan en las respuestas recolectadas.
 
 \subsubsection{Resultados cuantitativos}
 \noindent
@@ -164,10 +164,10 @@ En la Tabla~\ref{tab:resultados_encuesta} se presentan los promedios obtenidos p
 \hline
 \textbf{Eje de evaluación} & \textbf{Promedio (1-5)} \\
 \hline
-Comprensión de la notación & [4.56] \\
-Uso de los elementos & [4.08] \\
-Expresividad y utilidad & [4.58] \\
-Experiencia general & [3.91] \\
+Comprensión de la notación & 4,56 \\
+Uso de los elementos & 4,08 \\
+Expresividad y utilidad & 4,58 \\
+Experiencia general & 3,91 \\
 \hline
 \end{tabular}
 \end{table}
@@ -175,7 +175,7 @@ Experiencia general & [3.91] \\
 \FloatBarrier
 
 \noindent
-De manera general, los resultados evidencian una valoración positiva de la notación NDTI por parte de los participantes, con promedios superiores a 4 en la mayoría de los ejes evaluados. Esto sugiere que la notación fue percibida como comprensible, útil y adecuada para la representación del problema planteado, aunque con algunas oportunidades de mejora en la experiencia de uso.
+De manera general, los resultados evidencian una valoración positiva de la notación~\NDITI~por parte de los participantes, con promedios superiores a 4 en la mayoría de los ejes evaluados. Esto sugiere que la notación fue percibida como comprensible, útil y adecuada para la representación del problema planteado, aunque con algunas oportunidades de mejora en la experiencia de uso.
 
 \begin{figure}[H]
 \centering
@@ -185,13 +185,13 @@ De manera general, los resultados evidencian una valoración positiva de la nota
 \end{figure}
 
 \noindent
-Como se observa en la Figura~\ref{fig:grafico_ejes}, el eje con mayor valoración corresponde a \textbf{Expresividad y utilidad} (4.58), seguido de \textbf{Comprensión de la notación} (4.56), lo que indica que los participantes no solo lograron entender la notación, sino que también la consideraron efectiva para representar el sistema propuesto. Por otro lado, el eje con menor puntaje fue \textbf{Experiencia general} (3.91), lo que sugiere la presencia de ciertas dificultades asociadas principalmente a la curva de aprendizaje o al uso inicial de la notación.
+Como se observa en la Figura~\ref{fig:grafico_ejes}, el eje con mayor valoración corresponde a \textbf{Expresividad y utilidad} (4,58), seguido de \textbf{Comprensión de la notación} (4,56), lo que indica que los participantes no solo lograron entender la notación, sino que también la consideraron efectiva para representar el sistema propuesto. Por otro lado, el eje con menor puntaje fue \textbf{Experiencia general} (3,91), lo que sugiere la presencia de ciertas dificultades asociadas principalmente a la curva de aprendizaje o al uso inicial de la notación.
 
 \subsubsection{Distribución de respuestas por eje}
 \noindent
 Con el fin de analizar en mayor detalle la percepción de los participantes, a continuación se presenta la distribución de respuestas para cada una de las afirmaciones agrupadas por eje de evaluación.
 \noindent
-Los resultados presentados corresponden a una consolidación de las respuestas individuales obtenidas en el formulario aplicado. Los gráficos mostrados sintetizan la distribución de respuestas por pregunta en cada eje de evaluación. Los resultados completos de la encuesta se incluyen en el Anexo X.
+Los resultados presentados corresponden a una consolidación de las respuestas individuales obtenidas en el formulario aplicado. Los gráficos mostrados sintetizan la distribución de respuestas por pregunta en cada eje de evaluación. Los resultados completos de la encuesta se incluyen en el Anexo~\autoref{anx:resultados_encuesta}.
 
 \subsubsection{Eje I -- Comprensión de la notación}
 
@@ -203,15 +203,14 @@ Los resultados presentados corresponden a una consolidación de las respuestas i
 \end{figure}
 
 \noindent
-La Figura~\ref{fig:comprension_notacion} presenta los resultados correspondientes al eje de evaluación relacionado con la comprensión de la notación NDTI.
 
-En términos generales, los resultados evidencian una valoración positiva por parte de los participantes, con promedios ubicados entre 4.0 y 5.0 en la escala Likert. Esto sugiere que la notación fue comprendida adecuadamente en el contexto del ejercicio.
+En términos generales, los resultados evidencian una valoración positiva por parte de los participantes, con promedios ubicados entre 4,0 y 5,0 en la escala Likert. Esto sugiere que la notación fue comprendida adecuadamente en el contexto del ejercicio.
 
-El aspecto mejor valorado corresponde a la utilidad de los ejemplos proporcionados, alcanzando un promedio cercano a 5.0, lo cual indica que estos desempeñaron un papel clave en la apropiación de la notación. Asimismo, la organización por capas presenta una valoración alta (aproximadamente 4.7), evidenciando que esta estructura contribuye significativamente a la comprensión del modelo.
+El aspecto mejor valorado corresponde a la utilidad de los ejemplos proporcionados, alcanzando un promedio cercano a 5,0, lo cual indica que estos desempeñaron un papel clave en la apropiación de la notación. Asimismo, la organización por capas presenta una valoración alta (aproximadamente 4,7), evidenciando que esta estructura contribuye significativamente a la comprensión del modelo.
 
-Por su parte, la claridad de los nombres y descripciones de los elementos, así como la facilidad general de entendimiento, obtienen valores ligeramente inferiores (alrededor de 4.5 y 4.0 respectivamente), lo que sugiere que, aunque adecuados, podrían beneficiarse de ajustes menores para mejorar su interpretación.
+Por su parte, la claridad de los nombres y descripciones de los elementos, así como la facilidad general de entendimiento, obtienen valores ligeramente inferiores (alrededor de 4,5 y 4,0 respectivamente), lo que sugiere que, aunque adecuados, podrían beneficiarse de ajustes menores para mejorar su interpretación.
 
-En conjunto, estos resultados indican que la notación NDTI es comprensible para los usuarios en etapas tempranas de uso, destacándose especialmente el apoyo de los ejemplos y la estructuración por capas como elementos facilitadores del aprendizaje.
+En conjunto, las respuestas correspondientes a este eje indican que la notación~\NDITI~es comprensible para los usuarios en etapas tempranas de uso, destacándose especialmente el apoyo de los ejemplos y la estructuración por capas como elementos facilitadores del aprendizaje.
 
 
 \subsubsection{Eje II -- Uso de los elementos}
@@ -224,15 +223,13 @@ En conjunto, estos resultados indican que la notación NDTI es comprensible para
 \end{figure}
 
 \noindent
-La Figura~\ref{fig:identificacion_elementos} presenta los resultados correspondientes al eje de evaluación relacionado con el uso de los elementos de la notación NDTI durante el ejercicio de modelado.
+En términos generales, los participantes otorgaron valoraciones positivas y homogéneas en los tres ítems evaluados, con promedios comprendidos entre 4,0 y 4,25 en la escala Likert. Esta consistencia sugiere que los elementos de la notación resultaron manejables y apropiados para la resolución del problema planteado.
 
-En términos generales, los participantes otorgaron valoraciones positivas y homogéneas en los tres ítems evaluados, con promedios comprendidos entre 4.0 y 4.25 en la escala Likert. Esta consistencia sugiere que los elementos de la notación resultaron manejables y apropiados para la resolución del problema planteado.
+El aspecto mejor valorado fue la adecuación en la cantidad de elementos disponibles, con un promedio aproximado de 4,25, lo que indica que los participantes percibieron el conjunto de elementos como suficiente y no excesivo para representar el sistema modelado. Este resultado es relevante, pues una notación sobrecargada o insuficiente en elementos tiende a dificultar su adopción en contextos de aprendizaje.
 
-El aspecto mejor valorado fue la adecuación en la cantidad de elementos disponibles, con un promedio aproximado de 4.25, lo que indica que los participantes percibieron el conjunto de elementos como suficiente y no excesivo para representar el sistema modelado. Este resultado es relevante, pues una notación sobrecargada o insuficiente en elementos tiende a dificultar su adopción en contextos de aprendizaje.
+La identificación de los elementos apropiados para representar el problema y la comodidad durante su uso obtuvieron valores equivalentes, ambos cercanos a 4,0. Aunque ligeramente inferiores al ítem anterior, siguen situándose en un rango favorable, lo que sugiere que los participantes lograron seleccionar y aplicar los elementos de manera funcional, si bien podrían existir oportunidades de mejora en la orientación inicial sobre cuándo y cómo emplear cada elemento.
 
-La identificación de los elementos apropiados para representar el problema y la comodidad durante su uso obtuvieron valores equivalentes, ambos cercanos a 4.0. Aunque ligeramente inferiores al ítem anterior, siguen situándose en un rango favorable, lo que sugiere que los participantes lograron seleccionar y aplicar los elementos de manera funcional, si bien podrían existir oportunidades de mejora en la orientación inicial sobre cuándo y cómo emplear cada elemento.
-
-En conjunto, los resultados de este eje indican que la notación NDTI ofrece un conjunto de elementos equilibrado y utilizable, con un nivel de comodidad de uso adecuado para usuarios en etapas iniciales de familiarización con la notación.
+En síntesis, los resultados indican que la notación~\NDITI~ofrece un conjunto de elementos equilibrado y utilizable, con un nivel de comodidad de uso adecuado para usuarios en etapas iniciales de familiarización con la notación.
 
 \subsubsection{Eje III -- Expresividad y utilidad}
 
@@ -244,15 +241,13 @@ En conjunto, los resultados de este eje indican que la notación NDTI ofrece un 
 \end{figure}
 
 \noindent
-La Figura~\ref{fig:expresividad_utilidad} presenta los resultados correspondientes al eje de evaluación relacionado con la expresividad y utilidad percibida de la notación NDTI.
+En términos generales, este eje concentra las valoraciones más altas de toda la encuesta, con promedios ubicados entre 4,5 y 4,75 en la escala Likert. Este patrón es especialmente significativo, pues refleja que los participantes no solo lograron utilizar la notación, sino que reconocen en ella un valor expresivo y práctico concreto.
 
-En términos generales, este eje concentra las valoraciones más altas de toda la encuesta, con promedios ubicados entre 4.5 y 4.75 en la escala Likert. Este patrón es especialmente significativo, pues refleja que los participantes no solo lograron utilizar la notación, sino que reconocen en ella un valor expresivo y práctico concreto.
+El ítem mejor valorado corresponde a la utilidad percibida de la notación para modelar sistemas reales, con un promedio aproximado de 4,75, Este resultado es particularmente relevante en el marco del proyecto, ya que uno de los objetivos centrales de la~\NDITI~es precisamente su aplicabilidad en contextos reales de diseño de Infraestructura de~\TI. Que los participantes, en una etapa temprana de uso, proyecten su utilidad más allá del ejercicio académico constituye un indicador favorable de la pertinencia de la propuesta.
 
-El ítem mejor valorado corresponde a la utilidad percibida de la notación para modelar sistemas reales, con un promedio aproximado de 4.75. Este resultado es particularmente relevante en el marco del proyecto, ya que uno de los objetivos centrales de la NDTI es precisamente su aplicabilidad en contextos reales de diseño de infraestructura de TI. Que los participantes, en una etapa temprana de uso, proyecten su utilidad más allá del ejercicio académico constituye un indicador favorable de la pertinencia de la propuesta.
+La capacidad de la notación para representar el problema de forma clara y para facilitar la comprensión del sistema representado obtuvieron valores equivalentes, ambos cercanos a 4,5, Estos resultados indican que la notación cumple satisfactoriamente con su función comunicativa, permitiendo a los usuarios expresar y transmitir la estructura del sistema modelado de manera comprensible.
 
-La capacidad de la notación para representar el problema de forma clara y para facilitar la comprensión del sistema representado obtuvieron valores equivalentes, ambos cercanos a 4.5. Estos resultados indican que la notación cumple satisfactoriamente con su función comunicativa, permitiendo a los usuarios expresar y transmitir la estructura del sistema modelado de manera comprensible.
-
-En conjunto, los resultados de este eje sugieren que la notación NDTI es percibida como una herramienta expresiva y útil, con potencial de aplicación en escenarios de modelado de infraestructura más complejos y representativos de entornos profesionales.
+Las respuestas proporcionadas sugieren que la notación~\NDITI~es percibida como una herramienta expresiva y útil, con potencial de aplicación en escenarios de modelado de infraestructura más complejos y representativos de entornos profesionales.
 
 \subsubsection{Eje IV -- Experiencia general}
 
@@ -264,23 +259,21 @@ En conjunto, los resultados de este eje sugieren que la notación NDTI es percib
 \end{figure}
 
 \noindent
-La Figura~\ref{fig:experiencia_general} presenta los resultados correspondientes al eje de evaluación relacionado con la experiencia general de uso de la notación NDTI.
+En términos generales, los promedios de este eje se ubican en un rango entre 3,5 y 4,25, siendo este el eje con la mayor dispersión interna entre los cuatro evaluados. Si bien los valores siguen siendo favorables en conjunto, la variación entre ítems ofrece información valiosa sobre aspectos específicos que pueden orientar mejoras en versiones futuras de la notación.
 
-En términos generales, los promedios de este eje se ubican en un rango entre 3.5 y 4.25, siendo este el eje con la mayor dispersión interna entre los cuatro evaluados. Si bien los valores siguen siendo favorables en conjunto, la variación entre ítems ofrece información valiosa sobre aspectos específicos que pueden orientar mejoras en versiones futuras de la notación.
+El ítem mejor valorado corresponde a la adecuación de la notación para estudiantes en formación, con un promedio aproximado de 4,25, Este resultado refuerza la pertinencia de la~\NDITI~como herramienta pedagógica, sugiriendo que los participantes la perciben como apropiada para el nivel de complejidad propio de un contexto educativo. En coherencia con lo observado en el Eje III, esta valoración consolida la proyección de la notación como un recurso viable tanto en etapas formativas como en aplicaciones de mayor alcance.
 
-El ítem mejor valorado corresponde a la adecuación de la notación para estudiantes en formación, con un promedio aproximado de 4.25. Este resultado refuerza la pertinencia de la NDTI como herramienta pedagógica, sugiriendo que los participantes la perciben como apropiada para el nivel de complejidad propio de un contexto educativo. En coherencia con lo observado en el Eje III, esta valoración consolida la proyección de la notación como un recurso viable tanto en etapas formativas como en aplicaciones de mayor alcance.
+El interés por utilizar la notación en otros contextos académicos obtuvo un promedio cercano a 4,0, lo que indica una disposición positiva hacia su reutilización. Este indicador es relevante pues refleja que la experiencia de uso generó una percepción suficientemente satisfactoria como para motivar su aplicación más allá del ejercicio puntual.
 
-El interés por utilizar la notación en otros contextos académicos obtuvo un promedio cercano a 4.0, lo que indica una disposición positiva hacia su reutilización. Este indicador es relevante pues refleja que la experiencia de uso generó una percepción suficientemente satisfactoria como para motivar su aplicación más allá del ejercicio puntual.
+El ítem con la valoración más baja del eje, y de toda la encuesta, corresponde a la facilidad de aprendizaje de la notación, con un promedio aproximado de 3,5, Aunque este valor se mantiene en un rango aceptable dentro de la escala Likert, señala que la curva de aprendizaje inicial representa el principal desafío percibido por los usuarios. Este hallazgo es consistente con lo esperado en una notación de nueva propuesta y sugiere la necesidad de fortalecer los materiales de introducción y los recursos de apoyo didáctico para facilitar su adopción.
 
-El ítem con la valoración más baja del eje, y de toda la encuesta, corresponde a la facilidad de aprendizaje de la notación, con un promedio aproximado de 3.5. Aunque este valor se mantiene en un rango aceptable dentro de la escala Likert, señala que la curva de aprendizaje inicial representa el principal desafío percibido por los usuarios. Este hallazgo es consistente con lo esperado en una notación de nueva propuesta y sugiere la necesidad de fortalecer los materiales de introducción y los recursos de apoyo didáctico para facilitar su adopción.
-
-En conjunto, los resultados de este eje indican que la experiencia general con la notación NDTI fue positiva, destacándose su adecuación al contexto formativo y el interés por su uso continuado, al tiempo que se identifica en la facilidad de aprendizaje una oportunidad de mejora concreta para iteraciones posteriores de la propuesta.
+En conjunto, los resultados de este eje indican que la experiencia general con la notación~\NDITI~fue positiva, destacándose su adecuación al contexto formativo y el interés por su uso continuado, al tiempo que se identifica en la facilidad de aprendizaje una oportunidad de mejora concreta para iteraciones posteriores de la propuesta.
 
 
 \subsubsection{Análisis cualitativo de respuestas abiertas}
 
 \noindent
-Las respuestas abiertas de la encuesta fueron analizadas mediante categorización temática, agrupando las opiniones de los participantes en torno a cuatro dimensiones: fortalezas percibidas, aspectos a mejorar, dificultades experimentadas y valoración general. Las respuestas originales de los participantes, transcritas de forma fiel y sin modificaciones, se encuentran disponibles en el Anexo (indexar anexo respuestas abiertas). Dado el carácter exploratorio del ejercicio y el tamaño reducido del grupo experimental, el análisis se orienta a identificar patrones cualitativos recurrentes más que a establecer frecuencias estadísticamente representativas.
+Las respuestas abiertas de la encuesta fueron analizadas mediante categorización temática, agrupando las opiniones de los participantes en torno a cuatro dimensiones: fortalezas percibidas, aspectos a mejorar, dificultades experimentadas y valoración general. Las respuestas originales de los participantes, transcritas de forma fiel y sin modificaciones, se encuentran disponibles en el Anexo~\autoref{anx:respuestas_abiertas}. Dado el carácter exploratorio del ejercicio y el tamaño reducido del grupo experimental, el análisis se orienta a identificar patrones cualitativos recurrentes más que a establecer frecuencias estadísticamente representativas.
 \subsubsection{Fortalezas percibidas.}
 La organización por capas emergió de forma consistente como el aspecto más valorado de la notación. Los participantes destacaron que esta estructura facilita significativamente la comprensión del modelo, al segmentar los componentes del sistema en niveles claramente diferenciados. Asimismo, se señaló que la existencia de un estándar definido elimina la ambigüedad conceptual, al establecer una base común de referencia que evita divergencias interpretativas entre distintos usuarios. Estos hallazgos son coherentes con las valoraciones cuantitativas obtenidas en el Eje I, donde la organización por capas alcanzó uno de los promedios más altos de la encuesta.
 
@@ -314,22 +307,22 @@ Valoración general & Recepción positiva; proyección de la notación como pote
 
 \subsection{Integración de resultados}
 \noindent
-La integración de los resultados permite contrastar el desempeño observado en la actividad de diagramación con la percepción reportada por los participantes del grupo experimental sobre la notación NDTI, identificando correspondencias y tensiones entre ambas dimensiones de análisis.
+La integración de los resultados permite contrastar el desempeño observado en la actividad de diagramación con la percepción reportada por los participantes del grupo experimental sobre la notación~\NDITI{}, identificando correspondencias y tensiones entre ambas dimensiones de análisis.
 
 \paragraph{Estructuración y comprensión de la notación.}
-El criterio de estructuración del modelo fue el que registró la mayor diferencia entre grupos (4.6 vs. 3.0), y también el más homogéneo dentro del grupo NDTI, donde cuatro de cinco subgrupos obtuvieron la valoración máxima. Este resultado es directamente coherente con los hallazgos del Eje I de la encuesta, donde la organización por capas fue identificada tanto cuantitativamente (promedio $\approx 4.7$) como cualitativamente en las respuestas abiertas como el principal facilitador de comprensión de la notación. La convergencia entre percepción y desempeño en este aspecto constituye uno de los hallazgos más sólidos del estudio: la estructura por capas no solo es comprendida, sino efectivamente aplicada en la construcción de los modelos.
+El criterio de estructuración del modelo fue el que registró la mayor diferencia entre grupos (4,6 vs. 3,0), y también el más homogéneo dentro del grupo~\NDITI{}, donde cuatro de cinco subgrupos obtuvieron la valoración máxima. Este resultado es directamente coherente con los hallazgos del Eje I de la encuesta, donde la organización por capas fue identificada tanto cuantitativamente (promedio $\approx 4,7$) como cualitativamente en las respuestas abiertas como el principal facilitador de comprensión de la notación. La convergencia entre percepción y desempeño en este aspecto constituye uno de los hallazgos más sólidos del estudio: la estructura por capas no solo es comprendida, sino efectivamente aplicada en la construcción de los modelos.
 
 \paragraph{Completitud, correspondencia y expresividad percibida.}
-Los criterios de completitud (4.6 vs. 3.4) y correspondencia con el enunciado (4.6 vs. 3.6) presentan diferencias favorables al grupo NDTI, consistentes con los resultados del Eje III de la encuesta, donde los participantes valoraron positivamente la capacidad de la notación para representar el problema de forma clara ($\approx 4.5$) y para facilitar la comprensión del sistema modelado ($\approx 4.5$). La coherencia entre estas dos dimensiones sugiere que la expresividad percibida de la notación se traduce efectivamente en modelos más completos y fieles al enunciado.
+Los criterios de completitud (4,6 vs. 3,4) y correspondencia con el enunciado (4,6 vs. 3,6) presentan diferencias favorables al grupo~\NDITI{}, consistentes con los resultados del Eje III de la encuesta, donde los participantes valoraron positivamente la capacidad de la notación para representar el problema de forma clara ($\approx 4,5$) y para facilitar la comprensión del sistema modelado ($\approx 4,5$). La coherencia entre estas dos dimensiones sugiere que la expresividad percibida de la notación se traduce efectivamente en modelos más completos y fieles al enunciado.
 
 \paragraph{Relaciones: el criterio de mayor tensión.}
-La representación de relaciones fue el criterio con mayor variabilidad dentro del grupo NDTI (puntajes entre 3 y 5) y el único en que un subgrupo del grupo libre superó al mejor subgrupo NDTI (G2 libre obtuvo 5 mediante etiquetas textuales explícitas). Este patrón es coherente con la percepción recogida en el Eje II, donde la identificación de los elementos apropiados y la comodidad de uso obtuvieron los promedios más bajos del eje ($\approx 4.0$), y con las respuestas abiertas, donde se señaló que algunos elementos parecen representar lo mismo o resultan demasiado generales. En conjunto, esto indica que las relaciones entre elementos constituyen el aspecto de mayor dificultad de apropiación de la notación, tanto en su comprensión como en su aplicación práctica.
+La representación de relaciones fue el criterio con mayor variabilidad dentro del grupo~\NDITI~(puntajes entre 3 y 5) y el único en que un subgrupo del grupo libre superó al mejor subgrupo~\NDITI~(G2 libre obtuvo 5 mediante etiquetas textuales explícitas). Este patrón es coherente con la percepción recogida en el Eje II, donde la identificación de los elementos apropiados y la comodidad de uso obtuvieron los promedios más bajos del eje ($\approx 4,0$), y con las respuestas abiertas, donde se señaló que algunos elementos parecen representar lo mismo o resultan demasiado generales. En conjunto, esto indica que las relaciones entre elementos constituyen el aspecto de mayor dificultad de apropiación de la notación, tanto en su comprensión como en su aplicación práctica.
 
 \paragraph{Facilidad de aprendizaje y desempeño real.}
-La principal tensión identificada entre percepción y desempeño se sitúa en la facilidad de aprendizaje, que obtuvo el promedio más bajo de toda la encuesta ($\approx 3.5$ en el Eje IV). Sin embargo, los resultados del ejercicio fueron consistentemente superiores en el grupo NDTI, incluso en el subgrupo de menor desempeño (G3, promedio 3.75), que aun así superó el promedio general del grupo libre (3.35). Esto sugiere que la curva de aprendizaje percibida no impidió que los participantes produjeran modelos de calidad superior en su primera aplicación de la notación, lo cual puede interpretarse como un indicador de que la estructura de la notación compensa parcialmente las dificultades iniciales de familiarización.
+La principal tensión identificada entre percepción y desempeño se sitúa en la facilidad de aprendizaje, que obtuvo el promedio más bajo de toda la encuesta ($\approx 3,5$ en el Eje IV). Sin embargo, los resultados del ejercicio fueron consistentemente superiores en el grupo~\NDITI{}, incluso en el subgrupo de menor desempeño (G3, promedio 3,75), que aun así superó el promedio general del grupo libre (3,35). Esto sugiere que la curva de aprendizaje percibida no impidió que los participantes produjeran modelos de calidad superior en su primera aplicación de la notación, lo cual puede interpretarse como un indicador de que la estructura de la notación compensa parcialmente las dificultades iniciales de familiarización.
 
 \paragraph{Variabilidad interna como indicador diferenciador.}
-Más allá de los promedios, la variabilidad interna de cada grupo ofrece información relevante. El grupo NDTI presenta un rango de desempeño individual entre 3.75 y 5.0 (diferencia de 1.25 puntos), mientras que el grupo libre oscila entre 2.50 y 4.25 (diferencia de 1.75 puntos). Esta menor dispersión en el grupo experimental sugiere que la notación NDTI no solo eleva el desempeño promedio sino que también reduce la heterogeneidad en los resultados, ofreciendo un piso mínimo de calidad más elevado independientemente de las capacidades o conocimientos previos de cada subgrupo.
+Más allá de los promedios, la variabilidad interna de cada grupo ofrece información relevante. El grupo~\NDITI~presenta un rango de desempeño individual entre 3,75 y 5,0 (diferencia de 1,25 puntos), mientras que el grupo libre oscila entre 21,50 y 4,25 (diferencia de 1,75 puntos). Esta menor dispersión en el grupo experimental sugiere que la notación~\NDITI~no solo eleva el desempeño promedio sino que también reduce la heterogeneidad en los resultados, ofreciendo un piso mínimo de calidad más elevado independientemente de las capacidades o conocimientos previos de cada subgrupo.
 
 \noindent
-\textit{La interpretación profunda de estos hallazgos y sus implicaciones para el desarrollo de la notación NDTI se desarrollará en la sección de conclusiones.}
+\textit{La interpretación profunda de estos hallazgos y sus implicaciones para el desarrollo de la notación~\NDITI~se desarrollará en la sección de conclusiones.}

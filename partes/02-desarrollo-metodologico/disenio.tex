@@ -1,7 +1,7 @@
 \ChapterImageStar[cap:disenio]{Diseño de la solución}{./images/fondo.png}\label{cap:disenio}
 \mbox{}\\
 
-Este capítulo tiene como objetivo presentar una propuesta metodológica concreta para la definición de una notación unificada basada principalmente en \textit{ArchiMate} y aplicable en el contexto del programa de Ingeniería de Sistemas y Computación. También se especifica la estructura de la notación propuesta, detallando sus elementos seleccionados, capas definidas y reglas de representación que orientarán su uso en el área de Infraestructura de~\TI~del programa de Ingeniería de Sistemas y Computación de la Universidad del Quindío. Este diseño busca establecer las bases conceptuales para su implementación, promoviendo coherencia, claridad y sostenibilidad en la representación de la infraestructura tecnológica. Además, se pretende apoyar al grupo \GRID~en el fortalecimiento de sus procesos formativos y en el cumplimiento de las necesidades identificadas durante la caracterización.
+Este capítulo presenta la propuesta NDITI: sus capas, elementos, conectores transversales y reglas de representación, tomando como base ArchiMate y complementando con elementos de UML y BPMN donde se identificaron necesidades específicas del contexto académico. Este diseño busca establecer las bases conceptuales para su implementación, promoviendo coherencia, claridad y solidez conceptual en la representación de la infraestructura tecnológica. Además, se pretende apoyar al grupo \GRID~en el fortalecimiento de sus procesos formativos y en el cumplimiento de las necesidades identificadas durante la caracterización.
 
 La notación definida en este capítulo se fundamenta principalmente en la especificación oficial de \textit{ArchiMate}, desarrollada por The Open Group. Esta elección responde a su madurez como estándar, su capacidad para modelar arquitecturas mediante un enfoque multicapa y su cobertura de diferentes niveles de abstracción, lo que la convierte en una base adecuada para el contexto del proyecto.
 
@@ -13,7 +13,7 @@ Estas extensiones no modifican la lógica conceptual central de ArchiMate, sino 
 \noindent
 La notación propuesta en el marco del proyecto se organizará bajo un enfoque por capas, permitiendo representar la infraestructura de~\TI desde el nivel más concreto hasta el más abstracto, iniciando desde la capa física y culminando en la capa de negocio. Esta estructura facilita la comprensión progresiva de los sistemas.
 
-En este sentido, se definieron cuatro capas principales: Capa Física, Capa Tecnológica, Capa de Aplicación y Capa de Negocio.
+En este sentido, se definieron cinco capas principales: Capa Física, Capa de Redes y Comunicaciones, Capa Tecnológica, Capa de Aplicación y Capa de Negocio.
 
 \subsubsection{Conectores transversales de la propuesta~\NDITI}
 \noindent
@@ -101,22 +101,22 @@ Desde el punto de vista conceptual, estas relaciones se fundamentan en una integ
 
 \includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_loop.png}
 & R-08 Bucle
-& Elemento conductual
+& Conductual
 & Representación de la repetición de una o varias actividades dentro de un proceso de negocio hasta que se cumpla una condición específica.
-& Google Fonts \\
+& Usar para representar la repetición de un elemento o proceso mientras se cumpla una condición definida \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_parallel.png}
 & R-09 Paralelización
-& Elemento conductual
+& Conductual
 & Nodo que permite la ejecución simultánea de múltiples actividades dentro de un proceso de negocio, facilitando la representación de flujos concurrentes.
-& Google Fonts \\
+& Usar para modelar actividades que se ejecutan simultáneamente sin dependencia entre sí. \\
 \hline
 
 \end{longtable}
 \normalsize
 
-\subsubsection{Capa Física}
+\subsection{Capa Física}
 \noindent
 La Capa Física constituye el nivel base de la propuesta~\NDITI~y representa los componentes materiales que soportan la infraestructura tecnológica. En esta capa se modelan los elementos tangibles que permiten la operación de los sistemas de información, incluyendo equipos, espacios físicos, redes de distribución y recursos materiales involucrados en la prestación de servicios tecnológicos.
 
@@ -198,7 +198,7 @@ De acuerdo con lo anterior, la especificación presentada a continuación define
 \includegraphics[width=1.1cm]{tablas-images/archi/fisica/nditi_pascomp.png}
 & F-05 Componente (Pasivo)
 & Estructural pasivo
-& Elemento físico susceptible de ser utilizado, transformado o consumido dentro de un proceso.
+& Componente de hardware físico que no ejecuta comportamiento autónomo pero es necesario para la operación de otros elementos activos.
 & Google Fonts \\
 \hline
 
@@ -232,14 +232,14 @@ Adicionalmente, dentro del entorno físico del centro de datos se gestionan dive
 \noindent
 El diagrama permite representar la disposición de los elementos físicos dentro de la infraestructura, así como sus relaciones estructurales y de conectividad.
 
-\subsubsection{Capa de Redes y Comunicaciones}
+\subsection{Capa de Redes y Comunicaciones}
 \noindent
 
-La Capa de Redes y Comunicaciones se introduce en la propuesta~\NDITI~como una extensión orientada a representar de manera más detallada y estructurada los elementos asociados a la conectividad dentro de la infraestructura de TI. Aunque ArchiMate contempla conceptos generales de red y comunicación, no proporciona un conjunto de elementos suficientemente específico para modelar dispositivos y componentes comúnmente utilizados en el contexto académico del área de Infraestructura de TI.
+La Capa de Redes y Comunicaciones se introduce en la propuesta~\NDITI~como una extensión orientada a representar de manera más detallada y estructurada los elementos asociados a la conectividad dentro de la Infraestructura de TI. Aunque ArchiMate contempla conceptos generales de red y comunicación, no proporciona un conjunto de elementos suficientemente específico para modelar dispositivos y componentes comúnmente utilizados en el contexto académico del área de Infraestructura de TI.
 
 Con el propósito de cubrir esta limitación, se define una capa especializada que agrupa elementos propios del dominio de redes y comunicaciones, tales como dispositivos de interconexión, nodos de conexión y equipos asociados a la transmisión y gestión del tráfico de datos. Estos elementos se plantean como especializaciones físicas del concepto general de equipo, o como nuevas abstracciones necesarias para representar adecuadamente la topología y organización de una red.
 
-La separación de estos componentes en una capa independiente permite mejorar la claridad del modelo, facilitando la lectura, el análisis y la enseñanza de arquitecturas de red dentro del programa. Asimismo, esta organización favorece un uso más estructurado de la notación, alineado con las necesidades específicas de asignaturas relacionadas con redes, comunicaciones e infraestructura tecnológica.
+Separar estos componentes en su propia capa mejora la legibilidad del modelo y facilita su uso en asignaturas de redes, comunicaciones e infraestructura.
 
 \renewcommand{\arraystretch}{1.3}
 \setlength{\extrarowheight}{2pt}
@@ -285,49 +285,49 @@ La separación de estos componentes en una capa independiente permite mejorar la
 
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_router.png}
 & RC-02 Router
-& Especialización física de equipo
+& Especialización de componente activo
 & Dispositivo físico de interconexión de redes encargado de dirigir el tráfico de datos entre diferentes segmentos de red.
 & Freepik \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_switch.png}
 & RC-03 Switch
-& Especialización física de equipo
+& Especialización de componente activo
 & Dispositivo físico que permite la interconexión de múltiples dispositivos dentro de una red local, gestionando el tráfico mediante direcciones físicas.
 & Freepik \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_server.png}
 & RC-04 Servidor (Hardware)
-& Especialización física de equipo
+& Especialización de componente activo
 & Equipo físico de alto desempeño destinado a proporcionar recursos computacionales, almacenamiento o servicios a otros dispositivos.
 & Freepik \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_modem.png}
 & RC-05 Módem
-& Especialización física de equipo
+& Especialización de componente activo
 & Dispositivo físico encargado de modular y demodular señales para permitir la transmisión de datos a través de medios de comunicación externos.
 & Freepik \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_firewall.png}
 & RC-06 Firewall físico
-& Especialización física de equipo
+& Especialización de componente activo
 & Dispositivo físico de seguridad de red que controla y filtra el tráfico de datos según políticas predefinidas.
 & Google Fonts \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/redes_comunicaciones/nditi_disk.png}
 & RC-07 Dispositivo de almacenamiento físico
-& Especialización física de equipo
+& Especialización de componente activo
 & Equipo físico destinado al almacenamiento persistente de información, tales como sistemas NAS, SAN o arreglos de discos.
 & Google Fonts \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/fisica/nditi_generic.png}
 & RC-08 Dispositivo genérico físico
-& Especialización física de equipo
+& Especialización de componente activo
 & Elemento físico no especificado utilizado para representar cualquier dispositivo de infraestructura tecnológica cuya naturaleza particular no se detalla en el modelo.
 & Google Fonts \\
 
@@ -364,14 +364,14 @@ Cabe destacar que todo el tráfico destinado a los dispositivos internos debe at
 El diagrama muestra la estructura jerárquica de la red y la forma en que los dispositivos se interconectan para permitir la comunicación entre componentes internos y externos.
 
 
-\subsubsection{Capa Tecnológica}
+\subsection{Capa Tecnológica}
 \noindent
 
-La Capa Tecnológica en la propuesta~\NDITI~representa el nivel en el que se abstraen los recursos computacionales y los servicios que soportan la ejecución de software dentro de la infraestructura de TI. A diferencia de la capa física, en este nivel se modelan los componentes lógicos, los entornos de ejecución y los comportamientos tecnológicos que permiten la operación de los sistemas.
+La Capa Tecnológica en la propuesta~\NDITI~representa el nivel en el que se abstraen los recursos computacionales y los servicios que soportan la ejecución de software dentro de la Infraestructura de~\TI. A diferencia de la capa física, en este nivel se modelan los componentes lógicos, los entornos de ejecución y los comportamientos tecnológicos que permiten la operación de los sistemas.
 
 Esta capa se fundamenta directamente en la especificación de ArchiMate, adoptando sus principales elementos estructurales, de conectividad y de comportamiento, tales como nodos, software de sistema, servicios tecnológicos y procesos. Estos elementos proporcionan una base estandarizada para la representación de arquitecturas tecnológicas. No obstante, a partir de las necesidades identificadas en el contexto académico del programa, se incorporan extensiones específicas que permiten representar conceptos actuales ampliamente utilizados en la industria, como la virtualización y la contenedorización. Elementos como el nodo servidor, las máquinas virtuales, los contenedores de software y los mecanismos de seguridad lógica amplían la capacidad expresiva de la notación, facilitando la modelación de escenarios reales abordados en asignaturas del área de Infraestructura de TI.
 
-De esta manera, la capa tecnológica integra tanto los elementos propios de ArchiMate como las extensiones propuestas en el proyecto~\NDITI{}, manteniendo la coherencia conceptual.
+De esta manera, la capa tecnológica integra tanto los elementos propios de ArchiMate como las extensiones propuestas en el proyecto ~\NDITI{}, manteniendo la coherencia conceptual.
 
 \renewcommand{\arraystretch}{1.3}
 \setlength{\extrarowheight}{2pt}
@@ -576,7 +576,7 @@ Desde una perspectiva de comportamiento, el sistema está diseñado para respond
 \noindent
 El diagrama permite observar la relación entre infraestructura lógica, servicios tecnológicos y comportamiento del sistema, evidenciando la integración de múltiples tipos de elementos dentro de la capa.
 
-\subsubsection{Capa de Aplicación}
+\subsection{Capa de Aplicación}
 \noindent
 
 La Capa de Aplicación en la propuesta~\NDITI representa el nivel en el que se modelan los sistemas de software y sus funcionalidades desde una perspectiva lógica. En esta capa se describen los componentes de aplicación, sus interacciones, los procesos que ejecutan y los datos que gestionan, permitiendo abstraer la lógica del sistema independientemente de la infraestructura tecnológica subyacente.
@@ -762,16 +762,16 @@ El proceso de compra se materializa como una secuencia de actividades coordinada
 \noindent
 El diagrama representa la estructura lógica del sistema, las interacciones entre componentes y el flujo de ejecución de procesos dentro de la aplicación.
 
-\subsubsection{Capa de Negocio}
+\subsection{Capa de Negocio}
 \noindent
 
 La Capa de Negocio representa el nivel más abstracto de la propuesta~\NDITI~y tiene como propósito modelar los elementos organizacionales, los procesos y la lógica operativa que dan sentido a la infraestructura tecnológica. En esta capa se describen los actores, roles, servicios y objetos de negocio, así como las interacciones y comportamientos que permiten la generación de valor dentro de un contexto organizacional.
 
 Desde el punto de vista conceptual, esta capa se fundamenta en los elementos definidos por ArchiMate para el modelado del dominio de negocio, manteniendo su semántica original y su estructura basada en elementos estructurales, conductuales y pasivos. Esto permite representar de manera coherente la relación entre los procesos de negocio y las capas inferiores de la arquitectura.
 
-No obstante, a partir del análisis de las necesidades del programa académico, se identificó la necesidad de complementar esta capa con elementos adicionales orientados a la representación explícita de flujos de proceso. En este sentido, la propuesta\NDITI incorpora un conjunto de extensiones inspiradas en notaciones como BPMN y diagramas de actividades, las cuales permiten modelar de manera más clara aspectos como el inicio y fin de procesos, decisiones y organización por responsabilidades.
+No obstante, a partir del análisis de las necesidades del programa académico, se identificó la necesidad de complementar esta capa con elementos adicionales orientados a la representación explícita de flujos de proceso. En este sentido, la propuesta~\NDITI~incorpora un conjunto de extensiones inspiradas en notaciones como BPMN y diagramas de actividades, las cuales permiten modelar de manera más clara aspectos como el inicio y fin de procesos, decisiones y organización por responsabilidades.
 
-Estas extensiones no sustituyen los elementos propios de ArchiMate, sino que actúan como un complemento visual y semántico que facilita la comprensión de los procesos de negocio, especialmente en contextos educativos. En consecuencia, la Capa de Negocio en\NDITI logra integrar la solidez estructural de ArchiMate con la expresividad de las notaciones de flujo, proporcionando una representación más completa, intuitiva y alineada con los objetivos formativos del área de Infraestructura de TI.
+Estas extensiones no sustituyen los elementos propios de ArchiMate, sino que actúan como un complemento visual y semántico que facilita la comprensión de los procesos de negocio, especialmente en contextos educativos. En consecuencia, la Capa de Negocio en la~\NDITI~logra integrar la solidez estructural de ArchiMate con la expresividad de las notaciones de flujo, proporcionando una representación más completa, intuitiva y alineada con los objetivos formativos del área de Infraestructura de TI.
 
 \renewcommand{\arraystretch}{1.3}
 \setlength{\extrarowheight}{2pt}
@@ -930,14 +930,14 @@ Estas extensiones no sustituyen los elementos propios de ArchiMate, sino que act
 
 \includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_gateway.png}
 & B-17 Ramificación / Decisión
-& Elemento conductual
+& Conductual
 & Nodo que permite dividir el flujo de un proceso en múltiples caminos según condiciones definidas, representando decisiones dentro del proceso de negocio.
 & Google Fonts \\
 \hline
 
 \includegraphics[width=1.1cm]{tablas-images/archi/business/ndti_andor.png}
 & B-18 Operador lógico (AND/OR)
-& Elemento conductual
+& Conductual
 & Elemento que permite representar condiciones lógicas dentro de un flujo de negocio, indicando ejecución paralela (AND) o selección alternativa (OR).
 & Google Fonts \\
 \hline
@@ -1046,7 +1046,7 @@ Finalmente, la capa tecnológica se sustenta sobre una infraestructura física c
 
 \FloatBarrier
 
-\subsubsection{Síntesis y cierre del capítulo}
+\subsection{Síntesis y cierre del capítulo}
 \noindent
 En conjunto, la propuesta~\NDITI~presentada a lo largo de estas secciones consolida un marco integral para el modelado de arquitecturas de TI, articulando de manera coherente los distintos niveles de abstracción desde la infraestructura física hasta el dominio de negocio. 
 
@@ -1058,7 +1058,7 @@ Asimismo, la integración de elementos inspirados en notaciones como BPMN y UML 
 
 Finalmente, los conectores transversales permiten unificar todas las capas dentro de un mismo modelo, asegurando la trazabilidad y consistencia entre los diferentes componentes de la arquitectura. 
 
-De esta manera,~\NDITI~actúa como una propuesta estructurada que facilita la comprensión, el análisis y su aplicación en el ámbito académico.
+De esta manera, la~\NDITI~ofrece a docentes y estudiantes un lenguaje común para diseñar, analizar y documentar infraestructuras tecnológicas en el ámbito universitario.
 
 
 \FloatBarrier

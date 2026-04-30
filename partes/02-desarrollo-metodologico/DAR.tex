@@ -5,7 +5,6 @@
 \section{Metodología de evaluación}
 
 La metodología de evaluación empleada para la selección de las notaciones y lenguajes de modelado arquitectónico en el proyecto~\NDITI~fue la \textit{Decision Analysis and Resolution} (\DAR) del modelo \CMMI~\citep{CMMIInstitute2010}. Esta metodología permitió analizar de forma estructurada las necesidades del grupo~\GRID~y del entorno institucional, considerando múltiples alternativas de herramientas y enfoques de modelado. El proceso contempló criterios técnicos, metodológicos y pedagógicos, tales como el nivel de estandarización de la notación, la compatibilidad con marcos de arquitectura empresarial, la disponibilidad de herramientas de soporte (por ejemplo, Archi o Enterprise Architect), la curva de aprendizaje, la adopción en contextos académicos y la calidad de la documentación técnica.
-La aplicación de la metodología~\DAR~aportó transparencia, trazabilidad y rigor al proceso de selección, asegurando que la notación y las herramientas elegidas se fundamentaran en un análisis comparativo objetivo y alineado con las necesidades del proyecto~\NDITI~y con las metas estratégicas del~\GRID~en materia de modelado y gestión de infraestructura tecnológica.
 
 \subsection{Lista de criterios}
 A continuación se describen los criterios seleccionados para la evaluación.
@@ -24,8 +23,7 @@ el aprendizaje autónomo, la resolución de dudas y aumenta las probabilidades d
 de vida académico. Si bien esto no garantiza la calidad técnica, representa un valor añadido en términos de soporte
 y ecosistema de la notación, por lo que se le considera un criterio pertinente en el proceso de selección.
 
-Para la búsqueda realizada en google trends, se estableció un rango de tiempo desde 2020 a 2024 para conocordar con lo 
-establecido en el proyecto.
+Para la búsqueda realizada en Google Trends se estableció un rango de tiempo de 2020 a 2024, en línea con el período definido en el SMS.
 
 % TABLA Popularidad según Google Trends.
 \begin{table}[H]
@@ -51,7 +49,7 @@ establecido en el proyecto.
 \end{table}
 
 
-\subsubsection{documentación de la notación}
+\subsubsection{Documentación de la notación}
 \textbf{Código:} DOC
 
 \textbf{Descripción:} Una documentación sólida es fundamental para garantizar que tanto los estudiantes como los 
@@ -94,7 +92,7 @@ certificaciones o procesos de gobernanza.
 
 
 \textbf{Justificación:} La formalidad con la que una notación es desarrollada influye directamente en su estabilidad, 
-coherencia conceptual y continuidad en el tiempo. Para el área de infraestructura de TI, una notación respaldada por una 
+coherencia conceptual y continuidad en el tiempo. Para el área de infraestructura de~\TI{}, una notación respaldada por una 
 organización sólida brinda mayor confianza en su evolución y reduce el riesgo de quedar obsoleta o fragmentada. 
 Adicionalmente una base formal facilita su inclusión en entornos académicos al ofrecer un marco de referencia claro.
 Este criterio aporta un nivel importante de seguridad metodológica dentro del proceso de selección de la notación.
@@ -107,7 +105,7 @@ así como el nivel de actividad de sus desarrolladores o comunidades asociadas. 
 la que la notación se adapta a nuevas necesidades del sector a través de la actualizacion constante de sus versiones.
 
 
-\textbf{Justificación:} En un entorno tecnológico en constante cambio como la arquitectura de TI, es fundamental 
+\textbf{Justificación:} En un entorno tecnológico en constante cambio como la arquitectura de~\TI{}, es fundamental 
 utilizar una notación que no este desactualizada. Para el proyecto~\NDITI, la vigencia garantiza que la notación 
 pueda cubrir nuevos escenarios técnicos. Si una notación deja de actualizarse, su utilidad académica y práctica 
 disminuye, afectando directamente su adopción en el proceso formativo de los estudiantes. Por ello, la vigencia 
@@ -128,7 +126,7 @@ esta independencia facilita que la notación pueda aplicarse en cursos diversos,
 razones, el minimalismo resulta un criterio apropiado al evaluar opciones dentro del proyecto NDITI.
 
 \subsection{Análisis DAR}
-Con los criterios definidos y la medición de popularidad completada, se procede a realizar el análisis \DAR. Para este análisis se utilizó una metodología estructurada basada la plantilla encontrada en la tabla ~\ref{tab:plantilla-analisis_dar} que permite evaluar sistemáticamente cada universo contra los criterios establecidos. La plantilla utilizada se presenta en el Apéndice \ref{chap:plantilla-dar}.
+Con los criterios definidos y la medición de popularidad completada, se procede a realizar el análisis \DAR. Para este análisis se utilizó una metodología estructurada basada en la plantilla encontrada en la tabla ~\ref{tab:plantilla-analisis_dar} que permite evaluar sistemáticamente cada alternativa contra los criterios establecidos. La plantilla utilizada se presenta en el Apéndice \ref{chap:plantilla-dar}.
 
 Los resultados del análisis se presentan en la Tabla \ref{tab:analisis_notaciones}, donde cada notación fue evaluada con puntuaciones del 1 al 3 según su desempeño en cada criterio.
 
@@ -180,5 +178,9 @@ El análisis realizado tuvo como propósito identificar qué notación ofrece un
 
 Este resultado indica que no existe una única notación claramente dominante para el contexto del proyecto, sino un conjunto de opciones viables que aportan fortalezas distintas. UML destaca por su amplio respaldo documental y uso consolidado; BPMN por su orientación operativa y adopción extendida en modelado de procesos; y ArchiMate por su formalismo y vigencia en el ámbito de la arquitectura empresarial. En ausencia de una brecha significativa entre los puntajes, se opta por considerar las tres notaciones como candidatas válidas para las siguientes etapas del trabajo.
 
-\subsection{Próximos pasos}
-Con base en los resultados obtenidos, el siguiente paso consiste en seleccionar una notación principal que sirva como base estructural para el proyecto. A partir de ella, se identificarán sus limitaciones específicas y se integrarán elementos conceptuales o sintácticos provenientes de las otras notaciones evaluadas, con el fin de fortalecer aquellos aspectos donde la notación base resulte menos robusta.
+\subsection{Selección de la notación principal}
+El análisis comparativo muestra que no existe una notación claramente dominante. UML obtuvo el mayor puntaje (2.4), destacándose por su madurez y uso extendido, mientras que BPMN sobresale en el modelado de procesos y ArchiMate en la representación de arquitectura empresarial.
+
+Sin embargo, la selección de la notación principal no depende únicamente del puntaje, sino del nivel de abstracción requerido por el proyecto. UML y BPMN se enfocan en aspectos específicos del sistema, mientras que ArchiMate permite una visión integrada de las capas de negocio, aplicación y tecnología.
+
+Por esta razón, se adopta ArchiMate como notación principal, debido a su mayor adecuación al enfoque de arquitectura empresarial del proyecto.
